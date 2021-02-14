@@ -1,0 +1,13 @@
+>>>>Creating Virtual Env(if already Created not Required)<<<<
+Command: python -m venv env
+
+>>>>If Env is created thn activate<<<<
+Command: env\Scripts\activate.bat
+
+
+please follow the proccess for python version 3.8 and more..
+this project is build with python version 3.8.
+
+Always run pip freeze>requirements.txt after adding any module.
+
+
