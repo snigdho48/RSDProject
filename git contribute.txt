@@ -1,0 +1,13 @@
+>>>>Git contribute<<<<Snigdho
+
+1.Fork project of team member from github.com
+2.after init git,use git pull for the desire contribute project
+3.Go to your git profile and copy the repository link under your git.
+4.go to local repository on pc and open terminal.user command  git remote add origin [fatched repository link on step 3]
+5.git push --set-upstream origin master
+6.git remote add main https://github.com/Touhid7051/RSDProject.git
+7.git fetch main
+All done.now use git push origin for upload and git pull main for update.
+Note:Always use git fetch main for update work.if has any update use git pull main
+
+

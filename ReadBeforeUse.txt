@@ -1,7 +1,7 @@
->>>>Creating Virtual Env(if already Created not Required)<<<<
+>>>>Creating Virtual Env(if already Created not Required)<<<<Touhid
 Command: python -m venv env
 
->>>>If Env is created thn activate<<<<
+>>>>If Env is created thn activate<<<<Touhid
 Command: env\Scripts\activate.bat
 
 
@@ -10,4 +10,10 @@ this project is build with python version 3.8.
 
 Always run pip freeze>requirements.txt after adding any module.
 
+
+>>>>please enable virtual env and install requirements.txt file.<<<<Touhid
+Command : pip install -r requirements.txt
+
+
+>>>>please use git pull and git fetch before working for update<<<<Rafi
 
