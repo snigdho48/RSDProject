@@ -64,7 +64,7 @@ class Company_Overview(models.Model):
 class Products(models.Model):
     p_title = models.TextField(verbose_name="Title")
     p_image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100,name="image",verbose_name="Product Image")
-    p_description = models.TextField(max_length=500,verbose_name="Product Descreption")
+    description = RichTextField()
     created_at = models.DateTimeField(auto_now_add=True,verbose_name="Created At")
 
     def __str__(self):
@@ -93,9 +93,9 @@ class subscribe(models.Model):
 
 class NewsandEvent(models.Model):
     title = models.TextField(max_length=50,verbose_name="News Headline")
-    description = models.TextField(max_length=500,verbose_name="News Content")
+    description = RichTextField()
     image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100,verbose_name="News Photo")
-    created_at = models.DateTimeField(auto_now=False, auto_now_add=False)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
