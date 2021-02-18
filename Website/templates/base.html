@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    {% include "style.html"%}
+     {% block css %}{% endblock %}
+</head>
+<body>
+{% include 'loader_nav.html' %}
+{% block content %}
+
+{% endblock %}
+{% include 'footer.html' %}
+{% include 'scripts.html' %}
+
+</body>
+{#    #Machine Xtreme IT#}
+{#    #Team Touhid,Rafi,Tareq,Snigdho#}
+</html>
