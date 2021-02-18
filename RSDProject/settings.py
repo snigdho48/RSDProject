@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Website'
+    'Website',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,14 @@ MEDIA_ROOT = [
     # add path for media_root dir
     os.path.join(BASE_DIR, 'Website', 'media')
 ]
+CKEDITOR_CONFIGS = {
+    'default': {
+        # 'toolbar': 'Custom',
+        'width': '461px',
+        'height': 'auto',
+        # 'toolbar_Custom': [
+        #     ['Bold', 'Italic', 'Underline'],
+        #     ['NumberedList', 'BulletedList'],
+        # ],
+    }
+}
