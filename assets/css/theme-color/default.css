@@ -1,0 +1,101 @@
+/* HOME_PAGE */
+/*
+============== background Color====================
+*/
+nav.navbar.bootsnav, .main_nav ul ul li, .footer_logo ul li a:hover, .points_icon, .cons_man, .tparrows.tp-leftarrow:hover, .tparrows.tp-rightarrow:hover, .feature-box:before, .feature-box:after, .content:before, .content:after, .b-line, .social_team ul li a, .counter_box .single-fact .counter:before, .footer_logo ul li a:hover, .social-link__block a:after, .triangle_box, .bg_black,
+.patient_head, .dots_style .owl-dots .owl-dot, .event_date, .post_title h3:before, .post_date, .section_tit:before, .section_tit:after, 
+.three_line, .three_line:before, .three_line:after, .header_tran .navigation .sub-nav, #header .stricky {
+  background: #479c18;
+}
+
+.middel-part__block::before, .middel-part__block .logo:after, .middel-part__block .logo, .main_nav ul ul li:hover {
+  background: #337011;
+}
+
+@media (max-width: 992px) {
+  .middel-part__block {
+    background: #337011;
+  }
+}
+/*
+============== Text Color====================
+*/
+.top-info__block li i, .next_btn_style .owl-controls .owl-nav .owl-prev:hover, .next_btn_style .owl-controls .owl-nav .owl-next:hover, .team_detail span, .counter_box .single-fact .counter, .gallery-heading h4 a, .bg_Testimonial .owl-carousel .owl-controls .owl-nav .owl-prev:hover, .bg_Testimonial .owl-carousel .owl-controls .owl-nav .owl-next:hover, .link_footer ul li a:hover, .footer-latest-news .single-news span, .footer-latest-news .single-news h5 a:hover, .more_btn__block, .bor_top a,
+.header_tran .top-bar-section .top-social-icon .icons-hover-black a:hover, .header_tran .top_loction ul li a:hover, .header_tran .top_loction ul li a i, .color {
+  color: #479c18;
+}
+
+/*
+============== Border Color====================
+*/
+.next_btn_style .owl-controls .owl-nav .owl-prev:hover, .next_btn_style .owl-controls .owl-nav .owl-next:hover, .bg_Testimonial .owl-carousel .owl-controls .owl-nav .owl-prev:hover, .bg_Testimonial .owl-carousel .owl-controls .owl-nav .owl-next:hover, .footer_logo ul li a:hover,
+.tparrows.tp-leftarrow:hover, .tparrows.tp-rightarrow:hover, .process_box {
+  border-color: #479c18;
+}
+
+/* INNER_PAGE */
+/*
+============== background Color====================
+*/
+.b-line, .btn-text, .dark-bg, .hover-bg:hover, .ui-timeline .tl-item .tl-body .tl-entry .btn-primary, .abt-block__slider .owl-dots .owl-dot,
+.bullet_round:after, .second_righ:after, .owl-prev, .owl-next, .arrow_theme .owl-prev, .arrow_theme .owl-next,
+.faq .collape-plus, .panel-title a i, .container-filter li a.active, .container-filter li a:hover,
+.link-zoom a.same_style, .project-info, .blog-date, .pagination-nav ul li.active a, .pagination-nav ul li:hover a,
+#related-project .owl-prev:hover, #related-project .owl-next:hover, .sidebar-widget .widget-tag li a:hover,
+.box-hover:hover .team-block, .page-signin .body-inner:before, .ui-input-group .input-bar:before, .ui-input-group .input-bar:after,
+a.btn.xplus-btn.pricing.active, .btn.xplus-btn, a.btn.xplus-btn.pricing:hover, .skinonebg, .pricing-btn .get-start, .bg-color3, .bg-color,
+.ribbon.blue, .btn-default, .bar, .btn-default:hover, .color-switch .owl-controls .owl-page span, .tags li a, .shop .product-overlay div:hover,
+.nf-carousel-theme-top .owl-controls .owl-nav .owl-prev:hover, .nf-carousel-theme-top .owl-controls .owl-nav .owl-next:hover,
+.nf-carousel-theme .owl-controls .owl-nav .owl-prev, .nf-carousel-theme .owl-controls .owl-nav .owl-next {
+  background: #479c18;
+}
+
+.social_hover {
+  background: #479c18;
+  /* The Fallback */
+  background: rgba(71, 156, 24, 0.8);
+}
+
+.bullet_round:before, .second_righ:before {
+  box-shadow: 0 0 6px 6px #479c18;
+}
+
+.skinoneplancolor, div .secondary_bg {
+  background: #337011;
+}
+
+/*
+============== Text Color====================
+*/
+a:focus, a:hover, .abt-box__content-link-arrow, .abt-box_link-arrow, .abt-box__content-link:hover, .abt-box_link:hover,
+.abt-block_link-arrow, .abt-block_link:hover, .mv-block__vision_link:hover, .mv-block__mission_link:hover,
+.mv-block__vision_link-arrow, .mv-block__mission_link-arrow, .solution_box i.color_orenge, .single-fact .icon-boxed, .star i,
+.abt__link-arrow, .abt__link:hover, .gallery-heading h4 a:hover, .post-meta span > a > i, .pagination-nav ul li a,
+.sidebar-widget ul li a:hover, .lead-point li, .blog-post .fa-tag, .post-meta span > a > i, .custom-check:before,
+.ui-input-group > input:focus ~ label, .ui-input-group > textarea:focus ~ label, .color-primary, a.color-primary,
+.pricing-2 .price, .pricing-2 .currency-symbol, .price-blue--color, .big-font i, .contact-info .info li .icon,
+.contact .icon-circle, .nf-carousel-theme-top .owl-controls .owl-nav .owl-prev, .nf-carousel-theme-top .owl-controls .owl-nav .owl-next {
+  color: #479c18;
+}
+
+/*
+============== Border Color====================
+*/
+.btn-text, .v-line, .ui-timeline .tl-item .tl-body .tl-entry .btn-primary, .testimonial-block .small-divider,
+#related-project .owl-prev:hover, #related-project .owl-next:hover, .pagination-nav ul li a, .widget-tag li a,
+.widget-search input[type=text]:focus, .blog-post-hr input[type=text]:focus, .blog-post-hr textarea:focus,
+.custom-check, .pricing-2 .pricing_table.active, a.btn.xplus-btn.pricing.active,
+.btn.xplus-btn, a.btn.xplus-btn.pricing:hover, .pricing-wrap, .client-avtar,
+.contact-form input[type=text]:focus, .contact-form textarea:focus, .contact .icon-circle,
+.nf-carousel-theme-top .owl-controls .owl-nav .owl-prev, .nf-carousel-theme-top .owl-controls .owl-nav .owl-next,
+.nf-carousel-theme-top .owl-controls .owl-nav .owl-prev:hover, .nf-carousel-theme-top .owl-controls .owl-nav .owl-next:hover {
+  border-color: #479c18;
+}
+
+.team-member .inner-box .overlay-box:after, .ui-input-group > input:focus, .rightGrip:before, .leftGrip:before {
+  border-bottom-color: #479c18;
+}
+
+.ribbon:before, .ribbon:after {
+  border-top-color: #479c18;
+}

@@ -16,7 +16,4 @@ Command : pip install -r requirements.txt
 
 
 >>>>please use git pull and git fetch before working for update<<<<Rafi
-Superuser Name:admin
-password:rsdairy
 
-fix upload to touhid>rafi

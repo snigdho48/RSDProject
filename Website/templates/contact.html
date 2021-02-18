@@ -1,0 +1,98 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+
+
+{% endblock %}
+{% block content %}
+
+
+		<!-- Intro Section -->
+ <section class="inner-intro bg-img light-color overlay-before parallax-background">
+    <div class="container">
+      <div class="row title">
+      	<div class="title_row">
+      		<h1 data-title="Contact"><span>Contact</span></h1>
+      		<div class="page-breadcrumb">
+							<a>Home</a>/ <span>Contact</span>
+						</div>
+      		
+      	</div>
+        
+      </div>
+    </div>
+  </section>
+ <!-- Intro Section End-->
+		
+  
+  <!-- Contact Section -->
+  <section class="padding ptb-xs-40">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-lg-8 offset-md-2 text-center">
+          <h2>KEEP IN TOUCH</h2>
+          <p class="lead"> Nullam dictum felis eu pede mollis pretium leo eget bibendum sodales augue velit cursus. tellus eget condimentum rhoncus sem quam semper libero. </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-lg-12 contact pb-40 pt-30">
+          <div class="row text-center">
+            <div class="col-md-4 col-lg-4 pb-xs-30"> <i class="ion-android-call icon-circle pos-s"></i><a href="#" class="mt-15 i-block">+91 123-1234</a> </div>
+            <div class="col-md-4 col-lg-4 pb-xs-30"> <i class="ion-ios-location icon-circle pos-s"></i>
+              <p  class="mt-15"> 123 Main Street, St. NW Ste, <br />
+                1 Washington, DC,USA. </p>
+            </div>
+            <div class="col-md-4 col-lg-4 pb-xs-30"> <i class="ion-ios-email icon-circle pos-s"></i><a href="mailto:Construc@support.com"  class="mt-15 i-block">medical@support.com</a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Map Section -->
+    <div class="map">
+      <div id="map"></div>
+    </div>
+    <!-- Map Section -->
+    <div class="container contact-form pt-90 pt-xs-40 mt-up">
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <h4>GET IN TOUCH</h4>
+          <p> Nullam dictum felis eu pede mollis pretium. </p>
+          <!-- Contact FORM -->
+          <form class="contact-form mt-45" id="contact">           
+            <!-- IF MAIL SENT SUCCESSFULLY -->
+            <div id="success">
+              <div role="alert" class="alert alert-success"> <strong>Thanks</strong> for using our template. Your message has been sent. </div>
+            </div>
+            <!-- END IF MAIL SENT SUCCESSFULLY -->           
+            <div class="row">
+              <div class="col-md-6 col-lg-6">
+                <div class="form-field">
+                  <input class="input-sm form-full" id="name" type="text" name="form-name" placeholder="Your Name">
+                </div>
+                <div class="form-field">
+                  <input class="input-sm form-full" id="email" type="text" name="form-email" placeholder="Email" >
+                </div>
+                <div class="form-field">
+                  <input class="input-sm form-full" id="sub" type="text" name="form-subject" placeholder="Subject">
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <div class="form-field">
+                  <textarea class="form-full" id="message" rows="7" name="form-message" placeholder="Your Message" ></textarea>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-12 mt-30">
+                <button class="btn-text" type="button" id="submit" name="button"> Send Message </button>
+              </div>
+            </div>
+          </form>
+          <!-- END Contact FORM --> 
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+{% endblock %}
+
+
+
