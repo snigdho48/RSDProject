@@ -1,8 +1,13 @@
+from typing import ContextManager
+from Website.models import Contact_Info
 from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'index.html')
+    data=Contact_Info.objects.all()
+    context={'data':data}
+    return render(request, 'index.html',context)
+
 
 
 def about(request):
@@ -42,3 +47,6 @@ def handler404(request,exception=None):
 
 def services(request):
     return render(request,'services.html')
+
+def career(request):
+    return render(request,'career.html')

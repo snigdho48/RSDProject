@@ -1,3 +1,4 @@
+
 {% load static %}
 
 		<!--loader-->
@@ -62,15 +63,18 @@
 
 							</div>
 						</div>
+						{% block content %}
 						<div class="col-lg-8 col-md-12">
 							<div class="top-info__block text-right">
 								<ul>
 									<li>
 										<i class="fa fa-map-marker"></i>
+										{% for p in data  %}
 										<p>
-											13005 Greenvile Avenue
-											<span> California, TX 70240</span>
+											{{p.address1}}
+											<span> {{p.address2}}</span>
 										</p>
+										{% endfor %}
 									</li>
 									<li>
 										<i class="fa fa-phone"></i>
@@ -196,6 +200,8 @@
 						</div>
 						<!--navbar-collapse -->
 					</div>
+					
 				</nav>
 			</div>
 		</header>
+		{% endblock  %}
