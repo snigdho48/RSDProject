@@ -7,12 +7,13 @@ from ckeditor.fields import RichTextField
 
 class Contact_Info(models.Model):
 
-    address=models.TextField(verbose_name="Address")
+    address1=models.TextField(verbose_name="Address Line 1")
+    address2=models.TextField(verbose_name="Address Line 2")
     cell = models.CharField(max_length = 14,verbose_name="Phone Number")
     email = models.EmailField(verbose_name="E-mail")
 
     def __str__(self):
-        return self.address
+        return self.address1
 
 class Slide_Images(models.Model):
 
@@ -125,6 +126,14 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.created_at
+    
+class Career(models.Model):
+    job_title = models.TextField(max_length=50,verbose_name="Job Title")
+    Description = RichTextField()
+    
+    def __str__(self):
+        return self.job_title
+    
 
 
     #Machine Xtreme IT

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Website.models import Contact_Info,Slide_Images,Brands,Topbar_footer,Company_Overview,Products,Board_of_directors,Our_partner,subscribe,NewsandEvent,About_us,Contact
+from Website.models import Career, Contact_Info,Slide_Images,Brands,Topbar_footer,Company_Overview,Products,Board_of_directors,Our_partner,subscribe,NewsandEvent,About_us,Contact
 
 # Register your models here.
 
@@ -15,3 +15,4 @@ admin.site.register(subscribe)
 admin.site.register(NewsandEvent)
 admin.site.register(About_us)
 admin.site.register(Contact) 
+admin.site.register(Career)
