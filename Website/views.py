@@ -45,7 +45,7 @@ def contact(request):
 def handler404(request,exception=None):
     return render(request, '404.html', status=404)
 
-def services(request):
+def brands(request):
     return render(request,'services.html')
 
 def career(request):
