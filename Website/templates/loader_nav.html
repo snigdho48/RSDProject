@@ -34,6 +34,7 @@
 
 		.nav-container img {
 			display: none;
+            visibility: hidden;
 			z-index:-99999;
 
 
@@ -55,7 +56,9 @@
 
 	}
 
+
 </style>
+
 
 {% endblock %}
 
@@ -155,7 +158,7 @@
 				</div>
 			</div>
 			<div class="main_nav stricky-header__top navbar-toggleable-md nav-container">
-				<img src="{% static 'images/logo.png'%}" alt="Logo" id="logo">
+				<img src="{% static 'images/logo.png'%}" alt="Logo" id="logo" style="visibility: hidden">
 
 				<nav class="navbar navbar-default navbar-sticky bootsnav">
 					<div class="container">

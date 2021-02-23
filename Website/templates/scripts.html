@@ -31,3 +31,30 @@
 		<script type="text/javascript" src="{% static 'js/jquery.revolution.js'%}"></script>
 		<!-- custom Js -->
 		<script src="{% static 'js/custom.js'%}" type="text/javascript"></script>
+        <script type="text/javascript">
+            var pastWaypoint = false;
+            var x = window.matchMedia("(max-width: 769px)");
+            $(window).scroll(function(){
+                if ($(x.window).scrollTop() > 170 && !pastWaypoint) {
+                    $('#logo').show();
+
+                    console.log('d');
+                    pastWaypoint = true;
+            }
+            else if ($(x.window).scrollTop() <= 170 && pastWaypoint)
+            {
+                 $('#logo').hide();
+                console.log('f');
+                pastWaypoint = false;
+                }
+            });
+
+            $(window).scroll(function(){
+		    if ($(x.window).scrollTop() > 170) {
+		        $('#logo').css('visibility','visible');
+		    } else {
+		        $('#logo').css('visibility','hidden');
+
+		        }
+			});
+        </script>
