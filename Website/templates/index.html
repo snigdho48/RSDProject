@@ -228,7 +228,7 @@
 				<div class="row text-center mb-xs-30">
 					<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
 						<div class="section-title_home">
-							<h2>Quality Services</h2>
+							<h2>Our Brands</h2>
 							<span class="b-line"></span>
 							<p>
 								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the s standard dummy text
@@ -241,8 +241,10 @@
 
 					<div class="col-md-12">
 						<div class="service_slider_home next_btn_style">
+							{% for b in brands %}
 							<div class="service_box">
 								<figure>
+
 									<img src="{% static 'images/service/img_1.jpg' %}" alt=""/>
                                     {#								Services logo#}
 								</figure>
@@ -312,7 +314,15 @@
 									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos aperiam ipsam
 									modi dolor suscipit asperiores perspiciatis.
 								</p>
+
+									<img src="{{ b.image.url }}" alt="" />
+                                <h3><a href="#">{{b.title}}</a></h3>
+								
+									{{ b.description }}
+
 							</div>
+                         {% endfor %}
+							
 						</div>
 					</div>
 
@@ -361,6 +371,7 @@
         <!-- Section_End -->
 
         <!-- Team -->
+        <!-- Team -->
 	    <section class="padding ptb-xs-40">
 		    <div class="container">
 				<div class="row text-center mb-40 mb-xs-30">
@@ -375,147 +386,39 @@
 					</div>
 				</div>
 
-			    <div class="row">
-				    <div class="col-lg-3 col-md-6">
-					    <div class="team_box img-scale">
-						    <div class="team_picher">
-							    <figure>
-								    <img src="{% static 'images/team/team1.jpg' %}" alt="">
-                                    {#								team logo#}
-							    </figure>
-						    </div>
-						    <div class="team_detail">
-							    <h3>Josh Philippe</h3>
-							    <span>Senior Developer</span>
-						    </div>
-						    <div class="team_text">
-							    <p>
-								    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-							    </p>
-						    </div>
-						    <div class="social_team">
-                                {#								social medial URL#}
-							    <ul>
-								    <li>
-									    <a href="#"><i class="fa fa-facebook"></i></a>
-								    </li>
-								    <li>
-									    <a href="#"><i class="fa fa-twitter"></i></a>
-								    </li>
-								    <li>
-									    <a href="#"><i class="fa fa-linkedin"></i></a>
-								    </li>
-									<li>
-										<a href="#"><i class="fa fa-youtube"></i></a>
-									</li>
-							    </ul>
-						    </div>
-					    </div>
-				    </div>
 
-				    <div class="col-lg-3 col-md-6 mt-xs-30">
-					    <div class="team_box img-scale">
-						    <div class="team_picher">
-							    <figure>
-								    <img src="{% static 'images/team/team2.jpg' %}" alt="">
-                                    {#									team url#}
-							    </figure>
-						    </div>
-						    <div class="team_detail">
-							    <h3>Marcus Stoinis</h3>
-							    <span>Senior Developer</span>
-						    </div>
-						    <div class="team_text">
-							    <p>
-								    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-							    </p>
-						    </div>
-						    <div class="social_team">
-                                {#								team logo#}
-							    <ul>
-								    <li>
-									    <a href="#"><i class="fa fa-facebook"></i></a>
-								    </li>
-								    <li>
-									    <a href="#"><i class="fa fa-twitter"></i></a>
-								    </li>
-								    <li>
-									    <a href="#"><i class="fa fa-linkedin"></i></a>
-								    </li>
-									<li>
-										<a href="#"><i class="fa fa-youtube"></i></a>
-									</li>
-							    </ul>
-						    </div>
-					    </div>
-				    </div>
 
-				    <div class="col-lg-3 col-md-6 mt-sm-30 mt-xs-30">
-					    <div class="team_box img-scale">
-						    <div class="team_picher">
-							    <figure>
-								    <img src="{% static 'images/team/team3.jpg' %}" alt="">
-                                    {#									team image#}
-							    </figure>
-						    </div>
-						    <div class="team_detail">
-							    <h3>Jackson Coleman</h3>
-							    <span>Senior Developer</span>
-						    </div>
-						    <div class="team_text">
-							    <p>
-								    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-							    </p>
-						    </div>
-						    <div class="social_team">
-                                {#								team logo#}
-							    <ul>
-								    <li>
-									    <a href="#"><i class="fa fa-facebook"></i></a>
-								    </li>
-								    <li>
-									    <a href="#"><i class="fa fa-twitter"></i></a>
-								    </li>
-								    <li>
-									    <a href="#"><i class="fa fa-linkedin"></i></a>
-								    </li>
-									<li>
-										<a href="#"><i class="fa fa-youtube"></i></a>
-									</li>
-							    </ul>
-						    </div>
-					    </div>
-				    </div>
 
-				    <div class="col-lg-3 col-md-6 mt-sm-30 mt-xs-30">
-					    <div class="team_box img-scale">
-						    <div class="team_picher">
-							    <figure>
-								    <img src="{% static 'images/team/team4.jpg' %}" alt="">
-                                    {#									team image#}
-							    </figure>
-						    </div>
-						    <div class="team_detail">
-							    <h3>Mackenzie Harvey</h3>
-							    <span>Senior Developer</span>
-						    </div>
-						    <div class="team_text">
-							    <p>
-								    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-							    </p>
-						    </div>
-						    <div class="social_team">
-                                {#								team logo#}
-							    <ul>
-								    <li>
-									    <a href="#"><i class="fa fa-facebook"></i></a>
-								    </li>
-								    <li>
-									    <a href="#"><i class="fa fa-twitter"></i></a>
-								    </li>
-								    <li>
-									    <a href="#"><i class="fa fa-linkedin"></i></a>
-								    </li>
+				<div class="row">
+					{% for board in board_of_directors %}
+					<div class="col-lg-3 col-md-6">
+						<div class="team_box img-scale">
+							<div class="team_picher">
+								<figure>
+									<img src="{{board.image.url}}" alt="">
+								</figure>
+							</div>
+							<div class="team_detail">
+								<h3>{{ board.name }}</h3>
+								<span>{{ board.designation }}</span>
+							</div>
+							<div class="team_text">
+								<p>
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+								</p>
+							</div>
+							<div class="social_team">
+								<ul>
+									<li>
+										<a href="#"><i class="fa fa-facebook"></i></a>
+									</li>
+									<li>
+										<a href="#"><i class="fa fa-twitter"></i></a>
+									</li>
+									<li>
+										<a href="#"><i class="fa fa-linkedin"></i></a>
+									</li>
+
 									<li>
 										<a href="#"><i class="fa fa-youtube"></i></a>
 									</li>
@@ -523,10 +426,12 @@
 							</div>
 						</div>
 					</div>
+                     {% endfor %}
 
 				</div>
+		    </div>
 
-			</div>
+
 		</section>
 		<!-- Team_End -->
 
@@ -604,158 +509,97 @@
 		<!-- Counter_Section_End -->
 
 		<!-- Work Section -->
-		<section id="work" class="padding ptb-xs-40">
-			<div class="container">
-				<div class="row text-center mb-40 mb-xs-30">
-					<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-						<div class="section-title_home">
-							<h2>Our Products</h2>
-							<span class="b-line"></span>
-							<p>
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 's standard dummy text.
-							</p>
-						</div>
-					</div>
-				</div>
-				<!-- work Filter -->
-				<div class="row">
-					<div class="col-lg-8 offset-lg-2">
-						<ul class="container-filter categories-filter">
-							<li>
-								<a class="categories active" data-filter="*">All</a>
-							</li>
+	    <div class="container">
+	    <div class="row text-center mb-40 mb-xs-30">
+		    <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+			    <div class="section-title_home">
+				    <h2>Our Products</h2>
+				    <span class="b-line"></span>
+				    <p>
+					    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 's standard dummy text.
+				    </p>
+			    </div>
+		    </div>
+	    </div>
+	    <!-- work Filter -->
+	    <div class="row">
+		    <div class="col-lg-8 offset-lg-2">
+			    <ul class="container-filter categories-filter">
+				    <li>
+					    <a class="categories active" data-filter="*">All</a>
+				    </li>
 
-						</ul>
-					</div>
-				</div>
-				<!-- End work Filter -->
-				<div class="row container-grid nf-col-3">
+			    </ul>
+		    </div>
+	    </div>
+	    <!-- End work Filter -->
+	    <div class="row container-grid nf-col-3">
 
-					<div class="nf-item branding coffee spacing">
-						<div class="item-box">
-							<a> <img alt="1" src="{% static 'images/project/project_1.jpg' %}" class="item-container">
-							</a>
-                            {#							product image#}
-							<div class="link-zoom">
-								<a href="{% url 'products_details' %}" class="project_links same_style"> <i
-										class="fa fa-link"> </i> </a>
-								<a href="{% static 'images/project/project_1.jpg' %}"
-								   class="fancylight popup-btn same_style" data-fancybox-group="light"> <i
-										class="fa fa-search-plus"></i> </a>
-                                {#								product image#}
-								<div class="gallery-heading">
-									<h4><a href="#">Cleaning Services</a></h4>
 
-								</div>
-							</div>
+	    <div class="nf-item branding coffee spacing">
+		    <div class="item-box">
+			    <a> <img alt="1" src="{% static 'images/project/project_1.jpg' %}" class="item-container">
+			    </a>
+                {#							product image#}
+			    <div class="link-zoom">
+				    <a href="{% url 'products_details' %}" class="project_links same_style"> <i
+						    class="fa fa-link"> </i> </a>
+				    <a href="{% static 'images/project/project_1.jpg' %}"
+				       class="fancylight popup-btn same_style" data-fancybox-group="light"> <i
+						    class="fa fa-search-plus"></i> </a>
+                    {#								product image#}
+				    <div class="gallery-heading">
+					    <h4><a href="#">Cleaning Services</a></h4>
 
-						</div>
-					</div>
+				    </div>
+			    </div>
 
-					<div class="nf-item photo spacing">
-						<div class="item-box">
-							<a> <img alt="1" src="{% static 'images/project/project_2.jpg' %}" class="item-container">
-							</a>
-                            {#							product image#}
-							<div class="link-zoom">
-								<a href="project-details.html" class="project_links same_style"> <i
-										class="fa fa-link"> </i> </a>
-								<a href="{% static 'images/project/project_2.jpg' %}"
-								   class="fancylight popup-btn same_style" data-fancybox-group="light"> <i
-										class="fa fa-search-plus"></i> </a>
-								<div class="gallery-heading">
-									<h4><a href="#">Cleaning Services</a></h4>
-								</div>
-							</div>
+		    </div>
+	    </div>
 
-						</div>
-					</div>
+	    <div class="nf-item photo spacing">
+	    <div class="item-box">
+		    <a> <img alt="1" src="{% static 'images/project/project_2.jpg' %}" class="item-container">
+		    </a>
+            {#							product image#}
+		    <div class="link-zoom">
+			    <a href="{% url 'products_details' %}" class="project_links same_style"> <i
+					    class="fa fa-link"> </i> </a>
+			    <a href="{% static 'images/project/project_2.jpg' %}"
+			       class="fancylight popup-btn same_style" data-fancybox-group="light"> <i
+					    class="fa fa-search-plus"></i> </a>
 
-					<div class="nf-item branding coffee spacing">
-						<div class="item-box">
-							<a> <img alt="1" src="{% static 'images/project/project_3.jpg' %}" class="item-container">
-							</a>
-							<div class="link-zoom">
-								<a href="{% url 'products_details' %}" class="project_links same_style"> <i
-										class="fa fa-link"> </i> </a>
-								<a href="{% static 'images/project/project_3.jpg' %}"
-								   class="fancylight popup-btn same_style" data-fancybox-group="light"> <i
-										class="fa fa-search-plus"></i> </a>
-                                {#								product image#}
-								<div class="gallery-heading">
-									<h4><a href="#">Cleaning Services</a></h4>
-								</div>
-							</div>
 
-						</div>
-					</div>
+                {% for p in products %}
+				    <div class="nf-item photo spacing">
+					    <div class="item-box">
+						    <a> <img alt="1" src="{{ p.p_image.url }}" class="item-container"> </a>
+						    <div class="link-zoom">
+							    <a href="{% url 'products_details' %}" class="project_links same_style"> <i class="fa fa-link"> </i> </a>
+							    <a href="{{ p.p_image.url }}" class="fancylight popup-btn same_style" data-fancybox-group="light" > <i class="fa fa-search-plus"></i> </a>
 
-					<div class="nf-item design spacing">
-						<div class="item-box">
-							<a> <img alt="1" src="{% static 'images/project/project_4.jpg' %}" class="item-container">
-							</a>
-							<div class="link-zoom">
-								<a href="{% url 'products_details' %}" class="project_links same_style"> <i
-										class="fa fa-link"> </i> </a>
-								<a href="{% static 'images/project/project_4.jpg' %}"
-								   class="fancylight popup-btn same_style" data-fancybox-group="light"> <i
-										class="fa fa-search-plus"></i> </a>
-                                {#								product image#}
-								<div class="gallery-heading">
-									<h4><a href="#">Cleaning Services</a></h4>
-								</div>
-							</div>
+							    <div class="gallery-heading">
 
-						</div>
-					</div>
+								    <h4><a href="#">{{p.p_title}}</a></h4>
 
-					<div class="nf-item branding spacing">
-						<div class="item-box">
-							<a> <img alt="1" src="{% static 'images/project/project_5.jpg' %}" class="item-container">
-							</a>
-							<div class="link-zoom">
-								<a href="project-details.html" class="project_links same_style"> <i
-										class="fa fa-link"> </i> </a>
-                                {% url 'products_details' %}
-								<a href="{% static 'images/project/project_5.jpg' %}"
-								   class="fancylight popup-btn same_style" data-fancybox-group="light"> <i
-										class="fa fa-search-plus"></i> </a>
-                                {#								product image#}
-								<div class="gallery-heading">
-									<h4><a href="#">Cleaning Services</a></h4>
-								</div>
-							</div>
+							    </div>
+						    </div>
 
-						</div>
-					</div>
+					    </div>
+				    </div>
+                {% endfor %}
 
-					<div class="nf-item photo spacing">
-						<div class="item-box">
-							<a> <img alt="1" src="{% static 'images/project/project_6.jpg' %}" class="item-container">
-							</a>
-                            {#                            product image#}
-							<div class="link-zoom">
-								<a href="{% url 'products_details' %}" class="project_links same_style"> <i
-										class="fa fa-link"> </i> </a>
-								<a href="{% static 'images/project/project_6.jpg' %}"
-								   class="fancylight popup-btn same_style" data-fancybox-group="light"> <i
-										class="fa fa-search-plus"></i> </a>
-                                {#								product image#}
-								<div class="gallery-heading">
-									<h4><a href="#">Cleaning Services</a></h4>
-								</div>
-							</div>
 
-						</div>
-					</div>
+		    </div>
 
-				</div>
-
-			</div>
-		</section>
-		<!-- End Work Section -->
+	    </div>
+        </div>
+        </div>
+        </div>
+	    <!-- End Work Section -->
 
 		<!-- testimonial_Section -->
+		<!--
 		<section class="padding ptb-xs-40 bg_Testimonial">
 			<div class="container">
 				<div class="row text-center light-color mb-40 mb-xs-30">
@@ -822,6 +666,7 @@
 				</div>
 			</div>
 		</section>
+	-->
 		<!-- testimonial_Section_End -->
 
 		<!-- Blog -->
