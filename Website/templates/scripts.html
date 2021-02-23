@@ -33,7 +33,7 @@
 		<script src="{% static 'js/custom.js'%}" type="text/javascript"></script>
         <script type="text/javascript">
             var pastWaypoint = false;
-            var x = window.matchMedia("(max-width: 769px)");
+            var x = window.matchMedia("(min-width: 769px)");
             $(window).scroll(function(){
                 if ($(x.window).scrollTop() > 170 && !pastWaypoint) {
                     $('#logo').show();
@@ -44,17 +44,16 @@
             else if ($(x.window).scrollTop() <= 170 && pastWaypoint)
             {
                  $('#logo').hide();
-                console.log('f');
                 pastWaypoint = false;
-                }
+            }
             });
 
             $(window).scroll(function(){
-		    if ($(x.window).scrollTop() > 170) {
+		    if ($(window).scrollTop() > 170) {
 		        $('#logo').css('visibility','visible');
 		    } else {
 		        $('#logo').css('visibility','hidden');
 
-		        }
-			});
-        </script>
+		    }
+		});
+    </script>

@@ -72,8 +72,8 @@ class Company_Overview(models.Model):
 class Products(models.Model):
     p_title = models.TextField(verbose_name="Title")
 
-    p_image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, name="image",
-                                verbose_name="Product Image")
+    p_image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, null=True,
+                              blank=True, verbose_name="Products Image")
 
 
     description = RichTextField()

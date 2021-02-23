@@ -4,16 +4,15 @@ from django.shortcuts import render
 
 
 def home(request):
-    data=Contact_Info.objects.all()
-    products=Products.objects.all()
-    brands=Brands.objects.all()
-    board_of_directors=Board_of_directors.objects.all()
-    context={'data':data,
-    'products':products,
-    'brands':brands,
-    'board_of_directors':board_of_directors}
-    return render(request, 'index.html',context)
-
+    data = Contact_Info.objects.all()
+    product = Products.objects.all()
+    brands = Brands.objects.all()
+    board_of_directors = Board_of_directors.objects.all()
+    context = {'data': data,
+               'products': product,
+               'brands': brands,
+               'board_of_directors': board_of_directors}
+    return render(request, 'index.html', context)
 
 
 def about(request):
@@ -48,14 +47,17 @@ def contact(request):
     return render(request, 'contact.html')
 
 
-def handler404(request,exception=None):
+def handler404(request, exception=None):
     return render(request, '404.html', status=404)
 
+
 def brands(request):
-    return render(request,'brands.html')
+    return render(request, 'brands.html')
+
 
 def career(request):
-    return render(request,'career.html')
+    return render(request, 'career.html')
+
 
 def testimonial(request):
-    return render(request,'testimonial.html')
+    return render(request, 'testimonial.html')

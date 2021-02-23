@@ -9,7 +9,7 @@
 	@media (min-width:760px) {
 		.logo-img a img{
 			width: 200px;
-			height:120px;
+			height:100px;
 			position:relative;
 			z-index: 4;
 		}
@@ -34,7 +34,6 @@
 
 		.nav-container img {
 			display: none;
-            visibility: hidden;
 			z-index:-99999;
 
 
@@ -55,10 +54,11 @@
 		}
 
 	}
-
+	#logo{
+		visibility:hidden;
+	}
 
 </style>
-
 
 {% endblock %}
 
@@ -115,7 +115,7 @@
 					<div class="row">
 						<div class="col-lg-3 logo col-md-12 d-flex align-items-center logo-img">
 
-							<a href="{% url 'home' %}"> <img src="{% static 'images/logo.png'%}" alt="Logo"> </a>
+							<a href="{% url 'home' %}"> <img src="{% static 'images/logo.png'%}" alt="Logo" class="pt-2 pb-2"> </a>
 
 							<div class="navbar-header">
 								<button type="button" class="navbar-toggle hidden-lg-up" data-toggle="collapse" data-target="#navbar-menu">
@@ -158,7 +158,7 @@
 				</div>
 			</div>
 			<div class="main_nav stricky-header__top navbar-toggleable-md nav-container">
-				<img src="{% static 'images/logo.png'%}" alt="Logo" id="logo" style="visibility: hidden">
+				<img src="{% static 'images/logo.png'%}" alt="Logo" id="logo">
 
 				<nav class="navbar navbar-default navbar-sticky bootsnav">
 					<div class="container">
