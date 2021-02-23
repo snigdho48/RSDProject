@@ -1,5 +1,63 @@
 
 {% load static %}
+{% block css %}
+
+
+<style>
+
+
+	@media (min-width:760px) {
+		.logo-img a img{
+			width: 200px;
+			height:120px;
+			position:relative;
+			z-index: 4;
+		}
+		.nav-container img{
+			width: 50px;
+			height:30px;
+			position:absolute;
+			z-index: 100;
+			margin-top: 18px;
+			margin-left: 30px;
+
+
+		}
+	}
+	@media (max-width:769px) {
+		.logo-img a img {
+			width: 150px;
+			height: 80px;
+
+
+		}
+
+		.nav-container img {
+			display: none;
+			z-index:-99999;
+
+
+		}
+	}
+	.middel-part__block .logo a{
+		padding: 2px;
+	}
+
+	@media (max-width:1280px) {
+		.nav-container img {
+			width: 50px;
+			height: 30px;
+			position: absolute;
+			z-index: 100;
+			margin-top: 14px;
+			margin-left:0px;
+		}
+
+	}
+
+</style>
+
+{% endblock %}
 
 		<!--loader-->
 		<div id="preloader">
@@ -52,7 +110,7 @@
 			<div class="middel-part__block">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-4 logo col-md-12 d-flex align-items-center">
+						<div class="col-lg-3 logo col-md-12 d-flex align-items-center logo-img">
 
 							<a href="{% url 'home' %}"> <img src="{% static 'images/logo.png'%}" alt="Logo"> </a>
 
@@ -63,8 +121,8 @@
 
 							</div>
 						</div>
-						{% block content %}
-						<div class="col-lg-8 col-md-12">
+
+						<div class="col-lg-9 col-md-12">
 							<div class="top-info__block text-right">
 								<ul>
 									<li>
@@ -96,112 +154,124 @@
 					</div>
 				</div>
 			</div>
-			<div class="main_nav stricky-header__top navbar-toggleable-md">
+			<div class="main_nav stricky-header__top navbar-toggleable-md nav-container">
+				<img src="{% static 'images/logo.png'%}" alt="Logo" id="logo">
 
 				<nav class="navbar navbar-default navbar-sticky bootsnav">
 					<div class="container">
+
 						<!-- Start Header Navigation -->
 
 						<!-- End Header Navigation -->
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="navbar-menu">
-							<ul class="nav navbar-nav mobile-menu d-flex justify-content-between">
+
+							<ul class="nav navbar-nav mobile-menu d-flex justify-content-between ">
+
+
 
 								<li>
 									<a href="{% url 'home' %}">Home</a>
-								</li>
-								<li>
-									<a href="#!" class="dropdown-toggle">About</a>
-									<span class="submenu-button"></span>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="{% url 'about' %}">About</a>
-										</li>
-										<li>
-											<a href="about2.html">About 2</a>
-										</li>
-										<li>
-											<a href="about3.html">About 3</a>
-										</li>
-										<li>
-											<a href="history.html">history</a>
-										</li>
-										<li>
-											<a href="career.html">career</a>
-										</li>
-										<li>
-											<a href="{% url 'partnerships' %}">partnerships</a>
-										</li>
-										<li>
-											<a href="leadership.html">leadership</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="{% url 'products' %}" >Products</a>
-								</li>
-
-								<li>
-									<a href="javascript:avoid(0);">Brands</a>
-
-								</li>
-
-								<li>
-									<a href="javascript:avoid(0);" class="dropdown-toggle">News & Events</a>
-									<span class="submenu-button"></span>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="{% url 'news' %}">Latest News</a>
-										</li>
-										<li>
-											<a href="{% url 'event_details' %}">Image Gallery</a>
-										</li>
-									</ul>
-								</li>
-
-								<li>
-									<a href="javascript:avoid(0);" class="dropdown-toggle">Investment</a>
-									<span class="submenu-button"></span>
-									<ul class="dropdown-menu">
+                                </li>
+                                <li>
+                                    <a href="#!" class="dropdown-toggle">About</a>
+                                    <span class="submenu"></span>
+                                    <ul class="dropdown-menu">
                                         <li>
-											<a href="login.html">About Investment</a>
-										</li>
+                                            <a href="{% url 'about' %}">About</a>
+                                        </li>
                                         <li>
-											<a href="login.html">Investment Policy</a>
-										</li>
-										<li>
-											<a href="register.html">Investor Request</a>
-										</li>
-										<li>
-											<a href="login.html">Investor login</a>
-										</li>
+                                            <a href="about2.html">About 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="about3.html">About 3</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">history</a>
+                                            {#											History URL#}
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'career' %}">career</a>
+                                            {#											career URL#}
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'partnerships' %}">partnerships</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">leadership</a>
+                                            {#											leadership URL#}
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{% url 'products' %}">Products</a>
+                                </li>
 
-										<li>
-											<a href="testimonial.html">Testimonials</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="#!" class="dropdown-toggle">Shop</a>
-									<span class="submenu-button"></span>
-									<!-- Nav Dropdown -->
-									<ul class="dropdown-menu">
-										<li>
-											<a href="shop.html">Coming Soon....</a>
-										</li>
+                                <li>
+                                    <a href="{% url 'brands' %}">Brands</a>
 
-									</ul>
-									<!-- End Nav Dropdown -->
-								</li>
-								<li>
-									<a href="{% url 'contact' %}">Contact</a>
-								</li>
-							</ul>
-						</div>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:avoid(0);" class="dropdown-toggle">News & Events</a>
+                                    <span class="submenu"></span>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{% url 'news' %}">Latest News</a>
+                                        </li>
+										<li>
+                                            <a href="{% url 'event_details' %}">Image Gallery</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:avoid(0);" class="dropdown-toggle">Investment</a>
+                                    <span class="submenu"></span>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">About Investment</a>
+                                            {#	                                        about URL#}
+                                        </li>
+                                        <li>
+                                            <a href="#">Investment Policy</a>
+                                            {#	                                        Trams and conditions URL#}
+                                        </li>
+                                        <li>
+                                            <a href="#">Investor Request</a>
+                                            {#											investor request URL#}
+                                        </li>
+                                        <li>
+                                            <a href="#">Investor login</a>
+                                            {#											login Url#}
+                                        </li>
+
+                                        <li>
+                                            <a href="{% url 'testimonial' %}">Testimonials</a>
+                                            {#                                            Testimonials URL#}
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown-toggle">Shop</a>
+                                    <span class="submenu"></span>
+                                    <!-- Nav Dropdown -->
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">Coming Soon....</a>{#	shop URL#}
+                                        </li>
+
+                                    </ul>
+                                    <!-- End Nav Dropdown -->
+                                </li>
+                                <li>
+                                    <a href="{% url 'contact' %}">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
 						<!--navbar-collapse -->
 					</div>
-					
 				</nav>
 			</div>
 		</header>
-		{% endblock  %}
+

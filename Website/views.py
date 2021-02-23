@@ -51,8 +51,11 @@ def contact(request):
 def handler404(request,exception=None):
     return render(request, '404.html', status=404)
 
-def services(request):
-    return render(request,'services.html')
+def brands(request):
+    return render(request,'brands.html')
 
 def career(request):
     return render(request,'career.html')
+
+def testimonial(request):
+    return render(request,'testimonial.html')

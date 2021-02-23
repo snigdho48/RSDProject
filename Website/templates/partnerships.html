@@ -35,29 +35,22 @@
 						<div class="tab-title">
 							<ul class="clearfix">
 								<li>
-									<a href="about2.html">Company</a>
+									<a href="{% url 'about' %}">Company</a>
 								</li>
 								<li>
-									<a href="history.html">History</a>
+									<a href="{%  url 'career' %}"">Careers</a>
 
 								</li>
 								<li>
-									<a href="career.html">Careers</a>
+									<a href="{% url 'partnerships' %}" class="active">Partnerships</a>
 
 								</li>
-								<li>
-									<a href="partnerships.html" class="active">Partnerships</a>
 
-								</li>
-								<li>
-									<a href="leadership.html">Leadership</a>
-
-								</li>
 							</ul>
 						</div>
 						<div class="company-brochure mt-30">
 							<h4>Downlaod Brochure</h4>
-							<a href="#"><img src="assets/images/flyer.jpg" alt=""></a>
+							<a href="#"><img src="{% static 'images/flyer.jpg' %}" alt=""></a>
 						</div>
 					</div>
 
@@ -67,7 +60,7 @@
 							<div class="row">
 
 								<div class="col-md-12 col-lg-12">
-									<img src="assets/images/people.jpg" alt="">
+									<img src="{% static 'images/people.jpg' %}" alt="">
 								</div>
 
 								<div class="col-md-12 col-lg-12">
@@ -87,7 +80,7 @@
 						<div class="pt-40">
 							<div class="row partner-blck__brdr mb-40">
 								<div class="col-sm-3 no-padding partner-blck__brdr-r d-flex align-items-center justify-content-center">
-									<img src="assets/images/2.png" alt="">
+									<img src="{% static 'images/2.png' %}" alt="">
 								</div>
 								<div class="col-md-9 col-lg-9 no-padding t_cell">
 									<div class="partner__content partnership">
@@ -102,7 +95,7 @@
 
 							<div class="row partner-blck__brdr mb-40">
 								<div class="col-sm-3 no-padding partner-blck__brdr-r d-flex align-items-center justify-content-center">
-									<img src="assets/images/2.png" alt="">
+									<img src="{% static 'images/2.png' %}" alt="">
 								</div>
 								<div class="col-md-9 col-lg-9 no-padding t_cell">
 									<div class="partner__content partnership">
@@ -117,7 +110,7 @@
 
 							<div class="row partner-blck__brdr mb-40">
 								<div class="col-sm-3 no-padding partner-blck__brdr-r d-flex align-items-center justify-content-center">
-									<img src="assets/images/2.png" alt="">
+									<img src="{% static 'images/2.png' %}" alt="">
 								</div>
 								<div class="col-md-9 col-lg-9 no-padding t_cell">
 									<div class="partner__content partnership">
@@ -132,7 +125,7 @@
 
 							<div class="row partner-blck__brdr mb-40">
 								<div class="col-sm-3 no-padding partner-blck__brdr-r d-flex align-items-center justify-content-center">
-									<img src="assets/images/2.png" alt="">
+									<img src="{% static 'images/2.png' %}" alt="">
 								</div>
 								<div class="col-md-9 col-lg-9 no-padding t_cell">
 									<div class="partner__content partnership">
@@ -147,7 +140,7 @@
 
 							<div class="row partner-blck__brdr mb-40">
 								<div class="col-sm-3 no-padding partner-blck__brdr-r d-flex align-items-center justify-content-center">
-									<img src="assets/images/2.png" alt="">
+									<img src="{% static 'images/2.png' %}" alt="">
 								</div>
 								<div class="col-md-9 col-lg-9 no-padding t_cell">
 									<div class="partner__content partnership">
@@ -162,7 +155,7 @@
 
 							<div class="row partner-blck__brdr">
 								<div class="col-sm-3 no-padding partner-blck__brdr-r d-flex align-items-center justify-content-center">
-									<img src="assets/images/2.png" alt="">
+									<img src="{% static 'images/2.png' %}" alt="">
 								</div>
 								<div class="col-md-9 col-lg-9 no-padding t_cell">
 									<div class="partner__content partnership">
