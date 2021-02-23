@@ -1,5 +1,63 @@
 
 {% load static %}
+{% block css %}
+
+
+<style>
+
+
+	@media (min-width:760px) {
+		.logo-img a img{
+			width: 200px;
+			height:120px;
+			position:relative;
+			z-index: 4;
+		}
+		.nav-container img{
+			width: 50px;
+			height:30px;
+			position:absolute;
+			z-index: 100;
+			margin-top: 18px;
+			margin-left: 30px;
+
+
+		}
+	}
+	@media (max-width:769px) {
+		.logo-img a img {
+			width: 150px;
+			height: 80px;
+
+
+		}
+
+		.nav-container img {
+			display: none;
+			z-index:-99999;
+
+
+		}
+	}
+	.middel-part__block .logo a{
+		padding: 2px;
+	}
+
+	@media (max-width:1280px) {
+		.nav-container img {
+			width: 50px;
+			height: 30px;
+			position: absolute;
+			z-index: 100;
+			margin-top: 14px;
+			margin-left:0px;
+		}
+
+	}
+
+</style>
+
+{% endblock %}
 
 		<!--loader-->
 		<div id="preloader">
@@ -52,7 +110,7 @@
 			<div class="middel-part__block">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-3 logo col-md-12 d-flex align-items-center">
+						<div class="col-lg-3 logo col-md-12 d-flex align-items-center logo-img">
 
 							<a href="{% url 'home' %}"> <img src="{% static 'images/logo.png'%}" alt="Logo"> </a>
 
@@ -96,16 +154,21 @@
 					</div>
 				</div>
 			</div>
-			<div class="main_nav stricky-header__top navbar-toggleable-md">
+			<div class="main_nav stricky-header__top navbar-toggleable-md nav-container">
+				<img src="{% static 'images/logo.png'%}" alt="Logo" id="logo">
 
 				<nav class="navbar navbar-default navbar-sticky bootsnav">
 					<div class="container">
+
 						<!-- Start Header Navigation -->
 
 						<!-- End Header Navigation -->
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="navbar-menu">
-							<ul class="nav navbar-nav mobile-menu d-flex justify-content-between">
+
+							<ul class="nav navbar-nav mobile-menu d-flex justify-content-between ">
+
+
 
 								<li>
 									<a href="{% url 'home' %}">Home</a>
@@ -184,7 +247,7 @@
                                         </li>
 
                                         <li>
-                                            <a href="#">Testimonials</a>
+                                            <a href="{% url 'testimonial' %}">Testimonials</a>
                                             {#                                            Testimonials URL#}
                                         </li>
                                     </ul>

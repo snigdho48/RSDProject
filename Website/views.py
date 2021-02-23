@@ -46,7 +46,10 @@ def handler404(request,exception=None):
     return render(request, '404.html', status=404)
 
 def brands(request):
-    return render(request,'services.html')
+    return render(request,'brands.html')
 
 def career(request):
     return render(request,'career.html')
+
+def testimonial(request):
+    return render(request,'testimonial.html')
