@@ -35,7 +35,7 @@ class Slide_Images(models.Model):
 class Brands(models.Model):
     title = models.TextField(max_length=50,verbose_name="Brand Title")
     description = RichTextField()
-    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100,verbose_name="Brand Image")
+    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100,null=True,blank=True,verbose_name="Brand Image")
 
     def __str__(self):
         return self.title
@@ -64,7 +64,7 @@ class Company_Overview(models.Model):
 
 class Products(models.Model):
     p_title = models.TextField(verbose_name="Title")
-    p_image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100,name="image",verbose_name="Product Image")
+    p_image = models.ImageField(upload_to=None,null=True,blank=True, height_field=None, width_field=None, max_length=100,name="image",verbose_name="Product Image")
     description = RichTextField()
     created_at = models.DateTimeField(auto_now_add=True,verbose_name="Created At")
 
@@ -74,7 +74,7 @@ class Products(models.Model):
 class Board_of_directors(models.Model):
     name = models.TextField(max_length=20,verbose_name="Name")
     designation = models.TextField(max_length=20,verbose_name="Designation")
-    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
+    image = models.ImageField(upload_to=None,null=True,blank=True, height_field=None, width_field=None, max_length=100)
 
     def __str__(self):
         return self.name

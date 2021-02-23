@@ -1,11 +1,17 @@
 from typing import ContextManager
-from Website.models import Contact_Info
+from Website.models import Contact_Info, Products, Brands, Board_of_directors
 from django.shortcuts import render
 
 
 def home(request):
     data=Contact_Info.objects.all()
-    context={'data':data}
+    products=Products.objects.all()
+    brands=Brands.objects.all()
+    board_of_directors=Board_of_directors.objects.all()
+    context={'data':data,
+    'products':products,
+    'brands':brands,
+    'board_of_directors':board_of_directors}
     return render(request, 'index.html',context)
 
 
@@ -31,7 +37,7 @@ def products(request):
 
 
 def products_details(request):
-    return render(request, 'products-details.html')
+    return render(request, 'products_details.html')
 
 
 def event_details(request):
