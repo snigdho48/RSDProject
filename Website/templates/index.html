@@ -452,6 +452,8 @@
 	    </div>
 	    <!-- work Filter -->
 	    <div class="row">
+
+
 		    <div class="col-lg-8 offset-lg-2">
 			    <ul class="container-filter categories-filter">
 				    <li>
@@ -462,31 +464,24 @@
 		    </div>
 	    </div>
 	    <!-- End work Filter -->
-	    <div class="row container-grid nf-col-3">
+	    <div class="row">
 
-                {% for p in products %}
-				    <div class="nf-item photo spacing">
-					    <div class="item-box">
-						    <a> <img alt="1" src="{{p.p_image.url}}" class="item-container"> </a>
-						    <div class="link-zoom">
-							    <a href="{% url 'products_details' %}" class="project_links same_style"> <i class="fa fa-link"> </i> </a>
-							    <a href="{{ p.p_image.url }}" class="fancylight popup-btn same_style" data-fancybox-group="light" > <i class="fa fa-search-plus"></i> </a>
+					<div class="col-md-12">
+						<div class="service_slider_home next_btn_style">
+							{% for pro in products %}
 
-							    <div class="gallery-heading">
+							<div class="service_box ml-lg-auto">
+                                    <figure>
+									<img src="{{ pro.p_image.url }}" alt="" />
+                                    </figure>
+                                <h3><a href="#">{{pro.p_title}}</a></h3>
+							</div>
+                         {% endfor %}
 
-								    <h4><a href="#">{{p.p_title}}</a></h4>
-
-							    </div>
-						    </div>
-
-					    </div>
-				    </div>
-                {% endfor %}
-
-
-		    </div>
-
+						</div>
+					</div>
 	    </div>
+        </div>
         <!-- End Work Section -->
 
 		<!-- testimonial_Section -->
