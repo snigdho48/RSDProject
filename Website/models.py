@@ -1,5 +1,5 @@
 from django.db import models
-from ckeditor.fields import RichTextField
+from django.db.models.fields import TextField
 
 
 # Create your models here.
@@ -37,7 +37,7 @@ class Slide_Images(models.Model):
 
 class Brands(models.Model):
     title = models.TextField(max_length=50, verbose_name="Brand Title")
-    description = RichTextField()
+    description = TextField(max_length=200,verbose_name="Description")
 
     image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100,null=True,
                               blank=True,verbose_name="Brand Image")
@@ -72,11 +72,11 @@ class Company_Overview(models.Model):
 class Products(models.Model):
     p_title = models.TextField(verbose_name="Title")
 
-    p_image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, name="image",
-                                verbose_name="Product Image")
+    p_image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, null=True,
+                              blank=True, verbose_name="Products Image")
 
 
-    description = RichTextField()
+    description = TextField(max_length=200,verbose_name="Description")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Created At")
 
     def __str__(self):
@@ -113,7 +113,7 @@ class subscribe(models.Model):
 
 class NewsandEvent(models.Model):
     title = models.TextField(max_length=50, verbose_name="News Headline")
-    description = RichTextField()
+    description = TextField(max_length=200,verbose_name="Description")
     image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100,
                               verbose_name="News Photo")
     created_at = models.DateTimeField(auto_now_add=True)
@@ -152,7 +152,7 @@ class Contact(models.Model):
 
 class Career(models.Model):
     job_title = models.TextField(max_length=50, verbose_name="Job Title")
-    Description = RichTextField()
+    Description = TextField(max_length=200,verbose_name="Description")
 
     def __str__(self):
         return self.job_title
