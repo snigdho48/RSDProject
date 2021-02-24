@@ -1201,7 +1201,7 @@ figure {
 	margin: 0px;
 }
 .bg-img {
-	background: url(../images/bg_1.jpg) 0 36% no-repeat;
+	background: url(../images/u_banner.jpg) 0 36% no-repeat;
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -2992,6 +2992,7 @@ label {
 #map {
 	height: 100%;
 }
+
 #success {
 	display: none;
 	position: absolute;
