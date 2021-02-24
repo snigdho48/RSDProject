@@ -9,7 +9,7 @@
 	@media (min-width:760px) {
 		.logo-img a img{
 			width: 200px;
-			height:120px;
+			height:100px;
 			position:relative;
 			z-index: 4;
 		}
@@ -53,6 +53,9 @@
 			margin-left:0px;
 		}
 
+	}
+	#logo{
+		visibility:hidden;
 	}
 
 </style>
@@ -112,7 +115,7 @@
 					<div class="row">
 						<div class="col-lg-3 logo col-md-12 d-flex align-items-center logo-img">
 
-							<a href="{% url 'home' %}"> <img src="{% static 'images/logo.png'%}" alt="Logo"> </a>
+							<a href="{% url 'home' %}"> <img src="{% static 'images/logo.png'%}" alt="Logo" class="pt-2 pb-2"> </a>
 
 							<div class="navbar-header">
 								<button type="button" class="navbar-toggle hidden-lg-up" data-toggle="collapse" data-target="#navbar-menu">
@@ -181,7 +184,7 @@
                                             <a href="{% url 'about' %}">About</a>
                                         </li>
                                         <li>
-                                            <a href="about2.html">About 2</a>
+                                            <a href="{% url 'catalog' %}">Catalog</a>
                                         </li>
                                         <li>
                                             <a href="about3.html">About 3</a>

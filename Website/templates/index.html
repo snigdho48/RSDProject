@@ -25,7 +25,7 @@
 					    <!-- SLIDE  -->
 					    <li data-index="rs-129">
 						    <!-- MAIN IMAGE -->
-						    <img src="{% static 'images/banner/slider1.jpg' %}" alt="" class="rev-slidebg">
+						    <img src="{% static 'images/banner/h_banner.png' %}" alt="" class="rev-slidebg">
                             {#                            slider image#}
 						    <!-- LAYERS -->
 						    <!-- LAYER NR. 2 -->
@@ -61,7 +61,7 @@
 					    <!-- SLIDE  -->
 					    <li data-index="rs-130" data-title="" data-description="">
 						    <!-- MAIN IMAGE -->
-						    <img src="{% static 'images/banner/slider2.jpg' %}" alt="" class="rev-slidebg">
+						    <img src="{% static 'images/banner/h_banner.png' %}" alt="" class="rev-slidebg">
                             {#							slider image#}
 						    <!-- LAYERS -->
 						    <!-- LAYER NR. 2 -->
@@ -97,7 +97,7 @@
 					    <!-- SLIDE  -->
 					    <li data-index="rs-131">
 						    <!-- MAIN IMAGE -->
-						    <img src="{% static 'images/banner/slider3.jpg' %}" alt="" class="rev-slidebg ">
+						    <img src="{% static 'images/banner/h_banner.png' %}" alt="" class="rev-slidebg ">
                             {#							slider image#}
 
 						    <!-- LAYERS -->
@@ -168,7 +168,7 @@
 					<div class="col-lg-3 col-md-6">
 						<div class="clean_top mb-xs-30 feature-box">
 							<div class="content">
-								<img src="{% static 'images/cleaning-lady.svg' %}" alt="" height="50" width="50"/>
+								<img src="{% static 'images/about-us.png' %}" alt="" height="50" width="50"/>
                                 {#								about us logo#}
 								<h3>Expert</h3>
 								<p>
@@ -180,7 +180,7 @@
 					<div class="col-lg-3 col-md-6">
 						<div class="clean_top mb-xs-30 feature-box">
 							<div class="content">
-								<img src="{% static 'images/cleaner.svg' %}" alt="" height="50" width="50"/>
+								<img src="{% static 'images/about-us.png' %}" alt="" height="50" width="50"/>
                                 {#								about us logo#}
 
 								<h3>Secure Services</h3>
@@ -193,7 +193,7 @@
 					<div class="col-lg-3 col-md-6 mt-sm-30">
 						<div class="clean_top mb-xs-30 feature-box">
 							<div class="content">
-								<img src="{% static 'images/clean.svg' %}" alt="" height="50" width="50"/>
+								<img src="{% static 'images/about-us.png' %}" alt="" height="50" width="50"/>
                                 {#								about us logo#}
 
 								<h3>Low Costing</h3>
@@ -206,7 +206,7 @@
 					<div class="col-lg-3 col-md-6 mt-sm-30">
 						<div class="clean_top mb-xs-30 feature-box">
 							<div class="content">
-								<img src="{% static 'images/clean-1.svg' %}" alt="" height="50" width="50"/>
+								<img src="{% static 'images/about-us.png' %}" alt="" height="50" width="50"/>
                                 {#								about us logo#}
 
 								<h3>On Time</h3>
@@ -242,84 +242,13 @@
 					<div class="col-md-12">
 						<div class="service_slider_home next_btn_style">
 							{% for b in brands %}
-							<div class="service_box">
-								<figure>
 
-									<img src="{% static 'images/service/img_1.jpg' %}" alt=""/>
-                                    {#								Services logo#}
-								</figure>
-								<h3><a href="#">House Cleaning</a></h3>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos aperiam ipsam
-									modi dolor suscipit asperiores perspiciatis.
-								</p>
-							</div>
-
-							<div class="service_box">
-								<figure>
-									<img src="{% static 'images/service/img_2.jpg' %}" alt=""/>
-                                    {#								Services logo#}
-
-								</figure>
-								<h3><a href="#">Apartment Cleaning</a></h3>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos aperiam ipsam
-									modi dolor suscipit asperiores perspiciatis.
-								</p>
-							</div>
-
-							<div class="service_box">
-								<figure>
-									<img src="{% static 'images/service/img_3.jpg' %}" alt=""/>
-                                    {#								Services logo#}
-								</figure>
-								<h3><a href="#">Carpet Cleaning</a></h3>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos aperiam ipsam
-									modi dolor suscipit asperiores perspiciatis.
-								</p>
-							</div>
-
-							<div class="service_box">
-								<figure>
-									<img src="{% static 'images/service/img_4.jpg' %}" alt=""/>
-                                    {#								Services logo#}
-								</figure>
-								<h3><a href="#">Commercial Cleaning</a></h3>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos aperiam ipsam
-									modi dolor suscipit asperiores perspiciatis.
-								</p>
-							</div>
-
-							<div class="service_box">
-								<figure>
-									<img src="{% static 'images/service/img_5.jpg' %}" alt=""/>
-                                    {#								Services logo#}
-								</figure>
-								<h3><a href="#">Residential Cleaning</a></h3>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos aperiam ipsam
-									modi dolor suscipit asperiores perspiciatis.
-								</p>
-							</div>
-
-							<div class="service_box">
-								<figure>
-									<img src="{% static 'images/service/img_6.jpg' %}" alt=""/>
-                                    {#								Services logo#}
-								</figure>
-								<h3><a href="#">After Renovation</a></h3>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos aperiam ipsam
-									modi dolor suscipit asperiores perspiciatis.
-								</p>
-
+							<div class="service_box ml-lg-auto">
+                                    <figure>
 									<img src="{{ b.image.url }}" alt="" />
+                                    </figure>
                                 <h3><a href="#">{{b.title}}</a></h3>
-								
-									{{ b.description }}
-
+								<p>{{ b.description }}</p>
 							</div>
                          {% endfor %}
 							
@@ -361,7 +290,7 @@
 					</div>
 					<div class="col-lg-4 mt-sm-30 mt-xs-30">
 						<figure>
-							<img src="{% static 'images/img4.png' %}" alt="">
+							<img src="{% static 'images/team.png' %}" alt="">
                             {#							subscriibe image#}
 						</figure>
 					</div>
@@ -444,7 +373,7 @@
 							<h2>Company Overview</h2>
 							<span class="b-line"></span>
 							<p>
-								RS Dairy And Agro Foods Industries Ltd. is a new company that provides quality RMG food products,dairy products in food industries for businesses in Bangladesh to improve its consumers taste,health and all kinds of hygiene measures.Here is a simple overview about our manpower.
+								RS Dairy And Agro Foods Industries Ltd. is a new company that provides quality FMCG food products,dairy products in food industries for businesses in Bangladesh to improve its consumers taste,health and all kinds of hygiene measures.Here is a simple overview about our manpower.
 							</p>
 						</div>
 					</div>
@@ -509,7 +438,7 @@
 		<!-- Counter_Section_End -->
 
 		<!-- Work Section -->
-	    <div class="container">
+	    <div class="container mt-4">
 	    <div class="row text-center mb-40 mb-xs-30">
 		    <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
 			    <div class="section-title_home">
@@ -523,6 +452,8 @@
 	    </div>
 	    <!-- work Filter -->
 	    <div class="row">
+
+
 		    <div class="col-lg-8 offset-lg-2">
 			    <ul class="container-filter categories-filter">
 				    <li>
@@ -533,70 +464,25 @@
 		    </div>
 	    </div>
 	    <!-- End work Filter -->
-	    <div class="row container-grid nf-col-3">
+	    <div class="row">
 
+					<div class="col-md-12">
+						<div class="service_slider_home next_btn_style">
+							{% for pro in products %}
 
-	    <div class="nf-item branding coffee spacing">
-		    <div class="item-box">
-			    <a> <img alt="1" src="{% static 'images/project/project_1.jpg' %}" class="item-container">
-			    </a>
-                {#							product image#}
-			    <div class="link-zoom">
-				    <a href="{% url 'products_details' %}" class="project_links same_style"> <i
-						    class="fa fa-link"> </i> </a>
-				    <a href="{% static 'images/project/project_1.jpg' %}"
-				       class="fancylight popup-btn same_style" data-fancybox-group="light"> <i
-						    class="fa fa-search-plus"></i> </a>
-                    {#								product image#}
-				    <div class="gallery-heading">
-					    <h4><a href="#">Cleaning Services</a></h4>
+							<div class="service_box ml-lg-auto">
+                                    <figure>
+									<img src="{{ pro.p_image.url }}" alt="" />
+                                    </figure>
+                                <h3><a href="#">{{pro.p_title}}</a></h3>
+							</div>
+                         {% endfor %}
 
-				    </div>
-			    </div>
-
-		    </div>
-	    </div>
-
-	    <div class="nf-item photo spacing">
-	    <div class="item-box">
-		    <a> <img alt="1" src="{% static 'images/project/project_2.jpg' %}" class="item-container">
-		    </a>
-            {#							product image#}
-		    <div class="link-zoom">
-			    <a href="{% url 'products_details' %}" class="project_links same_style"> <i
-					    class="fa fa-link"> </i> </a>
-			    <a href="{% static 'images/project/project_2.jpg' %}"
-			       class="fancylight popup-btn same_style" data-fancybox-group="light"> <i
-					    class="fa fa-search-plus"></i> </a>
-
-
-                {% for p in products %}
-				    <div class="nf-item photo spacing">
-					    <div class="item-box">
-						    <a> <img alt="1" src="{{ p.p_image.url }}" class="item-container"> </a>
-						    <div class="link-zoom">
-							    <a href="{% url 'products_details' %}" class="project_links same_style"> <i class="fa fa-link"> </i> </a>
-							    <a href="{{ p.p_image.url }}" class="fancylight popup-btn same_style" data-fancybox-group="light" > <i class="fa fa-search-plus"></i> </a>
-
-							    <div class="gallery-heading">
-
-								    <h4><a href="#">{{p.p_title}}</a></h4>
-
-							    </div>
-						    </div>
-
-					    </div>
-				    </div>
-                {% endfor %}
-
-
-		    </div>
-
+						</div>
+					</div>
 	    </div>
         </div>
-        </div>
-        </div>
-	    <!-- End Work Section -->
+        <!-- End Work Section -->
 
 		<!-- testimonial_Section -->
 		<!--
