@@ -1,183 +1,69 @@
 ﻿{% extends 'base.html' %}
 {% load static %}
-{% block tilte %}
+{% block title %}
 
 {% endblock %}
-
+{% block css %}
+        <link href="{% static 'css/index.css'%}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/theme-color/default.css'%}" rel="stylesheet" type="text/css" id="theme-color" />
+        <style>
+            .bg-img{
+                background: url(../static/images/banner/u_banner.jpg) 0 36% no-repeat;
+                background-size: cover;
+        
+            }
+        </style>
+{% endblock %}
 {% block content %}
 
-		<!-- CONTENT -->
+
+
 		<!-- Intro Section -->
 		<section class="inner-intro bg-img light-color overlay-before parallax-background">
 			<div class="container">
 				<div class="row title">
 					<div class="title_row">
-						<h1 data-title="Project"><span>Project</span></h1>
-						<div class="page-breadcrumb">
-							<a>Home</a>/ <span>Project</span>
-						</div>
-
+						<h1 data-title="Service"><span>Products</span></h1>
 					</div>
 
 				</div>
 			</div>
 		</section>
-		<!-- End Intro Section -->
-		<!-- Work Section -->
-		<section id="work" class="padding ptb-xs-40">
+		<!-- Intro Section -->
+        
+		<!-- Service Section -->
+		<section class="padding ptb-xs-40">
 			<div class="container">
-				<div class="row text-center mb-40 mb-xs-30">
-					<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+				<div class="row pb-30 text-center">
+					<div class="col-md-12">
 						<div class="section-title_home">
-							<h2>Case Studies</h2>
-							<p class="mb-0">
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 's standard dummy text.
-							</p>
-						</div>
-					</div>
-				</div>
-				<!-- work Filter -->
-				<div class="row">
-					<div class="col-sm-12">
-						<ul class="container-filter categories-filter">
-							<li>
-								<a class="categories active" data-filter="*">All</a>
-                            </li>
-                        </ul>
+                            <h2>Our <span>Products</span></h2>
+                          
+                        </div>
                     </div>
                 </div>
-                <!-- End work Filter -->
-                <div class="row container-grid nf-col-3">
 
-                    <div class="nf-item branding coffee spacing">
-                        <div class="item-box">
-                            <a> <img alt="1" src="{% static 'images/project/project_1.jpg' %}" class="item-container">
-                            </a>
-                            {#							products image#}
-                            <div class="link-zoom">
-                                <a href="{% url 'products_details' %}" class="project_links same_style"> <i
-                                        class="fa fa-link"> </i> </a>
-                                <a href="{% static 'images/project/project_1.jpg' %}"
-                                   class="fancylight popup-btn same_style" data-fancybox-group="light"> <i
-                                        class="fa fa-search-plus"></i> </a>
-                                {#								product image#}
-                                <div class="gallery-heading">
-                                    <h4><a href="{% url 'products_details' %}">Cleaning Services</a></h4>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="nf-item photo spacing">
-                        <div class="item-box">
-                            <a> <img alt="1" src="{% static 'images/project/project_2.jpg' %}" class="item-container">
-                            </a>
-                            {#							products image#}
-                            <div class="link-zoom">
-                                <a href="{% url 'products_details' %}" class="project_links same_style"> <i
-                                        class="fa fa-link"> </i> </a>
-                                <a href="{% static 'images/project/project_2.jpg' %}"
-                                   class="fancylight popup-btn same_style" data-fancybox-group="light"> <i
-                                        class="fa fa-search-plus"></i> </a>
-                                {#								products image#}
-                                <div class="gallery-heading">
-                                    <h4><a href="{% url 'products_details' %}">Cleaning Services</a></h4>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="nf-item branding coffee spacing">
-                        <div class="item-box">
-                            <a> <img alt="1" src="{% static 'images/project/project_3.jpg' %}" class="item-container">
-                            </a>
-                            {#							product image#}
-                            <div class="link-zoom">
-                                <a href="{% url 'products_details' %}" class="project_links same_style"> <i
-                                        class="fa fa-link"> </i> </a>
-                                <a href="{% static 'images/project/project_3.jpg' %}"
-                                   class="fancylight popup-btn same_style" data-fancybox-group="light"> <i
-                                        class="fa fa-search-plus"></i> </a>
-
-                                {#                                products image#}
-                                <div class="gallery-heading">
-                                    <h4><a href="{% url 'products_details' %}">Cleaning Services</a></h4>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="nf-item design spacing">
-                        <div class="item-box">
-                            <a> <img alt="1" src="{% static 'images/project/project_4.jpg' %}" class="item-container">
-                            </a>
-                            {#                            product image#}
-                            <div class="link-zoom">
-                                <a href="{% url 'products_details' %}" class="project_links same_style"> <i
-                                        class="fa fa-link"> </i> </a>
-                                <a href="{% static 'images/project/project_4.jpg' %}"
-                                   class="fancylight popup-btn same_style" data-fancybox-group="light"> <i
-                                        class="fa fa-search-plus"></i> </a>
-                                {#								product image#}
-                                <div class="gallery-heading">
-                                    <h4><a href="{% url 'products_details' %}">Cleaning Services</a></h4>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="nf-item branding spacing">
-                        <div class="item-box">
-                            <a> <img alt="1" src="{% static 'images/project/project_5.jpg' %}" class="item-container">
-                            </a>
-                            {#                            product image#}
-                            <div class="link-zoom">
-                                <a href="{% url 'products_details' %}" class="project_links same_style"> <i
-                                        class="fa fa-link"> </i> </a>
-                                <a href="{% static 'images/project/project_5.jpg' %}"
-                                   class="fancylight popup-btn same_style" data-fancybox-group="light"> <i
-                                        class="fa fa-search-plus"></i> </a>
-                                {#								product image#}
-                                <div class="gallery-heading">
-                                    <h4><a href="{% url 'products_details' %}">Cleaning Services</a></h4>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="nf-item photo spacing">
-                        <div class="item-box">
-                            <a> <img alt="1" src="{% static 'images/project/project_6.jpg' %}" class="item-container">
-                            </a>
-                            {#                            product image#}
-                            <div class="link-zoom">
-                                <a href="{% url 'products_details' %}" class="project_links same_style"> <i
-                                        class="fa fa-link"> </i> </a>
-                                <a href="{% static 'images/project/project_6.jpg' %}"
-                                   class="fancylight popup-btn same_style" data-fancybox-group="light"> <i
-                                        class="fa fa-search-plus"></i> </a>
-                                {#								product image#}
-                                <div class="gallery-heading">
-                                    <h4><a href="{% url 'products_details' %}">Cleaning Services</a></h4>
-                                </div>
-                            </div>
-
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-xs-30">
+                        <div class="service_box">
+                            <figure>
+                                <img src="{% static  'images/service/img_5.jpg' %}" alt=""/>
+                                {#                                brands image#}
+                            </figure>
+                            {#                                brands title#}
+                            <h3><a href="#">Residential Cleaning</a></h3>
+                            {#                                brands Description#}
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos aperiam ipsam modi
+                                dolor suscipit asperiores perspiciatis.
+                            </p>
                         </div>
                     </div>
 
                 </div>
 
-            </div>
-        </section>
-		<!-- End Work Section -->
-		<!--End Contact-->
-
+			</div>
+		</section>
+		<!-- Service Section end -->
 {% endblock %}
-
 
