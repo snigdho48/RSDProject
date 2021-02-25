@@ -76,10 +76,7 @@ def career(request):
     return render(request, 'career.html',context)
 
 
-def testimonial(request):
-    data = Contact_Info.objects.all()
-    context={'data': data,}
-    return render(request, 'testimonial.html',context)
+
 
 def catalog(request):
     data = Contact_Info.objects.all()

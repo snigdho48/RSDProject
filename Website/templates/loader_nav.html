@@ -58,7 +58,9 @@
 		visibility:hidden;
 	}
 
+
 </style>
+
 
 {% endblock %}
 
@@ -114,7 +116,7 @@
 			<div class="middel-part__block">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-3 logo col-md-12 d-flex align-items-center logo-img">
+						<div class="col-lg-3 logo col-md-12 d-flex align-items-center logo-img" >
 
 							<a href="{% url 'home' %}"> <img src="{% static 'images/logo.png'%}" alt="Logo" class="pt-2 pb-2"> </a>
 
@@ -185,6 +187,9 @@
                                             <a href="{% url 'about' %}">About</a>
                                         </li>
                                         <li>
+                                            <a href="{% url 'catalog' %}">catalog</a>
+                                        </li>
+                                        <li>
                                             <a href="{% url 'career' %}">career</a>
                                             {#											career URL#}
                                         </li>
@@ -236,10 +241,10 @@
                                             {#											login Url#}
                                         </li>
 
-                                        <li>
-                                            <a href="{% url 'testimonial' %}">Testimonials</a>
+{#                                        <li>#}
+{#                                            <a href="{% url 'testimonial' %}">Testimonials</a>#}
                                             {#                                            Testimonials URL#}
-                                        </li>
+{#                                        </li>#}
                                     </ul>
                                 </li>
                                 <li>
