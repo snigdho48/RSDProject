@@ -24,7 +24,7 @@ SECRET_KEY = '%g!=&0x9daxtzii2zoz3-(68f^kt1jovfl1enb32f0k_4h#t5y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.104',
+ALLOWED_HOSTS = ['192.168.0.107',
                  '127.0.0.1']
 
 # Application definition
@@ -132,14 +132,14 @@ STATICFILES_DIRS = [
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-CKEDITOR_CONFIGS = {
-    'default': {
-        # 'toolbar': 'Custom',
-        'width': '461px',
-        'height': 'auto',
-        # 'toolbar_Custom': [
-        #     ['Bold', 'Italic', 'Underline'],
-        #     ['NumberedList', 'BulletedList'],
-        # ],
-    }
-}
+# CKEDITOR_CONFIGS = {
+#     'default': {
+#         # 'toolbar': 'Custom',
+#         'width': '461px',
+#         'height': 'auto',
+#         # 'toolbar_Custom': [
+#         #     ['Bold', 'Italic', 'Underline'],
+#         #     ['NumberedList', 'BulletedList'],
+#         # ],
+#     }
+# }
