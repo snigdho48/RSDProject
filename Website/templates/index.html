@@ -152,11 +152,11 @@
 						</div>
 					</div>
 
-					<div class="col-md-8 mt-xs-30 text-center text-md-left">
-						<p>
+					<div class="col-md-8 mt-xs-30 text-center text-md-left text-justify">
+						<p class="text-justify">
 							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 's standard dummy text. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text.
 						</p>
-						<p>
+						<p class="text-justify">
 							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
 							been the 's standard dummy text. Lorem Ipsum has been the industry's standard dummy text
 							ever since. Lorem Ipsum is simply dummy text.
@@ -272,7 +272,7 @@
 								<span class="three_line"></span>
 							</div>
 							<div class="text_heading mb-30 light-color">
-								<p>
+								<p class="text-justify">
 									Lorem ipsum dolor sit amet, ligula vestibulum nunc dis ipsum, et nam, cras nec lacus amet, ut mauris erat mattis neque a quis. Vivamus donec dolor consectetuer congue.
 								</p>
 							</div>
@@ -550,65 +550,29 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-lg-4">
+                    {% for post in posts %}
+                        {% if forloop.counter <= 3 %}
+					<div class="col-lg-4 mt-2">
 						<div class="img-scale">
 							<figure>
-								<img src="{% static 'images/blog/home_blog_1.jpg' %}" alt="">
+								<img src="{{ post.image.url }}" alt="" height="220px">
                                 {#								news and event image#}
 							</figure>
 							<div class="latest__block-post gray-bg">
 								<div class="meta-post">
-									Oct, 24th 2018
+									{{ post.created_at.date }}
 								</div>
-								<h3 class="latest__block-title"><a href="blog-single.html">How To Decorate With
-									Black-and-White?</a></h3>
+								<h3 class="latest__block-title"><a href="{% url 'News_detail' post.slug %}">{{ post.title }}</a></h3>
 
 								<div class="flat-link flat-arrow sm  ">
-									<a href="#" class="more_btn__block">More <i class="fa fa-angle-right"></i> </a>
+									<a href="{% url 'News_detail' post.slug %}" class="more_btn__block">More <i class="fa fa-angle-right"></i> </a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 mt-sm-30 mt-xs-30">
-						<div class="img-scale">
-							<figure>
-								<img src="{% static 'images/blog/home_blog_2.jpg' %}" alt="">
-                                {#								news and event image#}
+                        {% endif %}
 
-							</figure>
-							<div class="latest__block-post gray-bg">
-								<div class="meta-post">
-									Oct, 24th 2018
-								</div>
-								<h3 class="latest__block-title"><a href="blog-single.html">How To Decorate With
-									Black-and-White?</a></h3>
-
-								<div class="flat-link flat-arrow sm  ">
-									<a href="#" class="more_btn__block">More <i class="fa fa-angle-right"></i> </a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 mt-sm-30 mt-xs-30">
-						<div class="img-scale">
-							<figure>
-								<img src="{% static 'images/blog/home_blog_3.jpg' %}" alt="">
-                                {#								news and event image#}
-
-							</figure>
-							<div class="latest__block-post gray-bg">
-								<div class="meta-post">
-									Oct, 24th 2018
-								</div>
-								<h3 class="latest__block-title"><a href="blog-single.html">How To Decorate With
-									Black-and-White?</a></h3>
-
-								<div class="flat-link flat-arrow sm  ">
-									<a href="#" class="more_btn__block">More <i class="fa fa-angle-right"></i> </a>
-								</div>
-							</div>
-						</div>
-					</div>
+        {% endfor %}
 				</div>
 			</div>
 		</section>

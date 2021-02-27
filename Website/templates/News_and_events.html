@@ -15,7 +15,8 @@
 	<div class="container">
 		<div class="row title">
 			<div class="title_row">
-				<h1 data-title="Blog"><span>News & Events</span></h1>
+				<h1 data-title="News & Events">News & Events<span class="b-line"></span></h1>
+
 			</div>
 		</div>
 	</div>
@@ -25,7 +26,7 @@
 <div class="row pb-30 text-center">
 	<div class="col-md-12">
 		<div class="section-title_home">
-			<h2>News & <span>Events</span></h2>
+			<h2>News & Event<span class="b-line"></span></h2>
 		</div>
 	</div>
 </div>
@@ -38,17 +39,17 @@
 			<div class="col-12">
 				<div class="row">
 					{% for post in posts %}
-					<div class="col-md-9 blog-post-hr">
+					<div class="col-md-9 blog-post-hr mt-2">
 						<div class="blog-post mb-30">
-							<div class="post-media"><img src="{{post.image.url}}" class=""><span
-									class="event-calender blog-date"> {{ post.created_at }}</span>s</div>
+							<div class="post-media"><img src="{{post.image.url}}" class="">
+                                <span class="event-calender post_date text-white"> {{ post.created_at.date }}</span></div>
 							{# news image#}
 						
-							<div class="post-header">
-								<h2><a href="blog-detail.html">{{ post.title }}</a></h2>
+							<div class="post-header text-justify">
+								<h2><a href="{% url 'News_detail' post.slug %}">{{ post.title }}</a></h2>
 								{# news details#}
 							</div>
-							<div class="post-entry">
+							<div class="post-entry text-justify">
 							  <p>{{post.description | slice:":200" }}</p>
 							</div>
 							<div class="post-more-link pull-left"><a href="{% url 'News_detail' post.slug %}" class="btn-text">Read
