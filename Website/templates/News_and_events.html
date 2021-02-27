@@ -37,30 +37,25 @@
 			<!-- Post Item -->
 			<div class="col-12">
 				<div class="row">
-					
+					{% for post in posts %}
 					<div class="col-md-9 blog-post-hr">
 						<div class="blog-post mb-30">
-							<div class="post-media"><img src="{% static 'images/blog/img3.jpg' %}" class=""><span
-									class="event-calender blog-date"> 21 <span>june</span> </span></div>
+							<div class="post-media"><img src="{{post.image.url}}" class=""><span
+									class="event-calender blog-date"> {{ post.created_at }}</span>s</div>
 							{# news image#}
 						
 							<div class="post-header">
-								<h2><a href="blog-detail.html">Maecenas nec odio ante varcy tincidunt</a></h2>
+								<h2><a href="blog-detail.html">{{ post.title }}</a></h2>
 								{# news details#}
 							</div>
 							<div class="post-entry">
-								<p> Praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-									excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
-									officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-									rerum facilis est et expedita distinctio. </p>
-								<p> Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et
-									dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
+							  <p>{{post.description | slice:":200" }}</p>
 							</div>
-							<div class="post-more-link pull-left"><a href="#" class="btn-text">Read
+							<div class="post-more-link pull-left"><a href="{% url 'News_detail' post.slug %}" class="btn-text">Read
 									More</a></div>
 							{# news details#}
 						</div>
-
+                    {% endfor %}
 					</div>
 				</div>
 				

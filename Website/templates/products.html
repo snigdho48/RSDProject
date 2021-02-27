@@ -44,22 +44,22 @@
                 </div>
 
                 <div class="row">
+                    {% for p in data %}
                     <div class="col-md-6 col-lg-4 mb-xs-30">
                         <div class="service_box">
                             <figure>
-                                <img src="{% static  'images/service/img_5.jpg' %}" alt=""/>
+                                <img src="{{p.p_image.url}}" alt=""/>
                                 {#                                brands image#}
                             </figure>
                             {#                                brands title#}
-                            <h3><a href="#">Residential Cleaning</a></h3>
+                            <h3><a href="#">{{p.p_title}}</a></h3>
                             {#                                brands Description#}
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos aperiam ipsam modi
-                                dolor suscipit asperiores perspiciatis.
+                                {{p.description}}
                             </p>
                         </div>
                     </div>
-
+                     {% endfor %}
                 </div>
 
 			</div>
