@@ -6072,7 +6072,7 @@ filter: alpha(opacity=0);
 @media (max-width:767px){
 	.partner-blck__brdr{
 		padding: 0;
-	
+
 	}
 	.partner-blck__brdr-r{
 		border:none;
@@ -6492,7 +6492,7 @@ div .secondary_bg {
 .btn-default:hover, .color-switch .owl-controls .owl-page span, .tags li a {
 	background-color: #222;
 }
-.product-page .single-product .zoom-product-thumb .navigation-shop .owl-controls .owl-nav .owl-prev, 
+.product-page .single-product .zoom-product-thumb .navigation-shop .owl-controls .owl-nav .owl-prev,
 .product-page .single-product .zoom-product-thumb .navigation-shop .owl-controls .owl-nav .owl-next{
     background: transparent;
     color: #797979;
