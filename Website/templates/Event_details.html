@@ -34,16 +34,13 @@
               <div class="blog-post mb-30">
                   
                   <div class="post-header">
-                      <h2>Maecenas nec odio ante varcy tincidunt.</h2>
+                      <h2>{{ post.title }}</h2>
                   </div>
-                  <div class="post-media"><img src="{% static 'images/blog/img2.jpg' %}" alt=""><span
-                          class="event-calender blog-date"> 21 <span>june</span> </span></div>
+                  <div class="post-media"><img src="{{ post.image.url }}" alt=""><span
+                          class="event-calender blog-date"> {{ post.created_at }} </span></div>
                   {#            news details image#}
                   <div class="post-entry">
-                      <p> Praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                          occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia
-                          animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
-                          distinctio. 
+                      <p> {{ post.description }}
                     </p>
                       
                     </div>
