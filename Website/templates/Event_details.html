@@ -19,7 +19,7 @@
         <div class="container">
             <div class="row title">
                 <div class="title_row">
-                    <h1 data-title="Blog Detail"><span>Event Details</span></h1>
+                    <h1 data-title="Event Details"><span class="b-line"></span></h1>
                 </div>
 
             </div>
@@ -47,9 +47,9 @@
                       <h2>{{ post.title }}</h2>
                   </div>
                   <div class="post-media"><img src="{{ post.image.url }}" alt=""><span
-                          class="event-calender blog-date"> {{ post.created_at }} </span></div>
+                          class="event-calender post_date text-white"> {{ post.created_at.date }} </span></div>
                   {#            news details image#}
-                  <div class="post-entry">
+                  <div class="post-entry text-justify">
                       <p> {{ post.description }}
                     </p>
                       
