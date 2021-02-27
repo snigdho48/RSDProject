@@ -17,7 +17,8 @@
 
 {% block content %}
 
-
+{% for about in about %}
+    {% if forloop.counter < 1 %}
 <!-- Intro Section -->
 <section class="inner-intro bg-img light-color overlay-before parallax-background">
 	<div class="container">
@@ -39,24 +40,18 @@
 			<div class="col-md-12 col-lg-12">
 				<div class="block-title v-line">
 					 {# About_us mission_title#} 
-					<h2><span>OUR</span> MISSION</h2>
+					<h2>{{ about.mission_tittle }}</h2>
 					{# About_us mission_title#} 
 					{# About_us mission_short_text#} 
 					<p class="italic">
-						Aenean suscipit eget mi act
+						{{ about.mission_short_text }}
 					</p>
 				{# About_us mission_short_text#}
 				</div>
 					 {# About_us mission_description#} 
 				<div class="text-content">
 					<p>
-						Aenean suscipit eget mi act fermentum phasellus vulputate turpis tincidunt. Aenean suscipit eget
-						mi act fermentum phasellus vulputate turpis tincidunt.
-						Aenean suscipit eget mi act fermentum phasellus vulputate turpis tincidunt. Aenean suscipit eget
-						mi act fermentum phasellus vulputate turpis tincidunt.
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus maxime saepe eos soluta
-						reprehenderit, ratione beatae id voluptates. Nobis possimus asperiores quos! Facilis iure itaque
-						vel explicabo aspernatur ipsa dolore!
+						{{ about.mission_discription }}
 					</p>
 				</div>
 				 {# About_us mission_description#}
@@ -73,20 +68,17 @@
 			<div class="dark-bg our-vision light-color padding-40">
 				<div class="block-title">
 					{# About_us vision_title #}
-					<h2><span>OUR</span> VISION</h2>
+					<h2>{{ about.vision_title }}</h2>
 						{# About_us vision_title #}
 						{# About_us vision_short_text #}
 					<p class="italic">
-						Aenean suscipit eget mi act
+						{{ about.vision_short_text }}
 					</p>
 					{# About_us vision_short_text #}
 				</div>
 			{# About_us vision_description #}
 				<p>
-					Aenean suscipit eget mi act fermentum phasellus vulputate turpis tincidunt. Aenean suscipit eget
-					mi act fermentum phasellus vulputate turpis tincidunt.
-					Aenean suscipit eget mi act fermentum phasellus vulputate turpis tincidunt. Aenean suscipit eget
-					mi act fermentum phasellus vulputate turpis tincidunt.
+					{{ about.vision_description }}
 				</p>
 				{# About_us vision_description #}
 			</div>
@@ -103,27 +95,18 @@
 			<div class="col-md-12 col-lg-12">
 				<div class="block-title v-line">
 						{# About_us journey_title #}
-					<h2><span>OUR</span> JOURNEY</h2>
+					<h2>{{ about.journey_title }}</h2>
 					{# About_us journey_title #}
 					{# About_us journey_short_text #}
 					<p class="italic">
-						Aenean suscipit eget mi act
+						{{about.journey_short_text}}
 					</p>
 				{# About_us journey_short_text #}
 				</div>
 				{# About_us journey_description #}
 				<div class="text-content">
 					<p>
-						Aenean suscipit eget mi act fermentum phasellus vulputate turpis tincidunt. Aenean suscipit eget
-						mi
-						act fermentum phasellus vulputate turpis tincidunt.
-						Aenean suscipit eget mi act fermentum phasellus vulputate turpis tincidunt. Aenean suscipit eget
-						mi
-						act fermentum phasellus vulputate turpis tincidunt.
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus maxime saepe eos soluta
-						reprehenderit, ratione beatae id voluptates. Nobis possimus asperiores quos! Facilis iure itaque
-						vel
-						explicabo aspernatur ipsa dolore!
+						{{ about.journey_description }}
 					</p>
 				</div>
 				{# About_us journey_description #}
@@ -133,7 +116,8 @@
 	</div>
 </div>
 
-
+{% endif %}
+    {% endfor %}
 
 
 
