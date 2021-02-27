@@ -132,14 +132,14 @@ STATICFILES_DIRS = [
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-CKEDITOR_CONFIGS = {
-    'default': {
-        # 'toolbar': 'Custom',
-        'width': '461px',
-        'height': 'auto',
-        # 'toolbar_Custom': [
-        #     ['Bold', 'Italic', 'Underline'],
-        #     ['NumberedList', 'BulletedList'],
-        # ],
-    }
-}
+# CKEDITOR_CONFIGS = {
+#     'default': {
+#         # 'toolbar': 'Custom',
+#         'width': '461px',
+#         'height': 'auto',
+#         # 'toolbar_Custom': [
+#         #     ['Bold', 'Italic', 'Underline'],
+#         #     ['NumberedList', 'BulletedList'],
+#         # ],
+#     }
+# }

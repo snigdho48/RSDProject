@@ -1,7 +1,7 @@
 from typing import ContextManager
-from Website.models import Contact_Info, Products, Brands, Board_of_directors
+from Website.models import Contact_Info, Products, Brands, Board_of_directors, NewsandEvent
 from django.shortcuts import render
-
+from django.views import generic
 
 def home(request):
     data = Contact_Info.objects.all()
@@ -21,12 +21,16 @@ def about(request):
     return render(request, 'about.html',context)
 
 
-def News(request):
-    data = Contact_Info.objects.all()
-    context = {'data': data,}
-    return render(request, 'News_and_events.html',context)
 
 
+def NewsList(request):
+    posts = NewsandEvent.objects.all()
+
+    return render(request, 'News_and_events.html', {'posts': posts})
+
+def NewsDetail(request, slug):
+    post = NewsandEvent.objects.get(slug=slug)
+    return render(request, 'Event_details.html', {'post': post})
 
 
 
@@ -37,7 +41,7 @@ def partnerships(request):
 
 
 def products(request):
-    data = Contact_Info.objects.all()
+    data = Products.objects.all()
     context = {'data': data,}
     return render(request, 'products.html',context)
 
@@ -65,7 +69,7 @@ def handler404(request, exception=None):
 
 
 def brands(request):
-    data = Contact_Info.objects.all()
+    data = Brands.objects.all()
     context = {'data': data,}
     return render(request, 'brands.html',context)
 
@@ -76,10 +80,7 @@ def career(request):
     return render(request, 'career.html',context)
 
 
-def testimonial(request):
-    data = Contact_Info.objects.all()
-    context={'data': data,}
-    return render(request, 'testimonial.html',context)
+
 
 def catalog(request):
     data = Contact_Info.objects.all()

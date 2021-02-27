@@ -6,6 +6,13 @@
 {% block css %}
         <link href="{% static 'css/index.css'%}" rel="stylesheet" type="text/css" />
         <link href="{% static 'css/theme-color/default.css'%}" rel="stylesheet" type="text/css" id="theme-color" />
+        <style>
+            .bg-img{
+                background: url(../static/images/banner/u_banner.jpg) 0 36% no-repeat;
+                background-size: cover;
+        
+            }
+        </style>
 {% endblock %}
 {% block content %}
 
@@ -16,119 +23,42 @@
 			<div class="container">
 				<div class="row title">
 					<div class="title_row">
-						<h1 data-title="Service"><span>Service</span></h1>
-						<div class="page-breadcrumb">
-							<a>Home</a>/ <span>Service</span>
-						</div>
-
+						<h1 data-title="Service"><span>Brands</span></h1>
 					</div>
 
 				</div>
 			</div>
 		</section>
 		<!-- Intro Section -->
+        
 		<!-- Service Section -->
 		<section class="padding ptb-xs-40">
 			<div class="container">
 				<div class="row pb-30 text-center">
 					<div class="col-md-12">
 						<div class="section-title_home">
-                            <h2>Our <span>Service</span></h2>
+                            <h2>Our <span>Brands</span></h2>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-
-                    <div class="col-md-6 col-lg-4 mb-30">
-                        <div class="service_box">
-                            <figure>
-                                <img src="{% static  'images/service/img_1.jpg' %}" alt=""/>
-                                {#                                brands image#}
-                            </figure>
-                            <h3><a href="#">House Cleaning</a></h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos aperiam ipsam modi
-                                dolor suscipit asperiores perspiciatis.
-                            </p>
-                        </div>
-                    </div>
-
+                    {% for p in data %}
                     <div class="col-md-6 col-lg-4 mb-xs-30">
                         <div class="service_box">
                             <figure>
-                                <img src="{% static  'images/service/img_2.jpg' %}" alt=""/>
+                                <img src="{{p.image.url}}" alt=""/>
                                 {#                                brands image#}
-
                             </figure>
-                            <h3><a href="#">Apartment Cleaning</a></h3>
+                            {#                                brands title#}
+                            <h3><a href="#">{{ p.title }}</a></h3>
+                            {#                                brands Description#}
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos aperiam ipsam modi
-                                dolor suscipit asperiores perspiciatis.
+                                {{p.description}}
                             </p>
                         </div>
                     </div>
-
-                    <div class="col-md-6 col-lg-4 mb-sm-30 mb-xs-30">
-                        <div class="service_box">
-                            <figure>
-                                <img src="{% static  'images/service/img_3.jpg' %}" alt=""/>
-                                {#                                brands image#}
-
-                            </figure>
-                            <h3><a href="#">Carpet Cleaning</a></h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos aperiam ipsam modi
-                                dolor suscipit asperiores perspiciatis.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 mb-xs-30">
-                        <div class="service_box">
-                            <figure>
-                                <img src="{% static  'images/service/img_6.jpg' %}" alt=""/>
-                                {#                                brands image#}
-
-                            </figure>
-                            <h3><a href="#">After Renovation</a></h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos aperiam ipsam modi
-                                dolor suscipit asperiores perspiciatis.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 mb-xs-30">
-                        <div class="service_box">
-                            <figure>
-                                <img src="{% static  'images/service/img_4.jpg' %}" alt=""/>
-                                {#                                brands image#}
-
-                            </figure>
-                            <h3><a href="#">Commercial Cleaning</a></h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos aperiam ipsam modi
-                                dolor suscipit asperiores perspiciatis.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 mb-xs-30">
-                        <div class="service_box">
-                            <figure>
-                                <img src="{% static  'images/service/img_5.jpg' %}" alt=""/>
-                                {#                                brands image#}
-
-                            </figure>
-                            <h3><a href="#">Residential Cleaning</a></h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos aperiam ipsam modi
-                                dolor suscipit asperiores perspiciatis.
-                            </p>
-                        </div>
-                    </div>
-
+                    {% endfor %}
                 </div>
 
 			</div>

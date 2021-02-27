@@ -5,6 +5,16 @@
 
 {% endblock %}
 
+{% block css %}
+<style>
+	.bg-img{
+		background: url(../static/images/banner/u_banner.jpg) 0 36% no-repeat;
+		background-size: cover;
+
+	}
+</style>
+{% endblock css %}
+
 
 {% block content %}
 
@@ -14,9 +24,7 @@
 				<div class="row title">
 					<div class="title_row">
 						<h1 data-title="Partnerships"><span>Partnerships</span></h1>
-						<div class="page-breadcrumb">
-							<a>Home</a>/ <span>Partnerships</span>
-						</div>
+						
 
 					</div>
 
@@ -35,7 +43,7 @@
 						<div class="tab-title">
 							<ul class="clearfix">
 								<li>
-									<a href="{% url 'about' %}">Company</a>
+									<a href="{% url 'home' %}">Company</a>
 								</li>
 								<li>
 									<a href="{%  url 'career' %}"">Careers</a>
@@ -48,23 +56,15 @@
 
 							</ul>
 						</div>
-						<div class="company-brochure mt-30">
-							<h4>Downlaod Brochure</h4>
-							<a href="#"><img src="{% static 'images/flyer.jpg' %}" alt=""></a>
-						</div>
+						
 					</div>
 
 					<div class="col-md-9 col-lg-9">
 						<div class="tab-content">
 
 							<div class="row">
-
 								<div class="col-md-12 col-lg-12">
-									<img src="{% static 'images/people.jpg' %}" alt="">
-								</div>
-
-								<div class="col-md-12 col-lg-12">
-									<h2 class="pt-30">Our Partnerships</h2>
+									<h2 class="">Our Partnerships</h2>
 									<p>
 										Lorem ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim minim veniam quis nostrud exercitation ullamco laboris nisi aliquip exea commodo ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua.
 										laboris nisi aliquip exea commodo ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -79,95 +79,23 @@
 						<!-- About Section -->
 						<div class="pt-40">
 							<div class="row partner-blck__brdr mb-40">
+								{# Our_partner Database partner_logo field#}
 								<div class="col-sm-3 no-padding partner-blck__brdr-r d-flex align-items-center justify-content-center">
 									<img src="{% static 'images/2.png' %}" alt="">
 								</div>
+								{# Our_partner Database partner_logo field#}
 								<div class="col-md-9 col-lg-9 no-padding t_cell">
 									<div class="partner__content partnership">
 										<h3>Our Partnerships</h3>
+										{# Our_partner Database company text field#}
 										<p>
 											Lorem ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim minim veniam quis nostrud Lorem ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim minim veniam quis nostrud
 										</p>
+									{# Our_partner Database company text field#}
 										<a href="#" class="abt__link"> Read More <i class="fa fa-chevron-circle-right abt__link-arrow" aria-hidden="true"></i></a>
 									</div>
 								</div>
 							</div>
-
-							<div class="row partner-blck__brdr mb-40">
-								<div class="col-sm-3 no-padding partner-blck__brdr-r d-flex align-items-center justify-content-center">
-									<img src="{% static 'images/2.png' %}" alt="">
-								</div>
-								<div class="col-md-9 col-lg-9 no-padding t_cell">
-									<div class="partner__content partnership">
-										<h3>Themeforest</h3>
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim minim veniam quis nostrud Lorem ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim minim veniam quis nostrud
-										</p>
-										<a href="#" class="abt__link"> Read More <i class="fa fa-chevron-circle-right abt__link-arrow" aria-hidden="true"></i></a>
-									</div>
-								</div>
-							</div>
-
-							<div class="row partner-blck__brdr mb-40">
-								<div class="col-sm-3 no-padding partner-blck__brdr-r d-flex align-items-center justify-content-center">
-									<img src="{% static 'images/2.png' %}" alt="">
-								</div>
-								<div class="col-md-9 col-lg-9 no-padding t_cell">
-									<div class="partner__content partnership">
-										<h3>Themeforest</h3>
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim minim veniam quis nostrud Lorem ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim minim veniam quis nostrud
-										</p>
-										<a href="#" class="abt__link"> Read More <i class="fa fa-chevron-circle-right abt__link-arrow" aria-hidden="true"></i></a>
-									</div>
-								</div>
-							</div>
-
-							<div class="row partner-blck__brdr mb-40">
-								<div class="col-sm-3 no-padding partner-blck__brdr-r d-flex align-items-center justify-content-center">
-									<img src="{% static 'images/2.png' %}" alt="">
-								</div>
-								<div class="col-md-9 col-lg-9 no-padding t_cell">
-									<div class="partner__content partnership">
-										<h3>Themeforest</h3>
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim minim veniam quis nostrud Lorem ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim minim veniam quis nostrud
-										</p>
-										<a href="#" class="abt__link"> Read More <i class="fa fa-chevron-circle-right abt__link-arrow" aria-hidden="true"></i></a>
-									</div>
-								</div>
-							</div>
-
-							<div class="row partner-blck__brdr mb-40">
-								<div class="col-sm-3 no-padding partner-blck__brdr-r d-flex align-items-center justify-content-center">
-									<img src="{% static 'images/2.png' %}" alt="">
-								</div>
-								<div class="col-md-9 col-lg-9 no-padding t_cell">
-									<div class="partner__content partnership">
-										<h3>Themeforest</h3>
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim minim veniam quis nostrud Lorem ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim minim veniam quis nostrud
-										</p>
-										<a href="#" class="abt__link"> Read More <i class="fa fa-chevron-circle-right abt__link-arrow" aria-hidden="true"></i></a>
-									</div>
-								</div>
-							</div>
-
-							<div class="row partner-blck__brdr">
-								<div class="col-sm-3 no-padding partner-blck__brdr-r d-flex align-items-center justify-content-center">
-									<img src="{% static 'images/2.png' %}" alt="">
-								</div>
-								<div class="col-md-9 col-lg-9 no-padding t_cell">
-									<div class="partner__content partnership">
-										<h3>Themeforest</h3>
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim minim veniam quis nostrud Lorem ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim minim veniam quis nostrud
-										</p>
-										<a href="#" class="abt__link"> Read More <i class="fa fa-chevron-circle-right abt__link-arrow" aria-hidden="true"></i></a>
-									</div>
-								</div>
-							</div>
-
 						</div>
 						<!-- About Section End-->
 
