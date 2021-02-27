@@ -138,21 +138,22 @@
 											{{p.address1}}
 											<span> {{p.address2}}</span>
 										</p>
-										{% endfor %}
+										
 									</li>
 									<li>
 										<i class="fa fa-phone"></i>
 										<p>
 											Call Us
-											<span> +56 (0) 012 345 6789</span>
+											<span> {{p.cell}}</span>
 										</p>
 									</li>
 									<li>
 										<i class="fa fa-envelope" aria-hidden="true"></i>
 										<p>
 											Mail Us
-											<span> <a href="mailto:info@gmail.com">info@gmail.com</a> </span>
+											<span> <a href="#">{{p.email}}</a> </span>
 										</p>
+										{% endfor %}
 									</li>
 								</ul>
 							</div>
