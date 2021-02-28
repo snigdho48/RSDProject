@@ -104,7 +104,6 @@ class Our_partner(models.Model):
 
 
 class subscribe(models.Model):
-    sub_text = models.TextField(max_length=20, verbose_name="Subscription Text",null=True)
     email = models.EmailField()
 
     def __str__(self):
