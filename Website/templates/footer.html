@@ -1,4 +1,7 @@
 {% load static %}
+{% block css %}
+
+{% endblock %}
 <footer class="footer pt-50">
 	<div class="container">
 		<div class="row">
@@ -53,24 +56,29 @@
 
 			<div class="col-md-6 col-lg-3 mt-sm-30 mt-xs-30 footer-latest-news">
 				<h4>Latest News</h4>
+                {% for news in po %}
+                    {% if forloop.counter <= 3 %}
 				<div class="single-news">
-					<h5><a href="#">How can be successfull in market place..</a></h5>
-					<span>13 Nov, 2018 / Business</span>
+					<h5><a href="{% url 'News_detail' news.slug %}">{{ news.title | slice:42 }}..</a></h5>
+					<span>{{ news.created_at.date }}</span>
 				</div>
-				<div class="single-news">
-					<h5><a href="#">How can be successfull in market place..</a></h5>
-					<span>13 Nov, 2018 / Business</span>
-				</div>
+	                {% endif %}
+				{% endfor %}
 			</div>
 
 			<div class="col-md-6 col-lg-4 mt-sm-30 mt-xs-30 footer-subscribe">
 				<h4>Subscribe Us</h4>
 				<p>
-					Subscribe us for more info and for getting every updates.
+					 {% for s in subscribe %}
+                                    {% if forloop.counter <= 1 %}
+									{{ s.sub_text }}
+									{% endif %}
+                     {%endfor %}
 				</p>
-				<form action="#">
-					<input style="width: 70%;" class="mr-0 pr-0" type="text" placeholder="Enter your e-mail">
-					<button class="btn-text">
+				<form action="{% url 'Subscribe_footer' %}" method="post">
+                    {% csrf_token %}
+					<input style="width: 70%;" class="mr-0 pr-0" type="email" name="email-f" placeholder="Enter your e-mail">
+					<button class="btn-text" type="Submit" >
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
 					</button>
 				</form>

@@ -232,21 +232,37 @@ RS Group-RS Dairy And Agro Foods Industries Ltd.
 				</div>
 			</div>
 
-		</div>
+		<!-- Section -->
+		<section class="question_sec pt-90 pt-xs-40">
+			<div class="container">
+				<div class="row">
 
-	</div>
-</section>
-<!-- Service_Section_End -->
-
-<!-- Section -->
-<section class="question_sec pt-90 pt-xs-40">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8">
-				<div class="email_gardener">
-					<div class="section_tit light-color">
-						<h2>Subscribe For Information</h2>
-						<span class="three_line"></span>
+					<div class="col-lg-8">
+						<div class="email_gardener">
+							<div class="section_tit light-color">
+								<h2>Subscribe For Information</h2>
+								<span class="three_line"></span>
+							</div>
+							<div class="text_heading mb-30 light-color">
+								<p class="text-justify">
+                                    {% for s in subscribe %}
+                                    {% if forloop.counter <= 1 %}
+									{{ s.sub_text }}
+									{% endif %}
+								{%endfor %}
+								</p>
+							</div>
+							<div class="m-0 p-1 email_fill">
+								<form class="w-100 " action="subscribe/" method="post">
+                                    {% csrf_token %}
+									<div class="form-field">
+                                        <label for="email"></label>
+                                        <input class="input col-8" id="email" type="email" name="email" placeholder="Your Email">
+                                        <input class="btn btn-text col-3" type="Submit" value="Subscribe">
+									</div>
+								</form>
+							</div>
+						</div>
 					</div>
 					<div class="text_heading mb-30 light-color">
 						<p class="text-justify">
