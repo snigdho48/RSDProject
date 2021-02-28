@@ -44,10 +44,11 @@
 <section class="pb-xs-40 pb-4">
 	<div class="container">
 		<div class="row">
+            {% for post in posts %}
 			<!-- Post Item -->
-			<div class="col-12">
+			<div class="col-12 mt-2">
 				<div class="row">
-					{% for post in posts %}
+
 					<div class="col-md-9 blog-post-hr mt-2">
 						<div class="blog-post mb-30">
 							<div class="post-media"><img src="{{post.image.url}}" class="">
@@ -65,11 +66,12 @@
 									More</a></div>
 							{# news details#}
 						</div>
-                    {% endfor %}
+
 					</div>
 				</div>
 				
 			</div>
+            {% endfor %}
 			<!-- End Post Item -->
 		</div>
 	</div>
