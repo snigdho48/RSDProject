@@ -13,14 +13,12 @@ def home(request):
     board_of_directors = Board_of_directors.objects.all()
     links = Topbar_footer.objects.all()
     image = Slide_Images.objects.all()
-    subscribes = subscribe.objects.all()
     context = {'data': data,
                'products': product,
                'brands': brands,
                'po': posts,
                'links': links,
                'overview': overview,
-               'subscribe': subscribes,
                'image': image,
                'board_of_directors': board_of_directors, }
     return render(request, 'index.html', context)
@@ -144,11 +142,11 @@ def Subscribe(request):
         if email != '':
             user = subscribe.objects.create(email=email)
             user.save()
-            return redirect('home')
+            return redirect(request.META['HTTP_REFERER'])
         else:
-            return redirect('home')
+            return redirect(request.META['HTTP_REFERER'])
     else:
-        return redirect('home')
+        return redirect(request.META['HTTP_REFERER'])
 
 def Subscribe_footer(request):
     if request.method == 'POST':
@@ -156,8 +154,8 @@ def Subscribe_footer(request):
         if email != '':
             user = subscribe.objects.create(email=email)
             user.save()
-            return redirect('home')
+            return redirect(request.META['HTTP_REFERER'])
         else:
-            return redirect('home')
+            return redirect(request.META['HTTP_REFERER'])
     else:
-        return redirect('home')
+        return redirect(request.META['HTTP_REFERER'])
