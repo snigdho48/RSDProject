@@ -265,6 +265,7 @@
 		<section class="question_sec pt-90 pt-xs-40">
 			<div class="container">
 				<div class="row">
+
 					<div class="col-lg-8">
 						<div class="email_gardener">
 							<div class="section_tit light-color">
@@ -273,16 +274,20 @@
 							</div>
 							<div class="text_heading mb-30 light-color">
 								<p class="text-justify">
-									Lorem ipsum dolor sit amet, ligula vestibulum nunc dis ipsum, et nam, cras nec lacus amet, ut mauris erat mattis neque a quis. Vivamus donec dolor consectetuer congue.
+                                    {% for s in subscribe %}
+                                    {% if forloop.counter <= 1 %}
+									{{ s.sub_text }}
+									{% endif %}
+								{%endfor %}
 								</p>
 							</div>
-							<div class="email_fill">
-								<form class="w-100">
+							<div class="m-0 p-1 email_fill">
+								<form class="w-100 " action="subscribe/" method="post">
+                                    {% csrf_token %}
 									<div class="form-field">
-										<input class="input" id="email" type="text" name="form-email" placeholder="Your Email">
-										<button class="btn-text" type="button" id="submit" name="button">
-											Subscribe
-										</button>
+                                        <label for="email"></label>
+                                        <input class="input col-8" id="email" type="email" name="email" placeholder="Your Email">
+                                        <input class="btn btn-text col-3" type="Submit" value="Subscribe">
 									</div>
 								</form>
 							</div>
