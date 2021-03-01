@@ -48,7 +48,6 @@ class Brands(models.Model):
 
 
 class Topbar_footer(models.Model):
-    slogan_text = models.TextField(max_length=50, verbose_name="Slogan Text")
     facebook_link = models.TextField(verbose_name="Facebook Link")
     twitter_link = models.TextField(verbose_name="Twitter Link")
     googleplus_link = models.TextField(verbose_name="GooglePlus Link")
@@ -56,7 +55,7 @@ class Topbar_footer(models.Model):
     copyright_text = models.TextField(max_length=50, verbose_name="Copyright")
 
     def __str__(self):
-        return self.slogan_text
+        return self.facebook_link
 
 
 class Company_Overview(models.Model):

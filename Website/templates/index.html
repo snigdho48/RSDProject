@@ -22,10 +22,11 @@
 			    <!-- START REVOLUTION SLIDER 5.0.7 fullwidth mode -->
 			    <div id="rev_slider_34_1" class="rev_slider" data-version="5.0.7">
 				    <ul>
+                        {% for banner in banners %}
 					    <!-- SLIDE  -->
 					    <li data-index="rs-129">
 						    <!-- MAIN IMAGE -->
-						    <img src="{% static 'images/banner/h_banner.png' %}" alt="" class="rev-slidebg">
+						    <img src="{{ banner.slide_image1.url }}" alt="" class="rev-slidebg">
                             {#                            slider image#}
 						    <!-- LAYERS -->
 						    <!-- LAYER NR. 2 -->
@@ -48,20 +49,17 @@
 							data-splitout="none"
 							data-responsive_offset="on" >
 								<div class="banner-text">
-									<span class="sub-text">we are here to help you</span>
-									<h2>The best cleaning company in the country</h2>
+									<h2>{{ banner.slide_title1 }}</h2>
 									<p>
-										Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem
-										Ipsum has been the industry's standard dummy text ever.
+										{{ banner.slide_content1 }}
 									</p>
-									<a class="btn btn-text align-self-center" href="#"> Read More</a>
 								</div>
 						    </div>
 					    </li>
 					    <!-- SLIDE  -->
 					    <li data-index="rs-130" data-title="" data-description="">
 						    <!-- MAIN IMAGE -->
-						    <img src="{% static 'images/banner/h_banner.png' %}" alt="" class="rev-slidebg">
+						    <img src="{{ banner.slide_image2.url }}" alt="" class="rev-slidebg">
                             {#							slider image#}
 						    <!-- LAYERS -->
 						    <!-- LAYER NR. 2 -->
@@ -84,20 +82,17 @@
 							data-splitout="none"
 							data-responsive_offset="on">
 								<div class="banner-text">
-									<span class="sub-text">we are here to help you</span>
-									<h2>Professional Cleaning Services Provider</h2>
+									<h2>{{ banner.slide_title2 }}</h2>
 									<p>
-										Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem
-										Ipsum has been the industry's standard dummy text ever.
+										{{ banner.slide_content2 }}
 									</p>
-									<a class="btn btn-text align-self-center" href="#"> Read More</a>
 								</div>
 						    </div>
 					    </li>
 					    <!-- SLIDE  -->
 					    <li data-index="rs-131">
 						    <!-- MAIN IMAGE -->
-						    <img src="{% static 'images/banner/h_banner.png' %}" alt="" class="rev-slidebg ">
+						    <img src="{{ banner.slide_image3.url }}" alt="" class="rev-slidebg ">
                             {#							slider image#}
 
 						    <!-- LAYERS -->
@@ -121,18 +116,16 @@
 						         data-splitout="none"
 						         data-responsive_offset="on">
 							    <div class="banner-text">
-								    <span class="sub-text">we are here to help you</span>
-								    <h2>We Are Cleaning Manager Always at Your Service.</h2>
+								    <h2>{{ banner.slide_title3 }}</h2>
 								    <p>
-									    Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem
-									    Ipsum has been the industry's standard dummy text ever.
+									    {{ banner.slide_content3 }}
 								    </p>
-								    <a class="btn btn-text align-self-center" href="#"> Read More</a>
                                     {#									slider details#}
 
 							    </div>
 						    </div>
 					    </li>
+                        {% endfor %}
 					    <!-- SLIDE  -->
 				    </ul>
 				    <div class="tp-bannertimer tp-bottom"></div>

@@ -11,6 +11,7 @@ def home(request):
     posts = reversed(NewsandEvent.objects.all())
     f_post=reversed(NewsandEvent.objects.all())
     brands = Brands.objects.all()
+    banners=Slide_Images.objects.all()
     overview = Company_Overview.objects.all()
     board_of_directors = Board_of_directors.objects.all()
     links = Topbar_footer.objects.all()
@@ -23,17 +24,19 @@ def home(request):
                'overview': overview,
                'image': image,
                'board_of_directors': board_of_directors,
-               'f_post': f_post}
+               'f_post': f_post,
+               'banners':banners,
+               }
     return render(request, 'index.html', context)
 
 
 def about(request):
     posts = reversed(NewsandEvent.objects.all())
     data = Contact_Info.objects.all()
-    about = About_us.objects.all()
+    abouts = About_us.objects.all()
     links = Topbar_footer.objects.all()
     context = {'data': data,
-               'about': about,
+               'abouts': abouts,
                'links': links,
                'po': posts, }
     return render(request, 'about.html', context)

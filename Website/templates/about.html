@@ -17,8 +17,8 @@
 
 {% block content %}
 
-{% for about in about %}
-    {% if forloop.counter < 1 %}
+
+
 <!-- Intro Section -->
 <section class="inner-intro bg-img light-color overlay-before parallax-background">
 	<div class="container">
@@ -32,26 +32,29 @@
 	</div>
 </section>
 <!-- Intro Section End-->
+	<div>
+ {% for ab in abouts %}
 
 <!-- About Section -->
 <div id="about-section" class="padding pt-xs-40">
 	<div class="container">
 		<div class="row">
+
 			<div class="col-md-12 col-lg-12">
 				<div class="block-title v-line">
 					 {# About_us mission_title#} 
-					<h2>{{ about.mission_tittle }}</h2>
+					<h2>{{ ab.mission_title }}</h2>
 					{# About_us mission_title#} 
 					{# About_us mission_short_text#} 
 					<p class="italic">
-						{{ about.mission_short_text }}
+						{{ ab.mission_short_text }}
 					</p>
 				{# About_us mission_short_text#}
 				</div>
 					 {# About_us mission_description#} 
 				<div class="text-content">
 					<p>
-						{{ about.mission_discription }}
+						{{ ab.mission_description }}
 					</p>
 				</div>
 				 {# About_us mission_description#}
@@ -68,17 +71,17 @@
 			<div class="dark-bg our-vision light-color padding-40">
 				<div class="block-title">
 					{# About_us vision_title #}
-					<h2>{{ about.vision_title }}</h2>
+					<h2>{{ ab.vission_title }}</h2>
 						{# About_us vision_title #}
 						{# About_us vision_short_text #}
 					<p class="italic">
-						{{ about.vision_short_text }}
+						{{ ab.vission_short_text }}
 					</p>
 					{# About_us vision_short_text #}
 				</div>
 			{# About_us vision_description #}
 				<p>
-					{{ about.vision_description }}
+					{{ ab.vission_description }}
 				</p>
 				{# About_us vision_description #}
 			</div>
@@ -95,18 +98,18 @@
 			<div class="col-md-12 col-lg-12">
 				<div class="block-title v-line">
 						{# About_us journey_title #}
-					<h2>{{ about.journey_title }}</h2>
+					<h2>{{ ab.journey_title }}</h2>
 					{# About_us journey_title #}
 					{# About_us journey_short_text #}
 					<p class="italic">
-						{{about.journey_short_text}}
+						{{ab.journey_short_text}}
 					</p>
 				{# About_us journey_short_text #}
 				</div>
 				{# About_us journey_description #}
 				<div class="text-content">
 					<p>
-						{{ about.journey_description }}
+						{{ ab.journey_description }}
 					</p>
 				</div>
 				{# About_us journey_description #}
@@ -116,8 +119,9 @@
 	</div>
 </div>
 
-{% endif %}
+
     {% endfor %}
+	</div>
 
 
 
