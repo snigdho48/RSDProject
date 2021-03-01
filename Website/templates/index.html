@@ -319,16 +319,16 @@
 
 
 
-				<div class="row">
+				<div class="row d-flex justify-content-center">
 					{% for board in board_of_directors %}
-					<div class="col-lg-3 col-md-6">
+					<div class="col-lg-3 col-md-6 p-2">
 						<div class="team_box img-scale">
 							<div class="team_picher">
 								<figure>
-									<img src="{{board.image.url}}" alt="">
+									<img src="{{board.image.url}}" alt="" class="c_border" height="265x">
 								</figure>
 							</div>
-							<div class="team_detail team_text">
+							<div class="team_detail team_text ">
 								<h3>{{ board.name }}</h3>
 								<span>{{ board.designation }}</span>
 							</div>
@@ -365,12 +365,14 @@
 		<section class="counter_box">
 			<div class="container">
 				<div class="row">
+                    {% for overviews in overview %}
+                        {% if forloop.counter <= 1 %}
 					<div class="col-lg-10 offset-lg-1">
 						<div class="row bg_withe">
 							<div class="col-lg-3 col-md-6">
 								<div class="single-fact">
 
-									<span class="counter" data-count="40">0</span>
+									<span class="counter" data-count="{{ overviews.total_products }}">0</span>
 									{#									counter database#}
 									<p>
 										Total Products
@@ -380,7 +382,7 @@
 							<div class="col-lg-3 col-md-6 mt-xs-30">
 								<div class="single-fact">
 
-									<span class="counter" data-count="10">0</span>
+									<span class="counter" data-count="{{ overviews.active_employees }}">0</span>
 {#									counter database#}
 									<p>
 										Active Employees
@@ -390,7 +392,7 @@
 							<div class="col-lg-3 col-md-6 mt-sm-30 mt-xs-30">
 								<div class="single-fact">
 
-									<span class="counter" data-count="20">0</span>
+									<span class="counter" data-count="{{ overviews.active_dealers }}">0</span>
 									{#									counter database#}
 
 									<p>
@@ -401,7 +403,7 @@
 							<div class="col-lg-3 col-md-6 mt-sm-30 mt-xs-30">
 								<div class="single-fact">
 
-									<span class="counter" data-count="40">0</span>
+									<span class="counter" data-count="{{ overviews.total_brands }}">0</span>
 									{#									counter database#}
 
 									<p>
@@ -412,6 +414,8 @@
 
 						</div>
 					</div>
+                        {% endif %}
+                    {% endfor %}
 				</div>
 			</div>
 		</section>
@@ -551,7 +555,7 @@
 					</div>
 				</div>
 				<div class="row">
-                    {% for post in posts %}
+                    {% for post in f_post %}
                         {% if forloop.counter <= 3 %}
 					<div class="col-lg-4 mt-2">
 						<div class="img-scale">

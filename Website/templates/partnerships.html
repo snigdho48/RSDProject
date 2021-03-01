@@ -73,26 +73,23 @@
 						</div>
 
 						<!-- About Section -->
-						<div class="pt-40 mb-40">
-                            {% for partner in partners %}
-							<div class="row partner-blck__brdr">
+						<div class="container-fluid my-2 w-100">
 
-								{# Our_partner Database partner_logo field#}
-								<div class="col-sm-3 no-padding partner-blck__brdr-r d-flex align-items-center justify-content-center">
-									<img src="{{ partner.partner_logo.url }}" alt="" class="p-2"height="160px" width="160px">
-								</div>
-								{# Our_partner Database partner_logo field#}
-								<div class="col-md-9 col-lg-9 no-padding t_cell">
-									<div class="partner__content partnership mt-md-4 text-center">
-										<h3>{{ partner.company }}</h3>
-										{# Our_partner Database company text field#}
-
-									{# Our_partner Database company text field#}
-									</div>
-								</div>
+							<div class="row mt-2 mt-xs-0">
+                                {% for partner in partners %}
+					<div class="col-lg-3 col-md-6 m-1 border">
+						<div class="clean_top p-2 feature-box text-center">
+							<div class="content">
+								<img src="{{ partner.partner_logo.url }}" alt="" height="160" width="160"/>
+                                {#								about us logo#}
+								<h3>{{ partner.company }}</h3>
 
 							</div>
-                             {% endfor %}
+						</div>
+					</div>
+                                {% endfor %}
+	                            </div>
+
 						</div>
 						<!-- About Section End-->
 

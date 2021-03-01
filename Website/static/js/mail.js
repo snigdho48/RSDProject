@@ -83,7 +83,7 @@ jQuery(function($) {"use strict";
 				var y = $('#cell').val();
 
 
-				if ((jQuery.type(y)=== "string" || x === 'Cell') && y.val().match(numericExpression)) {
+				if (jQuery.type(y)== "string" || x == 'Cell') {
 					$('#cell').addClass('error')
 					bool = false;
 				} else {
@@ -161,6 +161,14 @@ jQuery(function($) {"use strict";
 						$(abc).addClass('error');
 					}
 				}
+				if ($(abc).attr('id') == 'cell') {
+					if (($(abc).val() != "" || $(abc).val() != null) && ($(abc).val().match(numericExpression))) {
+						$(abc).removeClass('error');
+
+					} else {
+						$(abc).addClass('error');
+					}
+				}
 
 			}
 
@@ -175,5 +183,5 @@ jQuery(function($) {"use strict";
 	};
 
 	Site.initialize();
-})
+});
 

@@ -9,6 +9,7 @@ def home(request):
     data = Contact_Info.objects.all()
     product = Products.objects.all()
     posts = reversed(NewsandEvent.objects.all())
+    f_post=reversed(NewsandEvent.objects.all())
     brands = Brands.objects.all()
     overview = Company_Overview.objects.all()
     board_of_directors = Board_of_directors.objects.all()
@@ -21,7 +22,8 @@ def home(request):
                'links': links,
                'overview': overview,
                'image': image,
-               'board_of_directors': board_of_directors, }
+               'board_of_directors': board_of_directors,
+               'f_post': f_post}
     return render(request, 'index.html', context)
 
 
@@ -40,10 +42,12 @@ def about(request):
 def NewsList(request):
     links = Topbar_footer.objects.all()
     posts = reversed(NewsandEvent.objects.all())
+    f_post = reversed(NewsandEvent.objects.all())
     data = Contact_Info.objects.all()
     context = {'data': data,
                'po': posts,
                'links': links,
+               'f_post':f_post,
                }
 
     return render(request, 'News_and_events.html', context)
@@ -52,12 +56,14 @@ def NewsList(request):
 def NewsDetail(request, slug):
     posts = reversed(NewsandEvent.objects.all())
     links = Topbar_footer.objects.all()
+    f_post = reversed(NewsandEvent.objects.all())
     post = NewsandEvent.objects.get(slug=slug)
     data = Contact_Info.objects.all()
     context = {'data': data,
                'post': post,
                'links': links,
-               'po': posts, }
+               'po': posts,
+               'f_post':f_post}
     return render(request, 'Event_details.html', context)
 
 

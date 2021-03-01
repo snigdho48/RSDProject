@@ -66,7 +66,7 @@ class Company_Overview(models.Model):
     total_brands = models.IntegerField(verbose_name="Total Brands")
 
     def __str__(self):
-        return self.total_products
+        return f'Total Products:{str(self.total_products)}'
 
 
 class Products(models.Model):
