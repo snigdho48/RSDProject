@@ -145,10 +145,11 @@ class Contact(models.Model):
     email = models.EmailField(verbose_name="Requester Email")
     cell = models.CharField(max_length=14, verbose_name="Phone Number")
     message = models.TextField(max_length=500, verbose_name="Message")
-    created_at = models.DateTimeField(auto_now=False, auto_now_add=False)
+    sub_text=models.TextField(max_length=100,blank=True,verbose_name="Subject")
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.created_at
+        return f'{self.email} {self.created_at}'
 
 
 class Career(models.Model):

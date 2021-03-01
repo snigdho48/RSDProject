@@ -20,7 +20,7 @@ jQuery(function($) {"use strict";
 		validation : function() {
 			var bool = true;
 
-			$('#name,#sub,#email,#message').blur(function() {
+			$('#name,#sub,#email,#message,#cell').blur(function() {
 				validateForm2(this);
 			});
 
@@ -53,6 +53,19 @@ jQuery(function($) {"use strict";
 
 				}
 
+				var x = $('#cell').val();
+
+				if (x == null || x == "" || x == "Name") {
+					$('#cell').addClass('error')
+					bool = false;
+
+				} else {
+					i++;
+					$('#sub').removeClass('error');
+					comp_val = $('#sub').val();
+
+				}
+
 				var x = $('#email').val();
 
 				var atpos = x.indexOf("@");
@@ -67,6 +80,20 @@ jQuery(function($) {"use strict";
 					email_val = $('#email').val();
 
 				}
+				var y = $('#cell').val();
+
+
+				if ((jQuery.type(y)=== "string" || x === 'Cell') && y.val().match(numericExpression)) {
+					$('#cell').addClass('error')
+					bool = false;
+				} else {
+
+					i++;
+					$('#cell').removeClass('error');
+					cell_val = $('#cell').val();
+
+				}
+
 
 				msg_val = $('#message').val();
 				//alert(i);
@@ -86,6 +113,7 @@ jQuery(function($) {"use strict";
 						email : email_val,
 						company : comp_val,
 						msg : msg_val,
+						cell:cell_val,
 					}, function(data) {
 						//console.log(data)
 
@@ -95,6 +123,7 @@ jQuery(function($) {"use strict";
 								$('#email').val('');
 								$('#sub').val('');
 								$('#message').val('');
+								$('#cell').val('');
 								//$('#name,#sub,#email,#message').next().removeClass("focussed");
 								//$('.ch').css('top', 0)
 								//$('#success').find('div').fadeOut();
@@ -135,9 +164,9 @@ jQuery(function($) {"use strict";
 
 			}
 
-			var name_val = ''
+			var name_val = '';
 			var email_val = '';
-
+			var cell_val='';
 			var msg_val = '';
 			var comp_val = '';
 			var emailRegex = /^[a-zA-Z0-9._]+[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/;

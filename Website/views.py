@@ -1,6 +1,7 @@
 from typing import ContextManager
 from Website.models import *
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.views import generic
 
 
@@ -32,7 +33,7 @@ def about(request):
     context = {'data': data,
                'about': about,
                'links': links,
-               'po':posts,}
+               'po': posts, }
     return render(request, 'about.html', context)
 
 
@@ -56,7 +57,7 @@ def NewsDetail(request, slug):
     context = {'data': data,
                'post': post,
                'links': links,
-               'po':posts,}
+               'po': posts, }
     return render(request, 'Event_details.html', context)
 
 
@@ -68,7 +69,7 @@ def partnerships(request):
     context = {'data': data,
                'partners': partners,
                'links': links,
-               'po':posts,}
+               'po': posts, }
     return render(request, 'partnerships.html', context)
 
 
@@ -80,7 +81,7 @@ def products(request):
     context = {'data': data,
                'product': product,
                'links': links,
-               'po':posts,}
+               'po': posts, }
     return render(request, 'products.html', context)
 
 
@@ -92,7 +93,7 @@ def contact(request):
     context = {'data': data,
                'contact': contacts,
                'links': links,
-               'po':posts,}
+               'po': posts, }
     return render(request, 'contact.html', context)
 
 
@@ -108,7 +109,7 @@ def brands(request):
     context = {'data': data,
                'brands': brands,
                'links': links,
-               'po':posts,}
+               'po': posts, }
     return render(request, 'brands.html', context)
 
 
@@ -120,7 +121,7 @@ def career(request):
     context = {'data': data,
                'career': careers,
                'links': links,
-               'po': posts,}
+               'po': posts, }
     return render(request, 'career.html', context)
 
 
@@ -132,7 +133,7 @@ def catalog(request):
     context = {'products': product,
                'data': data,
                'links': links,
-               'po':posts,}
+               'po': posts, }
     return render(request, 'catalog.html', context)
 
 
@@ -144,9 +145,11 @@ def Subscribe(request):
             user.save()
             return redirect(request.META['HTTP_REFERER'])
         else:
+            messages.info(request, "Field Can't Be Empty")
             return redirect(request.META['HTTP_REFERER'])
     else:
         return redirect(request.META['HTTP_REFERER'])
+
 
 def Subscribe_footer(request):
     if request.method == 'POST':
@@ -156,6 +159,25 @@ def Subscribe_footer(request):
             user.save()
             return redirect(request.META['HTTP_REFERER'])
         else:
+            messages.info(request, "Email Can't Be Empty")
+            return redirect(request.META['HTTP_REFERER'])
+    else:
+        return redirect(request.META['HTTP_REFERER'])
+
+
+def send_massage(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        name = request.POST['name']
+        massage = request.POST['message']
+        subject = request.POST['subject']
+        cell = request.POST['Cell']
+        if email != '' or name != '' or subject != '' or cell != '' or massage != '':
+            user = Contact.objects.create(name=name, email=email, message=massage, sub_text=subject, cell=cell)
+            user.save()
+            return redirect(request.META['HTTP_REFERER'])
+        else:
+            messages.info(request, "Field Can't Be Empty")
             return redirect(request.META['HTTP_REFERER'])
     else:
         return redirect(request.META['HTTP_REFERER'])
