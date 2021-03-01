@@ -8903,6 +8903,17 @@ a.btn.xplus-btn.pricing.active:hover {
 }
 .c_border{
 
-	border:2px solid #479c18;
+	border-top-width: 4px;
+	border-top-style: solid;
+	border-top-color: #479c18;
+	border-right-width: 4px;
+	border-right-style: solid;
+	border-right-color: #479c18;
+	border-left-width: 4px;
+	border-left-style: solid;
+	border-left-color: #479c18;
+	border-bottom-width: 4px;
+	border-bottom-style: solid;
+	border-bottom-color: #479c18;
 
 }
