@@ -92,7 +92,9 @@
 		<div class="container">
 			<div class="bor_top clearfix">
 				<p>
-					<a href="#" target="_blank">Copyright© RS Dairy And Agro Foods Industries Ltd.</a>
+                    {% for link in links %}
+					<a href="#" target="_blank">Copyright &copy{{ link.copyright_text }} RS Dairy And Agro Foods Industries Ltd.</a>
+					{% endfor %}
 				</p>
 
 			</div>
