@@ -1,153 +1,56 @@
 {% extends 'base.html' %}
 {% load static %}
 
-	{% block title %}
-        RS Group-RS Dairy And Agro Foods Industries Ltd.
+{% block title %}
+RS Group-RS Dairy And Agro Foods Industries Ltd.
 
-    {% endblock %}
-    {% block css %}
-        <link href="{% static 'css/index.css'%}" rel="stylesheet" type="text/css" />
-        <link href="{% static 'css/theme-color/default.css'%}" rel="stylesheet" type="text/css" id="theme-color" />
+{% endblock %}
+{% block css %}
+<link href="{% static 'css/index.css'%}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/theme-color/default.css'%}" rel="stylesheet" type="text/css" id="theme-color" />
 
-    {% endblock %}
+{% endblock %}
 
-    {% block content %}
+{% block content %}
 
 
 
-        <!--  Main Banner Start Here-->
-	    <div class="main-banner banner_up">
-		    <div id="rev_slider_34_1_wrapper" class="rev_slider_wrapper" data-alias="news-gallery34">
-			    <!-- START REVOLUTION SLIDER 5.0.7 fullwidth mode -->
-			    <div id="rev_slider_34_1" class="rev_slider" data-version="5.0.7">
-				    <ul>
-                        {% for banner in banners %}
-					    <!-- SLIDE  -->
-					    <li data-index="rs-129">
-						    <!-- MAIN IMAGE -->
-						    <img src="{{ banner.slide_image1.url }}" alt="" class="rev-slidebg">
-                            {#                            slider image#}
-						    <!-- LAYERS -->
-						    <!-- LAYER NR. 2 -->
-						    <div class="tp-caption Newspaper-Title tp-resizeme "
-						         id="slide-129-layer-1"
-						         data-x="['left','left','left','left']" data-hoffset="['100','50','50','30']"
-						         data-y="['top','top','top','center']" data-voffset="['230','135','50','0']"
-						         data-fontsize="['50','50','50','30']"
-						         data-lineheight="['55','55','55','35']"
-						         data-width="['700','700','700','420']"
-						         data-height="none"
-							data-whitespace="normal"
-							data-transform_idle="o:1;"
-							data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-							data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
-							data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-							data-mask_out="x:0;y:0;s:inherit;e:inherit;"
-							data-start="1000"
-							data-splitin="none"
-							data-splitout="none"
-							data-responsive_offset="on" >
-								<div class="banner-text">
-									<h2>{{ banner.slide_title1 }}</h2>
-									<p>
-										{{ banner.slide_content1 }}
-									</p>
-								</div>
-						    </div>
-					    </li>
-					    <!-- SLIDE  -->
-					    <li data-index="rs-130" data-title="" data-description="">
-						    <!-- MAIN IMAGE -->
-						    <img src="{{ banner.slide_image2.url }}" alt="" class="rev-slidebg">
-                            {#							slider image#}
-						    <!-- LAYERS -->
-						    <!-- LAYER NR. 2 -->
-						    <div class="tp-caption Newspaper-Title   tp-resizeme "
-						         id="slide-130-layer-1"
-						         data-x="['left','left','left','left']" data-hoffset="['100','50','50','30']"
-						         data-y="['top','top','top','center']" data-voffset="['230','135','50','0']"
-						         data-fontsize="['50','50','50','30']"
-						         data-lineheight="['55','55','55','35']"
-						         data-width="['700','700','700','420']"
-						         data-height="none"
-							data-whitespace="normal"
-							data-transform_idle="o:1;"
-							data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-							data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
-							data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-							data-mask_out="x:0;y:0;s:inherit;e:inherit;"
-							data-start="1000"
-							data-splitin="none"
-							data-splitout="none"
-							data-responsive_offset="on">
-								<div class="banner-text">
-									<h2>{{ banner.slide_title2 }}</h2>
-									<p>
-										{{ banner.slide_content2 }}
-									</p>
-								</div>
-						    </div>
-					    </li>
-					    <!-- SLIDE  -->
-					    <li data-index="rs-131">
-						    <!-- MAIN IMAGE -->
-						    <img src="{{ banner.slide_image3.url }}" alt="" class="rev-slidebg ">
-                            {#							slider image#}
-
-						    <!-- LAYERS -->
-						    <!-- LAYER NR. 2 -->
-						    <div class="tp-caption Newspaper-Title   tp-resizeme "
-						         id="slide-131-layer-1"
-						         data-x="['left','left','left','left']" data-hoffset="['100','50','50','30']"
-						         data-y="['top','top','top','center']" data-voffset="['230','135','50','0']"
-						         data-fontsize="['50','50','50','30']"
-						         data-lineheight="['55','55','55','35']"
-						         data-width="['700','700','700','420']"
-						         data-height="none"
-						         data-whitespace="normal"
-						         data-transform_idle="o:1;"
-						         data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-						         data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
-						         data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-						         data-mask_out="x:0;y:0;s:inherit;e:inherit;"
-						         data-start="1000"
-						         data-splitin="none"
-						         data-splitout="none"
-						         data-responsive_offset="on">
-							    <div class="banner-text">
-								    <h2>{{ banner.slide_title3 }}</h2>
-								    <p>
-									    {{ banner.slide_content3 }}
-								    </p>
-                                    {#									slider details#}
-
-							    </div>
-						    </div>
-					    </li>
-                        {% endfor %}
-					    <!-- SLIDE  -->
-				    </ul>
-				    <div class="tp-bannertimer tp-bottom"></div>
-			    </div>
-		    </div>
-	    </div>
-		<!--  Main Banner End Here-->
-
-		<!-- About -->
-		<section class="padding ptb-xs-40">
-			<div class="container">
-				<div class="row pb-30">
-					<div class="col-md-4 d-flex align-items-center">
-						<div class="section_tit">
-							<h2>About Us</h2>
-							<span class="b-line l-left sm-l-center my"></span>
+<!--  Main Banner Start Here-->
+<div class="main-banner banner_up">
+	<div id="rev_slider_34_1_wrapper" class="rev_slider_wrapper" data-alias="news-gallery34">
+		<!-- START REVOLUTION SLIDER 5.0.7 fullwidth mode -->
+		<div id="rev_slider_34_1" class="rev_slider" data-version="5.0.7">
+			<ul>
+				{% for banner in banners %}
+				<!-- SLIDE  -->
+				<li data-index="rs-129">
+					<!-- MAIN IMAGE -->
+					<img src="{{ banner.slide_image1.url }}" alt="" class="rev-slidebg">
+					{# slider image#}
+					<!-- LAYERS -->
+					<!-- LAYER NR. 2 -->
+					<div class="tp-caption Newspaper-Title tp-resizeme " id="slide-129-layer-1"
+						data-x="['left','left','left','left']" data-hoffset="['100','50','50','30']"
+						data-y="['top','top','top','center']" data-voffset="['230','135','50','0']"
+						data-fontsize="['50','50','50','30']" data-lineheight="['55','55','55','35']"
+						data-width="['700','700','700','420']" data-height="none" data-whitespace="normal"
+						data-transform_idle="o:1;"
+						data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+						data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
+						data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:0;y:0;s:inherit;e:inherit;"
+						data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on">
+						<div class="banner-text">
+							<h2>{{ banner.slide_title1 }}</h2>
+							<p>
+								{{ banner.slide_content1 }}
+							</p>
 						</div>
 					</div>
 				</li>
 				<!-- SLIDE  -->
 				<li data-index="rs-130" data-title="" data-description="">
 					<!-- MAIN IMAGE -->
-					<img src="{% static 'images/banner/h_banner.png' %}" alt="" class="rev-slidebg">
+					<img src="{{ banner.slide_image2.url }}" alt="" class="rev-slidebg">
 					{# slider image#}
 					<!-- LAYERS -->
 					<!-- LAYER NR. 2 -->
@@ -162,20 +65,17 @@
 						data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:0;y:0;s:inherit;e:inherit;"
 						data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on">
 						<div class="banner-text">
-							<span class="sub-text">we are here to help you</span>
-							<h2>Professional Cleaning Services Provider</h2>
+							<h2>{{ banner.slide_title2 }}</h2>
 							<p>
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem
-								Ipsum has been the industry's standard dummy text ever.
+								{{ banner.slide_content2 }}
 							</p>
-							<a class="btn btn-text align-self-center" href="#"> Read More</a>
 						</div>
 					</div>
 				</li>
 				<!-- SLIDE  -->
 				<li data-index="rs-131">
 					<!-- MAIN IMAGE -->
-					<img src="{% static 'images/banner/h_banner.png' %}" alt="" class="rev-slidebg ">
+					<img src="{{ banner.slide_image3.url }}" alt="" class="rev-slidebg ">
 					{# slider image#}
 
 					<!-- LAYERS -->
@@ -191,18 +91,16 @@
 						data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:0;y:0;s:inherit;e:inherit;"
 						data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on">
 						<div class="banner-text">
-							<span class="sub-text">we are here to help you</span>
-							<h2>We Are Cleaning Manager Always at Your Service.</h2>
+							<h2>{{ banner.slide_title3 }}</h2>
 							<p>
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem
-								Ipsum has been the industry's standard dummy text ever.
+								{{ banner.slide_content3 }}
 							</p>
-							<a class="btn btn-text align-self-center" href="#"> Read More</a>
 							{# slider details#}
 
 						</div>
 					</div>
 				</li>
+				{% endfor %}
 				<!-- SLIDE  -->
 			</ul>
 			<div class="tp-bannertimer tp-bottom"></div>
@@ -303,7 +201,7 @@
 					<h2>Our Brands <span class="b-line mt-2"></span></h2>
 
 					<p>
-						See our top brands here and know about them more
+						Here is our top Brands
 					</p>
 				</div>
 			</div>
@@ -327,47 +225,36 @@
 				</div>
 			</div>
 
-		<!-- Section -->
-		<section class="question_sec pt-90 pt-xs-40">
-			<div class="container">
-				<div class="row">
+		</div>
 
-					<div class="col-lg-8">
-						<div class="email_gardener">
-							<div class="section_tit light-color">
-								<h2>Subscribe For Information</h2>
-								<span class="three_line"></span>
-							</div>
-							<div class="text_heading mb-30 light-color">
-								<p class="text-justify">
-                                    HELLO THIS IS SUBSCRIBE STATIC TEXT.
-								</p>
-							</div>
-							<div class="m-0 p-1 email_fill">
-								<form class="w-100 " action="subscribe/" method="post">
-                                    {% csrf_token %}
-									<div class="form-field">
-                                        <label for="email"></label>
-                                        <input class="input col-8" id="email" type="email" name="email" placeholder="Your Email">
-                                        <input class="btn btn-text col-3" type="Submit" value="Subscribe">
-									</div>
-								</form>
-							</div>
-						</div>
+	</div>
+</section>
+<!-- Service_Section_End -->
+
+<!-- Section -->
+<section class="question_sec pt-90 pt-xs-40">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-lg-8">
+				<div class="email_gardener">
+					<div class="section_tit light-color">
+						<h2>Subscribe For Information</h2>
+						<span class="three_line"></span>
 					</div>
 					<div class="text_heading mb-30 light-color">
 						<p class="text-justify">
-							Lorem ipsum dolor sit amet, ligula vestibulum nunc dis ipsum, et nam, cras nec lacus amet,
-							ut mauris erat mattis neque a quis. Vivamus donec dolor consectetuer congue.
+							HELLO THIS IS SUBSCRIBE STATIC TEXT.
 						</p>
 					</div>
-					<div class="email_fill">
-						<form class="w-100">
+					<div class="m-0 p-1 email_fill">
+						<form class="w-100 " action="subscribe/" method="post">
+							{% csrf_token %}
 							<div class="form-field">
-								<input class="input" id="email" type="text" name="form-email" placeholder="Your Email">
-								<button class="btn-text" type="button" id="submit" name="button">
-									Subscribe
-								</button>
+								<label for="email"></label>
+								<input class="input col-8" id="email" type="email" name="email"
+									placeholder="Your Email">
+								<input class="btn btn-text col-3" type="Submit" value="Subscribe">
 							</div>
 						</form>
 					</div>
@@ -392,7 +279,6 @@
 			<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
 				<div class="section-title_home">
 					<h2>Board Of Directors <span class="b-line mt-2"></span></h2>
-
 					<p>
 						Although corporations worldwide utilize the board structure, there’s little consensus about a
 						board’s exact roles and purposes of RS Dairy And Agro Foods Industries Ltd.
@@ -404,16 +290,16 @@
 
 
 
-		<div class="row">
+		<div class="row d-flex justify-content-center">
 			{% for board in board_of_directors %}
-			<div class="col-lg-3 col-md-6">
+			<div class="col-lg-3 col-md-6 p-2">
 				<div class="team_box img-scale">
 					<div class="team_picher">
 						<figure>
-							<img src="{{board.image.url}}" alt="">
+							<img src="{{board.image.url}}" alt="" class="c_border" height="265x">
 						</figure>
 					</div>
-					<div class="team_detail team_text">
+					<div class="team_detail team_text ">
 						<h3>{{ board.name }}</h3>
 						<span>{{ board.designation }}</span>
 					</div>
@@ -429,24 +315,14 @@
 </section>
 <!-- Team_End -->
 
-				<div class="row d-flex justify-content-center">
-					{% for board in board_of_directors %}
-					<div class="col-lg-3 col-md-6 p-2">
-						<div class="team_box img-scale">
-							<div class="team_picher">
-								<figure>
-									<img src="{{board.image.url}}" alt="" class="c_border" height="265x">
-								</figure>
-							</div>
-							<div class="team_detail team_text ">
-								<h3>{{ board.name }}</h3>
-								<span>{{ board.designation }}</span>
-							</div>
-
-						</div>
-					</div>
-                     {% endfor %}
-
+<!-- Counter_Section -->
+<section class="padding ptb-xs-40 counter_sec">
+	<div class="container">
+		<div class="row text-center light-color mb-40 mb-xs-30">
+			<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+				<div class="section-title_home">
+					<h2>Company Overview</h2>
+					<span class="b-line"></span>
 					<p>
 						RS Dairy And Agro Foods Industries Ltd. is a new company that provides quality FMCG food
 						products,dairy products in food industries for businesses in Bangladesh to improve its consumers
@@ -462,12 +338,13 @@
 <section class="counter_box">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-10 offset-lg-1">
+			{% for overviews in overview %}
+			{% if forloop.counter <= 1 %} <div class="col-lg-10 offset-lg-1">
 				<div class="row bg_withe">
 					<div class="col-lg-3 col-md-6">
 						<div class="single-fact">
 
-							<span class="counter" data-count="40">0</span>
+							<span class="counter" data-count="{{ overviews.total_products }}">0</span>
 							{# counter database#}
 							<p>
 								Total Products
@@ -477,49 +354,28 @@
 					<div class="col-lg-3 col-md-6 mt-xs-30">
 						<div class="single-fact">
 
-			</div>
-		</section>
+							<span class="counter" data-count="{{ overviews.active_employees }}">0</span>
+							{# counter database#}
+							<p>
+								Active Employees
+							</p>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 mt-sm-30 mt-xs-30">
+						<div class="single-fact">
 
-		<section class="counter_box">
-			<div class="container">
-				<div class="row">
-                    {% for overviews in overview %}
-                        {% if forloop.counter <= 1 %}
-					<div class="col-lg-10 offset-lg-1">
-						<div class="row bg_withe">
-							<div class="col-lg-3 col-md-6">
-								<div class="single-fact">
-
-									<span class="counter" data-count="{{ overviews.total_products }}">0</span>
-									{#									counter database#}
-									<p>
-										Total Products
-									</p>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-6 mt-xs-30">
-								<div class="single-fact">
-
-									<span class="counter" data-count="{{ overviews.active_employees }}">0</span>
-{#									counter database#}
-									<p>
-										Active Employees
-									</p>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-6 mt-sm-30 mt-xs-30">
-								<div class="single-fact">
-
-									<span class="counter" data-count="{{ overviews.active_dealers }}">0</span>
-									{#									counter database#}
-
-							<span class="counter" data-count="20">0</span>
+							<span class="counter" data-count="{{ overviews.active_dealers }}">0</span>
 							{# counter database#}
 
-									<span class="counter" data-count="{{ overviews.total_brands }}">0</span>
-									{#									counter database#}
+							<p>
+								Active Dealers
+							</p>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 mt-sm-30 mt-xs-30">
+						<div class="single-fact">
 
-							<span class="counter" data-count="40">0</span>
+							<span class="counter" data-count="{{ overviews.total_brands }}">0</span>
 							{# counter database#}
 
 							<p>
@@ -527,11 +383,12 @@
 							</p>
 						</div>
 					</div>
-                        {% endif %}
-                    {% endfor %}
+
 				</div>
-			</div>
 		</div>
+		{% endif %}
+		{% endfor %}
+	</div>
 	</div>
 </section>
 <!-- Counter_Section_End -->
@@ -547,6 +404,8 @@
 	</div>
 	<!-- work Filter -->
 	<div class="row">
+
+
 		<div class="col-lg-8 offset-lg-2">
 			<ul class="container-filter categories-filter">
 				<li>
@@ -565,7 +424,7 @@
 
 				<div class="service_box ml-lg-auto">
 					<figure>
-						<img src="{{ pro.p_image.url }}" alt="" height="220px">
+						<img src="{{ pro.p_image.url }}" alt="" />
 					</figure>
 					<h3><a href="#">{{pro.p_title}}</a></h3>
 				</div>
@@ -656,25 +515,19 @@
 				<div class="section-title_home">
 					<h2>News & Events <span class="b-line mt-2"></span></h2>
 				</div>
-				<div class="row">
-                    {% for post in f_post %}
-                        {% if forloop.counter <= 3 %}
-					<div class="col-lg-4 mt-2">
-						<div class="img-scale">
-							<figure>
-								<img src="{{ post.image.url }}" alt="" height="220px">
-                                {#								news and event image#}
-							</figure>
-							<div class="latest__block-post gray-bg">
-								<div class="meta-post">
-									{{ post.created_at.date }}
-								</div>
-								<h3 class="latest__block-title"><a href="{% url 'News_detail' post.slug %}">{{ post.title }}</a></h3>
-
-								<div class="flat-link flat-arrow sm  ">
-									<a href="{% url 'News_detail' post.slug %}" class="more_btn__block">More <i class="fa fa-angle-right"></i> </a>
-								</div>
-							</div>
+			</div>
+		</div>
+		<div class="row">
+			{% for post in f_post %}
+			{% if forloop.counter <= 3 %} <div class="col-lg-4 mt-2">
+				<div class="img-scale">
+					<figure>
+						<img src="{{ post.image.url }}" alt="" height="220px">
+						{# news and event image#}
+					</figure>
+					<div class="latest__block-post gray-bg">
+						<div class="meta-post">
+							{{ post.created_at.date }}
 						</div>
 						<h3 class="latest__block-title"><a href="{% url 'News_detail' post.slug %}">{{ post.title }}</a>
 						</h3>

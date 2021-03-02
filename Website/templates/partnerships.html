@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
@@ -6,7 +7,7 @@
 
 {% block css %}
 <style>
-	.bg-img {
+	.bg-img{
 		background: url(../static/images/banner/u_banner.jpg) 0 36% no-repeat;
 		background-size: cover;
 
@@ -17,75 +18,58 @@
 
 {% block content %}
 
-<!-- Intro Section -->
-<section class="inner-intro bg-img light-color overlay-before parallax-background">
-	<div class="container">
-		<div class="row title">
-			<div class="title_row">
-				<h1 data-title="Partnerships"><span>Partnerships</span></h1>
+		<!-- Intro Section -->
+		<section class="inner-intro bg-img light-color overlay-before parallax-background">
+			<div class="container">
+				<div class="row title">
+					<div class="title_row">
+						<h1 data-title="Partnerships"><span>Partnerships</span></h1>
+						
+
+					</div>
+
+				</div>
 			</div>
+		</section>
+		<!-- Intro Section End-->
 
-		</div>
-	</div>
-</section>
-<!-- Intro Section End-->
+		<!-- CONTENT -->
 
-<!-- CONTENT -->
+		<section class="padding ptb-xs-40">
+			<div class="container">
 
-<section class="padding ptb-xs-40">
-	<div class="container">
-
-		<div class="row">
-			<div class="col-md-3 col-lg-3 mt-xs-40 pb-xs-40">
-				<div class="tab-title">
-					<ul class="clearfix">
-						<li>
-							<a href="{% url 'home' %}">Company</a>
-						</li>
-						<li>
-							<a href="{%  url 'career' %}"">Careers</a>
+				<div class="row">
+					<div class="col-md-3 col-lg-3 mt-xs-40 pb-xs-40">
+						<div class="tab-title">
+							<ul class="clearfix">
+								<li>
+									<a href="{% url 'home' %}">Company</a>
+								</li>
+								<li>
+									<a href="{%  url 'career' %}"">Careers</a>
 
 								</li>
 								<li>
-									<a href=" {% url 'partnerships' %}" class="active">Partnerships</a>
+									<a href="{% url 'partnerships' %}" class="active">Partnerships</a>
 
-						</li>
+								</li>
 
-					</ul>
-				</div>
+							</ul>
+						</div>
+						
+					</div>
 
-			</div>
-
-			<div class="col-md-9 col-lg-9">
-				<div class="tab-content">
-
-					<div class="row">
-						<div class="col-md-12 col-lg-12">
-							<h2 class="">Our Partnerships</h2>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut
-								labore et dolore magna aliqua. Enim minim veniam quis nostrud exercitation ullamco
-								laboris nisi aliquip exea commodo ipsum dolor sit amet consectetur adipisicing elit
-								eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								laboris nisi aliquip exea commodo ipsum dolor sit amet consectetur adipisicing elit
-								eiusmod tempor incididunt ut labore et dolore magna aliqua.
-							</p>
+					<div class="col-md-9 col-lg-9">
+						<div class="tab-content">
 
 							<div class="row">
 								<div class="col-md-12 col-lg-12">
 									<h2 class="">Our Partnerships</h2>
 
-					</div>
+								</div>
 
-				</div>
+							</div>
 
-				<!-- About Section -->
-				<div class="pt-40">
-					<div class="row partner-blck__brdr mb-40">
-						{# Our_partner Database partner_logo field#}
-						<div
-							class="col-sm-3 no-padding partner-blck__brdr-r d-flex align-items-center justify-content-center">
-							<img src="{% static 'images/2.png' %}" alt="">
 						</div>
 
 						<!-- About Section -->
@@ -110,17 +94,13 @@
 						<!-- About Section End-->
 
 					</div>
+
 				</div>
-				<!-- About Section End-->
-
 			</div>
-
-		</div>
-	</div>
-</section>
+		</section>
 
 {% endblock %}
 {% block js %}
-<script src="{%static 'js/jquery.appear.js'%}" type="text/javascript"></script>
+			<script src="{%static 'js/jquery.appear.js'%}" type="text/javascript"></script>
 
 {% endblock %}
