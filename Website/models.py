@@ -53,6 +53,7 @@ class Topbar_footer(models.Model):
     googleplus_link = models.TextField(verbose_name="GooglePlus Link")
     linkedin_link = models.TextField(verbose_name="Linkedin Link")
     copyright_text = models.TextField(max_length=50, verbose_name="Copyright")
+    f_address = models.TextField(verbose_name="Footer_address",blank=True,null=True)
 
     def __str__(self):
         return self.facebook_link

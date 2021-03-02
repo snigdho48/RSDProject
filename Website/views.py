@@ -152,6 +152,7 @@ def Subscribe(request):
         if email != '':
             user = subscribe.objects.create(email=email)
             user.save()
+            messages.info(request, "Success")
             return redirect(request.META['HTTP_REFERER'])
         else:
             messages.info(request, "Field Can't Be Empty")
@@ -166,6 +167,7 @@ def Subscribe_footer(request):
         if email != '':
             user = subscribe.objects.create(email=email)
             user.save()
+            messages.info(request, "Success")
             return redirect(request.META['HTTP_REFERER'])
         else:
             messages.info(request, "Email Can't Be Empty")
@@ -184,6 +186,7 @@ def send_massage(request):
         if email != '' or name != '' or subject != '' or cell != '' or massage != '':
             user = Contact.objects.create(name=name, email=email, message=massage, sub_text=subject, cell=cell)
             user.save()
+            messages.info(request, "Success")
             return redirect(request.META['HTTP_REFERER'])
         else:
             messages.info(request, "Field Can't Be Empty")
