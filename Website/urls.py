@@ -1,5 +1,6 @@
 from django.urls import path
 
+import Website
 from . import views
 
 
@@ -19,3 +20,7 @@ urlpatterns = [
         path('NewsList/', views.NewsList, name='NewsList'),
         path('<slug:slug>/', views.NewsDetail, name='News_detail'),
 ]
+
+handler404 = Website.views.error_404
+handler500 = Website.views.error_404
+

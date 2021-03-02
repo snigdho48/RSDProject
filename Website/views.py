@@ -106,8 +106,9 @@ def contact(request):
     return render(request, 'contact.html', context)
 
 
-def handler404(request, exception=None):
-    return render(request, '404.html', status=404)
+def error_404(request, exception=None):
+    data={}
+    return render(request, '404.html',data)
 
 
 def brands(request):
