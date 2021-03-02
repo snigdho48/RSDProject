@@ -378,10 +378,10 @@
 	color: red;
 }
 .team_text {
-	border-top: 1px solid #dadada;
-	border-bottom: 1px solid #dadada;
-	margin: 10px 0px 15px;
-	padding: 10px 0px;
+	border-top: 2px solid #479c18;
+	border-bottom: 2px solid #479c18;
+	margin: 5px 0px 10px;
+	padding: 5px 0px;
 }
 .team_detail h3, .team_text p {
 	margin: 0px;

@@ -22,10 +22,11 @@
 			    <!-- START REVOLUTION SLIDER 5.0.7 fullwidth mode -->
 			    <div id="rev_slider_34_1" class="rev_slider" data-version="5.0.7">
 				    <ul>
+                        {% for banner in banners %}
 					    <!-- SLIDE  -->
 					    <li data-index="rs-129">
 						    <!-- MAIN IMAGE -->
-						    <img src="{% static 'images/banner/h_banner.png' %}" alt="" class="rev-slidebg">
+						    <img src="{{ banner.slide_image1.url }}" alt="" class="rev-slidebg">
                             {#                            slider image#}
 						    <!-- LAYERS -->
 						    <!-- LAYER NR. 2 -->
@@ -48,20 +49,17 @@
 							data-splitout="none"
 							data-responsive_offset="on" >
 								<div class="banner-text">
-									<span class="sub-text">we are here to help you</span>
-									<h2>The best cleaning company in the country</h2>
+									<h2>{{ banner.slide_title1 }}</h2>
 									<p>
-										Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem
-										Ipsum has been the industry's standard dummy text ever.
+										{{ banner.slide_content1 }}
 									</p>
-									<a class="btn btn-text align-self-center" href="#"> Read More</a>
 								</div>
 						    </div>
 					    </li>
 					    <!-- SLIDE  -->
 					    <li data-index="rs-130" data-title="" data-description="">
 						    <!-- MAIN IMAGE -->
-						    <img src="{% static 'images/banner/h_banner.png' %}" alt="" class="rev-slidebg">
+						    <img src="{{ banner.slide_image2.url }}" alt="" class="rev-slidebg">
                             {#							slider image#}
 						    <!-- LAYERS -->
 						    <!-- LAYER NR. 2 -->
@@ -84,20 +82,17 @@
 							data-splitout="none"
 							data-responsive_offset="on">
 								<div class="banner-text">
-									<span class="sub-text">we are here to help you</span>
-									<h2>Professional Cleaning Services Provider</h2>
+									<h2>{{ banner.slide_title2 }}</h2>
 									<p>
-										Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem
-										Ipsum has been the industry's standard dummy text ever.
+										{{ banner.slide_content2 }}
 									</p>
-									<a class="btn btn-text align-self-center" href="#"> Read More</a>
 								</div>
 						    </div>
 					    </li>
 					    <!-- SLIDE  -->
 					    <li data-index="rs-131">
 						    <!-- MAIN IMAGE -->
-						    <img src="{% static 'images/banner/h_banner.png' %}" alt="" class="rev-slidebg ">
+						    <img src="{{ banner.slide_image3.url }}" alt="" class="rev-slidebg ">
                             {#							slider image#}
 
 						    <!-- LAYERS -->
@@ -121,18 +116,16 @@
 						         data-splitout="none"
 						         data-responsive_offset="on">
 							    <div class="banner-text">
-								    <span class="sub-text">we are here to help you</span>
-								    <h2>We Are Cleaning Manager Always at Your Service.</h2>
+								    <h2>{{ banner.slide_title3 }}</h2>
 								    <p>
-									    Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem
-									    Ipsum has been the industry's standard dummy text ever.
+									    {{ banner.slide_content3 }}
 								    </p>
-								    <a class="btn btn-text align-self-center" href="#"> Read More</a>
                                     {#									slider details#}
 
 							    </div>
 						    </div>
 					    </li>
+                        {% endfor %}
 					    <!-- SLIDE  -->
 				    </ul>
 				    <div class="tp-bannertimer tp-bottom"></div>
@@ -319,16 +312,16 @@
 
 
 
-				<div class="row">
+				<div class="row d-flex justify-content-center">
 					{% for board in board_of_directors %}
-					<div class="col-lg-3 col-md-6">
+					<div class="col-lg-3 col-md-6 p-2">
 						<div class="team_box img-scale">
 							<div class="team_picher">
 								<figure>
-									<img src="{{board.image.url}}" alt="">
+									<img src="{{board.image.url}}" alt="" class="c_border" height="265x">
 								</figure>
 							</div>
-							<div class="team_detail team_text">
+							<div class="team_detail team_text ">
 								<h3>{{ board.name }}</h3>
 								<span>{{ board.designation }}</span>
 							</div>
@@ -365,12 +358,14 @@
 		<section class="counter_box">
 			<div class="container">
 				<div class="row">
+                    {% for overviews in overview %}
+                        {% if forloop.counter <= 1 %}
 					<div class="col-lg-10 offset-lg-1">
 						<div class="row bg_withe">
 							<div class="col-lg-3 col-md-6">
 								<div class="single-fact">
 
-									<span class="counter" data-count="40">0</span>
+									<span class="counter" data-count="{{ overviews.total_products }}">0</span>
 									{#									counter database#}
 									<p>
 										Total Products
@@ -380,7 +375,7 @@
 							<div class="col-lg-3 col-md-6 mt-xs-30">
 								<div class="single-fact">
 
-									<span class="counter" data-count="10">0</span>
+									<span class="counter" data-count="{{ overviews.active_employees }}">0</span>
 {#									counter database#}
 									<p>
 										Active Employees
@@ -390,7 +385,7 @@
 							<div class="col-lg-3 col-md-6 mt-sm-30 mt-xs-30">
 								<div class="single-fact">
 
-									<span class="counter" data-count="20">0</span>
+									<span class="counter" data-count="{{ overviews.active_dealers }}">0</span>
 									{#									counter database#}
 
 									<p>
@@ -401,7 +396,7 @@
 							<div class="col-lg-3 col-md-6 mt-sm-30 mt-xs-30">
 								<div class="single-fact">
 
-									<span class="counter" data-count="40">0</span>
+									<span class="counter" data-count="{{ overviews.total_brands }}">0</span>
 									{#									counter database#}
 
 									<p>
@@ -412,6 +407,8 @@
 
 						</div>
 					</div>
+                        {% endif %}
+                    {% endfor %}
 				</div>
 			</div>
 		</section>
@@ -551,7 +548,7 @@
 					</div>
 				</div>
 				<div class="row">
-                    {% for post in posts %}
+                    {% for post in f_post %}
                         {% if forloop.counter <= 3 %}
 					<div class="col-lg-4 mt-2">
 						<div class="img-scale">
