@@ -17,34 +17,35 @@
 
 
 
-<!-- Intro Section -->
-<section class="inner-intro bg-img light-color overlay-before parallax-background">
-	<div class="container">
-		<div class="row title">
-			<div class="title_row">
-				<h1 data-title="Career"><span>Career</span></h1>
+    <!-- Intro Section -->
+    <section class="inner-intro bg-img light-color overlay-before parallax-background">
+        <div class="container">
+            <div class="row title">
+                <div class="title_row">
+                    <h1 data-title="Career"><span>Career</span></h1>
+      		
+      	</div>
+        
+      </div>
+    </div>
+  </section>
+ <!-- Intro Section End-->
+		
+		
+  <!-- CONTENT --> 
+  
+  <section class="padding pt-xs-40">
+				<div class="container">
+					
+					<div class="row">
 
-			</div>
-
-		</div>
-	</div>
-</section>
-<!-- Intro Section End-->
-
-
-<!-- CONTENT -->
-
-<section class="padding pt-xs-40">
-	<div class="container">
-
-		<div class="row">
-			<div class="col-md-3 col-lg-3 mt-xs-40 pb-xs-40">
-				<div class="tab-title">
-					<ul class="clearfix">
-						<li>
-							<a href="{% url 'home' %}">Company</a>
-						</li>
-						<!-- <li>
+					<div class="col-md-3 col-lg-3 mt-xs-40 pb-xs-40">
+						<div class="tab-title">
+								<ul class="clearfix">
+									<li>
+										<a href="{% url 'home' %}">Company</a>
+									</li>
+									<!-- <li>
 									<a href="#!">History</a>
 										
 									</li> -->
@@ -60,61 +61,61 @@
                                         <a href="leadership.html">Leadership</a>
 
                                     </li> -->
-					</ul>
-				</div>
-			</div>
+                                </ul>
+                        </div>
+                    </div>
 
-			<div class="col-md-9 col-lg-9">
-				<div class="tab-content">
+                        <div class="col-md-9 col-lg-9">
+                            <div class="tab-content">
 
-					<div class="row">
-						<div class="col-md-12 col-lg-12">
-							<h2 class="">Career</h2>
-						</div>
+								<div class="row">
 
-					</div>
+									<div class="col-md-12 col-lg-12">
+										<h2 class="">Career</h2>
+										<p>
+											Lorem ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim minim veniam quis nostrud exercitation ullamco laboris nisi aliquip exea commodo ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua.
+											laboris nisi aliquip exea commodo ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua.
+										</p>
+	
+									</div>
 
-				</div>
-
-
-				<!-- About Section -->
-
-				<div class="anim-section creer_page mt-30">
-					<div id="accordion" role="tablist" aria-multiselectable="true">
-
-						<div class="card">
-							<div class="card-header" role="tab" id="headingTwo">
-								{# Career Database Job_title Field #}
-								<h5 class="mb-0 panel-title"><a class="collapsed" data-toggle="collapse"
-										data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
-										aria-controls="collapseTwo"> Duis aute irure dolor in reprehenderit <i
-											class="fa fa-plus collape-plus"></i> </a></h5>
+								</div>
+	
 							</div>
-							{# Career Database Job_title Field #}
-							<div id="collapseTwo" class="collapse bg-custom" role="tabpanel"
-								aria-labelledby="headingTwo">
-								<div class="card-block">
-									{#Career Database Description Field#}
-									<p>
-										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-										richardson ad squid. 3 wolf moon officia aute, non
-										cupidatat skateboard dolor brunch.
-									</p>
-									{#Career Database Description Field#}
+							
+						
+						<!-- About Section -->
+				{% for info in career %}
+			<div class="anim-section creer_page mt-30">
+						<div id="accordion" role="tablist" aria-multiselectable="true">
+							
+							<div class="card">
+								<div class="card-header" role="tab" id="headingTwo">
+									{# Career Database Job_title Field #}
+									<h5 class="mb-0 panel-title"><a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> {{info.job_title}} <i class="fa fa-plus collape-plus"></i> </a></h5>
+								</div>
+								{# Career Database Job_title Field #}
+								<div id="collapseTwo" class="collapse bg-custom" role="tabpanel" aria-labelledby="headingTwo">
+									<div class="card-block">
+										{#Career Database Description Field#}
+										<p>
+											{{ info.Description }}
+										</p>
+										{#Career Database Description Field#}
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-			<!-- About Section End-->
+	                        {% endfor %}
+            </div>
+                            <!-- About Section End-->
 
 		</div>
 
 
-	</div>
-	</div>
-</section>
+                    </div>
+  </section>
 {% endblock %}
 
 {% block scripts %}

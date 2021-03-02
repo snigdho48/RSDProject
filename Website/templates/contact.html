@@ -11,6 +11,12 @@
 		background-size: cover;
 
 	}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 
 </style>
 {% endblock css %}
@@ -38,28 +44,29 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-lg-8 offset-md-2 text-center">
-          <!-- <h2>KEEP IN TOUCH</h2> -->
-          <h2>KEEP IN TOUCH<span class="b-line mt-2"></span></h2>
-          <p class="lead"> Whether you have a question about our products , Our team is ready to answer all your questions . </p>
+          <h2>KEEP IN TOUCH</h2>
+            <span class="b-line my-2"></span>
+          <p class="lead"> Nullam dictum felis eu pede mollis pretium leo eget bibendum sodales augue velit cursus. tellus eget condimentum rhoncus sem quam semper libero. </p>
         </div>
       </div>
       <div class="row">
+          {% for contact_info in data %}
+          {% if forloop.counter <= 1 %}
         <div class="col-md-12 col-lg-12 contact pb-40 pt-30">
           <div class="row text-center">
-            {#Contact PhoneNumber#}
-            <div class="col-md-4 col-lg-4 pb-xs-30"> <i class="ion-android-call icon-circle pos-s"></i><a href="#" class="mt-15 i-block">+91 123-1234</a> </div>
-            {#Contact PhoneNumber#}
-            {#Contact Address#}
+            <div class="col-md-4 col-lg-4 pb-xs-30"> <i class="ion-android-call icon-circle pos-s"></i><a href="#" class="mt-15 i-block">{{ contact_info.cell  }}</a> </div>
+
             <div class="col-md-4 col-lg-4 pb-xs-30"> <i class="ion-ios-location icon-circle pos-s"></i>
-              <p  class="mt-15"> 123 Main Street, St. NW Ste, <br />
-                1 Washington, DC,USA. </p>
+                <p  class="mt-15">
+                {{ contact_info.address1 }},<br />
+                {{ contact_info.address2 }}
+                </p>
             </div>
-            {#Contact Address#}
-            {#Contact Mail#}
-            <div class="col-md-4 col-lg-4 pb-xs-30"> <i class="ion-ios-email icon-circle pos-s"></i><a href="mailto:Construc@support.com"  class="mt-15 i-block">medical@support.com</a> </div>
-            {#Contact Mail#}
+            <div class="col-md-4 col-lg-4 pb-xs-30"> <i class="ion-ios-email icon-circle pos-s"></i><a href="mailto:Construc@support.com"  class="mt-15 i-block">{{ contact_info.email }}</a> </div>
           </div>
         </div>
+          {% endif %}
+      {% endfor %}
       </div>
     </div>
 
@@ -76,45 +83,57 @@
     <div class="container contact-form pt-40 pt-xs-40 mt-up">
       <div class="row">
         <div class="col-md-12 col-lg-12">
-          <!-- <h2>GET IN TOUCH</h2> -->
-          <h2>GET IN TOUCH<span class="b-line mt-2"></span></h2>
-          <p class="lead"> For all enquiries, please email us using the form below. </p>
+          <h2>GET IN TOUCH</h2>
+            <span class="b-line my-2"></span>
+          <p class="lead"> Nullam dictum felis eu pede mollis pretium. </p>
           <!-- Contact FORM -->
-          <form class="contact-form mt-45" id="contact">           
+          <form class="contact-form mt-45" id="contact" method="post" action="{% url 'send_massage' %}">
+              {% csrf_token %}
             <!-- IF MAIL SENT SUCCESSFULLY -->
             <div id="success">
-              <div role="alert" class="alert alert-success"> <strong>Thanks</strong> for using our template. Your message has been sent. </div>
+              <div role="alert" class="alert alert-success"> <strong>Thanks</strong> for Get In Touch. </div>
             </div>
             <!-- END IF MAIL SENT SUCCESSFULLY -->           
             <div class="row">
               <div class="col-md-6 col-lg-6">
                 {# Contact name #}
                 <div class="form-field">
-                  <input class="input-sm form-full" id="name" type="text" name="form-name" placeholder="Your Name">
+                  <input class="input-sm form-control" id="name" type="text" name="name" placeholder="Your Name" required="true">
                 </div>
                 {# Contact name #}
                 {# Contact email #}
                 <div class="form-field">
-                  <input class="input-sm form-full" id="email" type="text" name="form-email" placeholder="Email" >
+                  <input class="input-group-sm form-control" id="email" type="email" name="email" placeholder="Email" required="true">
+                </div>
+                  <div class="form-field">
+                  <input class="input-group-sm form-control" id="cell" type="number" name="Cell" placeholder="Phone Number" required="true">
                 </div>
                 {# Contact email #}
                 {# contact Subject#}
                 <div class="form-field">
-                  <input class="input-sm form-full" id="sub" type="text" name="form-subject" placeholder="Subject">
+                  <input class="input-sm form-control" id="sub" type="text" name="subject" placeholder="Subject">
                 </div>
                 {# contact Subject#}
               </div>
               <div class="col-md-6 col-lg-6">
                 {# Contact message #}
                 <div class="form-field">
-                  <textarea class="form-full" id="message" rows="7" name="form-message" placeholder="Your Message" ></textarea>
+                  <textarea class="form-control" id="message" rows="12" name="message" placeholder="Your Message" required="true"></textarea>
                 </div>
                 {# Contact Message #}
               </div>
-              <div class="col-md-12 col-lg-12 mt-30">
-                <button class="btn-text" type="button" id="submit" name="button"> Send Message </button>
-              </div>
+
             </div>
+               {% if massage in messages %}
+                    <div class="col-md-12 col-lg-12 mt-30">
+
+                <p class="btn-danger"> {{ massage }} </p>
+              </div>
+                {% endif %}
+              <div class="col-md-12 col-lg-12 mt-30">
+
+                <button class="btn-text" type="Submit" id="submit" name="button"> Send Message </button>
+              </div>
           </form>
           <!-- END Contact FORM --> 
         </div>

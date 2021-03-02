@@ -253,6 +253,9 @@ $(document).on('ready',function() {
 		dots : false,
 		center:true,
 		margin : 30,
+		autoplay:true,
+    	autoplayTimeout:2000,
+    	autoplayHoverPause:true,
 		responsive : {
 			0 : {
 				items : 1,

@@ -48,7 +48,6 @@ class Brands(models.Model):
 
 
 class Topbar_footer(models.Model):
-    slogan_text = models.TextField(max_length=50, verbose_name="Slogan Text")
     facebook_link = models.TextField(verbose_name="Facebook Link")
     twitter_link = models.TextField(verbose_name="Twitter Link")
     googleplus_link = models.TextField(verbose_name="GooglePlus Link")
@@ -56,7 +55,7 @@ class Topbar_footer(models.Model):
     copyright_text = models.TextField(max_length=50, verbose_name="Copyright")
 
     def __str__(self):
-        return self.slogan_text
+        return self.facebook_link
 
 
 class Company_Overview(models.Model):
@@ -66,7 +65,7 @@ class Company_Overview(models.Model):
     total_brands = models.IntegerField(verbose_name="Total Brands")
 
     def __str__(self):
-        return self.total_products
+        return f'Total Products:{str(self.total_products)}'
 
 
 class Products(models.Model):
@@ -104,7 +103,6 @@ class Our_partner(models.Model):
 
 
 class subscribe(models.Model):
-    sub_text = models.TextField(max_length=20, verbose_name="Subscription Text",null=True)
     email = models.EmailField()
 
     def __str__(self):
@@ -146,10 +144,11 @@ class Contact(models.Model):
     email = models.EmailField(verbose_name="Requester Email")
     cell = models.CharField(max_length=14, verbose_name="Phone Number")
     message = models.TextField(max_length=500, verbose_name="Message")
-    created_at = models.DateTimeField(auto_now=False, auto_now_add=False)
+    sub_text=models.TextField(max_length=100,blank=True,verbose_name="Subject")
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.created_at
+        return f'{self.email} {self.created_at}'
 
 
 class Career(models.Model):

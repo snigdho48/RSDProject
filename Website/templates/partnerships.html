@@ -71,7 +71,9 @@
 								eiusmod tempor incididunt ut labore et dolore magna aliqua.
 							</p>
 
-						</div>
+							<div class="row">
+								<div class="col-md-12 col-lg-12">
+									<h2 class="">Our Partnerships</h2>
 
 					</div>
 
@@ -85,20 +87,28 @@
 							class="col-sm-3 no-padding partner-blck__brdr-r d-flex align-items-center justify-content-center">
 							<img src="{% static 'images/2.png' %}" alt="">
 						</div>
-						{# Our_partner Database partner_logo field#}
-						<div class="col-md-9 col-lg-9 no-padding t_cell">
-							<div class="partner__content partnership">
-								<h3>Our Partnerships</h3>
-								{# Our_partner Database company text field#}
-								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut
-									labore et dolore magna aliqua. Enim minim veniam quis nostrud Lorem ipsum dolor sit
-									amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore
-									magna aliqua. Enim minim veniam quis nostrud
-								</p>
-								{# Our_partner Database company text field#}
+
+						<!-- About Section -->
+						<div class="container-fluid my-2 w-100">
+
+							<div class="row mt-2 mt-xs-0">
+                                {% for partner in partners %}
+					<div class="col-lg-3 col-md-6 m-1 border">
+						<div class="clean_top p-2 feature-box text-center">
+							<div class="content">
+								<img src="{{ partner.partner_logo.url }}" alt="" height="160" width="160"/>
+                                {#								about us logo#}
+								<h3>{{ partner.company }}</h3>
+
 							</div>
 						</div>
+					</div>
+                                {% endfor %}
+	                            </div>
+
+						</div>
+						<!-- About Section End-->
+
 					</div>
 				</div>
 				<!-- About Section End-->

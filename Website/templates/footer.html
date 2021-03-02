@@ -11,25 +11,25 @@
 				<p>
 					We Source Quality, We Make Quality, We Delivery Quality
 				</p>
+                {% for link in links %}
 				{#Social Links#}
 				<ul>
 					<li>
-						<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+						<a href="https://{{ link.facebook_link }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 					</li>
 					
 					<li>
-						<a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+						<a href="https://{{ link.googleplus_link }}"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
 					</li>
 					<li>
-						<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+						<a href="https://{{ link.likedin_link }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
 					</li>
 					<li>
-						<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+						<a href="https://{{ link.twitter_link }}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 					</li>
-					<li>
-						<a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
-					</li>
+
 				</ul>
+                {% endfor %}
 				{#Social Links#}
 			</div>
 
@@ -91,7 +91,9 @@
 		<div class="container">
 			<div class="bor_top clearfix">
 				<p>
-					<a href="#" target="_blank">Copyright© RS Dairy And Agro Foods Industries Ltd.</a>
+                    {% for link in links %}
+					<a href="#" target="_blank">Copyright &copy{{ link.copyright_text }} RS Dairy And Agro Foods Industries Ltd.</a>
+					{% endfor %}
 				</p>
 
 			</div>

@@ -24,7 +24,8 @@ SECRET_KEY = '%g!=&0x9daxtzii2zoz3-(68f^kt1jovfl1enb32f0k_4h#t5y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.103',
+ALLOWED_HOSTS = ['192.168.0.107',
+                 '192.168.0.101',
                  '127.0.0.1']
 
 # Application definition
@@ -36,11 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'Website',
     'InvestorPortal',
-    
-    
+
     'ckeditor',
 ]
 
@@ -125,10 +125,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
-
 STATICFILES_DIRS = [
     # add path for staticfile dir
-    os.path.join(BASE_DIR,'Website', 'static')
+    os.path.join(BASE_DIR, 'Website', 'static')
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

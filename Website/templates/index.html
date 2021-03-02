@@ -1,51 +1,146 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}
-RS Group-RS Dairy And Agro Foods Industries Ltd.
+	{% block title %}
+        RS Group-RS Dairy And Agro Foods Industries Ltd.
 
-{% endblock %}
-{% block css %}
-<link href="{% static 'css/index.css'%}" rel="stylesheet" type="text/css" />
-<link href="{% static 'css/theme-color/default.css'%}" rel="stylesheet" type="text/css" id="theme-color" />
+    {% endblock %}
+    {% block css %}
+        <link href="{% static 'css/index.css'%}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/theme-color/default.css'%}" rel="stylesheet" type="text/css" id="theme-color" />
 
-{% endblock %}
+    {% endblock %}
 
-{% block content %}
+    {% block content %}
 
 
 
-<!--  Main Banner Start Here-->
-<div class="main-banner banner_up">
-	<div id="rev_slider_34_1_wrapper" class="rev_slider_wrapper" data-alias="news-gallery34">
-		<!-- START REVOLUTION SLIDER 5.0.7 fullwidth mode -->
-		<div id="rev_slider_34_1" class="rev_slider" data-version="5.0.7">
-			<ul>
-				<!-- SLIDE  -->
-				<li data-index="rs-129">
-					<!-- MAIN IMAGE -->
-					<img src="{% static 'images/banner/h_banner.png' %}" alt="" class="rev-slidebg">
-					{# slider image#}
-					<!-- LAYERS -->
-					<!-- LAYER NR. 2 -->
-					<div class="tp-caption Newspaper-Title tp-resizeme " id="slide-129-layer-1"
-						data-x="['left','left','left','left']" data-hoffset="['100','50','50','30']"
-						data-y="['top','top','top','center']" data-voffset="['230','135','50','0']"
-						data-fontsize="['50','50','50','30']" data-lineheight="['55','55','55','35']"
-						data-width="['700','700','700','420']" data-height="none" data-whitespace="normal"
-						data-transform_idle="o:1;"
-						data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-						data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
-						data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:0;y:0;s:inherit;e:inherit;"
-						data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on">
-						<div class="banner-text">
-							<span class="sub-text">we are here to help you</span>
-							<h2>The best cleaning company in the country</h2>
-							<p>
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem
-								Ipsum has been the industry's standard dummy text ever.
-							</p>
-							<a class="btn btn-text align-self-center" href="#"> Read More</a>
+        <!--  Main Banner Start Here-->
+	    <div class="main-banner banner_up">
+		    <div id="rev_slider_34_1_wrapper" class="rev_slider_wrapper" data-alias="news-gallery34">
+			    <!-- START REVOLUTION SLIDER 5.0.7 fullwidth mode -->
+			    <div id="rev_slider_34_1" class="rev_slider" data-version="5.0.7">
+				    <ul>
+                        {% for banner in banners %}
+					    <!-- SLIDE  -->
+					    <li data-index="rs-129">
+						    <!-- MAIN IMAGE -->
+						    <img src="{{ banner.slide_image1.url }}" alt="" class="rev-slidebg">
+                            {#                            slider image#}
+						    <!-- LAYERS -->
+						    <!-- LAYER NR. 2 -->
+						    <div class="tp-caption Newspaper-Title tp-resizeme "
+						         id="slide-129-layer-1"
+						         data-x="['left','left','left','left']" data-hoffset="['100','50','50','30']"
+						         data-y="['top','top','top','center']" data-voffset="['230','135','50','0']"
+						         data-fontsize="['50','50','50','30']"
+						         data-lineheight="['55','55','55','35']"
+						         data-width="['700','700','700','420']"
+						         data-height="none"
+							data-whitespace="normal"
+							data-transform_idle="o:1;"
+							data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+							data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
+							data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+							data-mask_out="x:0;y:0;s:inherit;e:inherit;"
+							data-start="1000"
+							data-splitin="none"
+							data-splitout="none"
+							data-responsive_offset="on" >
+								<div class="banner-text">
+									<h2>{{ banner.slide_title1 }}</h2>
+									<p>
+										{{ banner.slide_content1 }}
+									</p>
+								</div>
+						    </div>
+					    </li>
+					    <!-- SLIDE  -->
+					    <li data-index="rs-130" data-title="" data-description="">
+						    <!-- MAIN IMAGE -->
+						    <img src="{{ banner.slide_image2.url }}" alt="" class="rev-slidebg">
+                            {#							slider image#}
+						    <!-- LAYERS -->
+						    <!-- LAYER NR. 2 -->
+						    <div class="tp-caption Newspaper-Title   tp-resizeme "
+						         id="slide-130-layer-1"
+						         data-x="['left','left','left','left']" data-hoffset="['100','50','50','30']"
+						         data-y="['top','top','top','center']" data-voffset="['230','135','50','0']"
+						         data-fontsize="['50','50','50','30']"
+						         data-lineheight="['55','55','55','35']"
+						         data-width="['700','700','700','420']"
+						         data-height="none"
+							data-whitespace="normal"
+							data-transform_idle="o:1;"
+							data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+							data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
+							data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+							data-mask_out="x:0;y:0;s:inherit;e:inherit;"
+							data-start="1000"
+							data-splitin="none"
+							data-splitout="none"
+							data-responsive_offset="on">
+								<div class="banner-text">
+									<h2>{{ banner.slide_title2 }}</h2>
+									<p>
+										{{ banner.slide_content2 }}
+									</p>
+								</div>
+						    </div>
+					    </li>
+					    <!-- SLIDE  -->
+					    <li data-index="rs-131">
+						    <!-- MAIN IMAGE -->
+						    <img src="{{ banner.slide_image3.url }}" alt="" class="rev-slidebg ">
+                            {#							slider image#}
+
+						    <!-- LAYERS -->
+						    <!-- LAYER NR. 2 -->
+						    <div class="tp-caption Newspaper-Title   tp-resizeme "
+						         id="slide-131-layer-1"
+						         data-x="['left','left','left','left']" data-hoffset="['100','50','50','30']"
+						         data-y="['top','top','top','center']" data-voffset="['230','135','50','0']"
+						         data-fontsize="['50','50','50','30']"
+						         data-lineheight="['55','55','55','35']"
+						         data-width="['700','700','700','420']"
+						         data-height="none"
+						         data-whitespace="normal"
+						         data-transform_idle="o:1;"
+						         data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+						         data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
+						         data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+						         data-mask_out="x:0;y:0;s:inherit;e:inherit;"
+						         data-start="1000"
+						         data-splitin="none"
+						         data-splitout="none"
+						         data-responsive_offset="on">
+							    <div class="banner-text">
+								    <h2>{{ banner.slide_title3 }}</h2>
+								    <p>
+									    {{ banner.slide_content3 }}
+								    </p>
+                                    {#									slider details#}
+
+							    </div>
+						    </div>
+					    </li>
+                        {% endfor %}
+					    <!-- SLIDE  -->
+				    </ul>
+				    <div class="tp-bannertimer tp-bottom"></div>
+			    </div>
+		    </div>
+	    </div>
+		<!--  Main Banner End Here-->
+
+		<!-- About -->
+		<section class="padding ptb-xs-40">
+			<div class="container">
+				<div class="row pb-30">
+					<div class="col-md-4 d-flex align-items-center">
+						<div class="section_tit">
+							<h2>About Us</h2>
+							<span class="b-line l-left sm-l-center my"></span>
 						</div>
 					</div>
 				</li>
@@ -245,11 +340,7 @@ RS Group-RS Dairy And Agro Foods Industries Ltd.
 							</div>
 							<div class="text_heading mb-30 light-color">
 								<p class="text-justify">
-                                    {% for s in subscribe %}
-                                    {% if forloop.counter <= 1 %}
-									{{ s.sub_text }}
-									{% endif %}
-								{%endfor %}
+                                    HELLO THIS IS SUBSCRIBE STATIC TEXT.
 								</p>
 							</div>
 							<div class="m-0 p-1 email_fill">
@@ -338,13 +429,23 @@ RS Group-RS Dairy And Agro Foods Industries Ltd.
 </section>
 <!-- Team_End -->
 
-<!-- Counter_Section -->
-<section class="padding ptb-xs-40 counter_sec">
-	<div class="container">
-		<div class="row text-center light-color mb-40 mb-xs-30">
-			<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-				<div class="section-title_home">
-					<h2>Company Overview <span class="b-line mt-3"></span></h2>
+				<div class="row d-flex justify-content-center">
+					{% for board in board_of_directors %}
+					<div class="col-lg-3 col-md-6 p-2">
+						<div class="team_box img-scale">
+							<div class="team_picher">
+								<figure>
+									<img src="{{board.image.url}}" alt="" class="c_border" height="265x">
+								</figure>
+							</div>
+							<div class="team_detail team_text ">
+								<h3>{{ board.name }}</h3>
+								<span>{{ board.designation }}</span>
+							</div>
+
+						</div>
+					</div>
+                     {% endfor %}
 
 					<p>
 						RS Dairy And Agro Foods Industries Ltd. is a new company that provides quality FMCG food
@@ -376,26 +477,47 @@ RS Group-RS Dairy And Agro Foods Industries Ltd.
 					<div class="col-lg-3 col-md-6 mt-xs-30">
 						<div class="single-fact">
 
-							<span class="counter" data-count="10">0</span>
-							{# counter database#}
-							<p>
-								Active Employees
-							</p>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6 mt-sm-30 mt-xs-30">
-						<div class="single-fact">
+			</div>
+		</section>
+
+		<section class="counter_box">
+			<div class="container">
+				<div class="row">
+                    {% for overviews in overview %}
+                        {% if forloop.counter <= 1 %}
+					<div class="col-lg-10 offset-lg-1">
+						<div class="row bg_withe">
+							<div class="col-lg-3 col-md-6">
+								<div class="single-fact">
+
+									<span class="counter" data-count="{{ overviews.total_products }}">0</span>
+									{#									counter database#}
+									<p>
+										Total Products
+									</p>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6 mt-xs-30">
+								<div class="single-fact">
+
+									<span class="counter" data-count="{{ overviews.active_employees }}">0</span>
+{#									counter database#}
+									<p>
+										Active Employees
+									</p>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6 mt-sm-30 mt-xs-30">
+								<div class="single-fact">
+
+									<span class="counter" data-count="{{ overviews.active_dealers }}">0</span>
+									{#									counter database#}
 
 							<span class="counter" data-count="20">0</span>
 							{# counter database#}
 
-							<p>
-								Active Dealers
-							</p>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6 mt-sm-30 mt-xs-30">
-						<div class="single-fact">
+									<span class="counter" data-count="{{ overviews.total_brands }}">0</span>
+									{#									counter database#}
 
 							<span class="counter" data-count="40">0</span>
 							{# counter database#}
@@ -405,7 +527,8 @@ RS Group-RS Dairy And Agro Foods Industries Ltd.
 							</p>
 						</div>
 					</div>
-
+                        {% endif %}
+                    {% endfor %}
 				</div>
 			</div>
 		</div>
@@ -533,19 +656,25 @@ RS Group-RS Dairy And Agro Foods Industries Ltd.
 				<div class="section-title_home">
 					<h2>News & Events <span class="b-line mt-2"></span></h2>
 				</div>
-			</div>
-		</div>
-		<div class="row">
-			{% for post in posts %}
-			{% if forloop.counter <= 3 %} <div class="col-lg-4 mt-2">
-				<div class="img-scale">
-					<figure>
-						<img src="{{ post.image.url }}" alt="" height="220px">
-						{# news and event image#}
-					</figure>
-					<div class="latest__block-post gray-bg">
-						<div class="meta-post">
-							{{ post.created_at.date }}
+				<div class="row">
+                    {% for post in f_post %}
+                        {% if forloop.counter <= 3 %}
+					<div class="col-lg-4 mt-2">
+						<div class="img-scale">
+							<figure>
+								<img src="{{ post.image.url }}" alt="" height="220px">
+                                {#								news and event image#}
+							</figure>
+							<div class="latest__block-post gray-bg">
+								<div class="meta-post">
+									{{ post.created_at.date }}
+								</div>
+								<h3 class="latest__block-title"><a href="{% url 'News_detail' post.slug %}">{{ post.title }}</a></h3>
+
+								<div class="flat-link flat-arrow sm  ">
+									<a href="{% url 'News_detail' post.slug %}" class="more_btn__block">More <i class="fa fa-angle-right"></i> </a>
+								</div>
+							</div>
 						</div>
 						<h3 class="latest__block-title"><a href="{% url 'News_detail' post.slug %}">{{ post.title }}</a>
 						</h3>
