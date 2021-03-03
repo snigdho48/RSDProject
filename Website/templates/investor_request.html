@@ -28,7 +28,7 @@ input[type=number]::-webkit-outer-spin-button {
     <div class="container">
       <div class="row title">
       	<div class="title_row">
-      		<h1 data-title="Contact"><span>Contact</span></h1>
+      		<h1 data-title="Contact"><span>Request For Investor</span></h1>
       	
       		
       	</div>
@@ -85,9 +85,9 @@ input[type=number]::-webkit-outer-spin-button {
         <div class="col-md-12 col-lg-12">
           <h2>GET IN TOUCH</h2>
             <span class="b-line my-2"></span>
-          <p class="lead"> How can we help you? </p>
+          <p class="lead"> Request Here. </p>
           <!-- Contact FORM -->
-          <form class="contact-form mt-45" id="contact" method="post" action="{% url 'send_massage' %}">
+          <form class="contact-form mt-45" id="contact" method="post" action="{% url 'send_request' %}">
               {% csrf_token %}
             <!-- IF MAIL SENT SUCCESSFULLY -->
             <div id="success">
@@ -124,7 +124,7 @@ input[type=number]::-webkit-outer-spin-button {
               </div>
 
             </div>
-            {% if messages %}
+               {% if messages %}
                    {% for m in messages %}
                     <div class="col-md-12 col-lg-12 mt-30 align-items-center">
 

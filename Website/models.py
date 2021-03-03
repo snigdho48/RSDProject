@@ -37,11 +37,10 @@ class Slide_Images(models.Model):
 
 class Brands(models.Model):
     title = models.TextField(max_length=50, verbose_name="Brand Title")
-    description = TextField(max_length=200,verbose_name="Description")
+    description = TextField(max_length=100, verbose_name="Description")
 
-    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100,null=True,
-                              blank=True,verbose_name="Brand Image")
-
+    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, null=True,
+                              blank=True, verbose_name="Brand Image")
 
     def __str__(self):
         return self.title
@@ -53,7 +52,7 @@ class Topbar_footer(models.Model):
     googleplus_link = models.TextField(verbose_name="GooglePlus Link")
     linkedin_link = models.TextField(verbose_name="Linkedin Link")
     copyright_text = models.TextField(max_length=50, verbose_name="Copyright")
-    f_address = models.TextField(verbose_name="Footer_address",blank=True,null=True)
+    f_address = models.TextField(verbose_name="Footer_address", blank=True, null=True)
 
     def __str__(self):
         return self.facebook_link
@@ -71,12 +70,8 @@ class Company_Overview(models.Model):
 
 class Products(models.Model):
     p_title = models.TextField(verbose_name="Title")
-
     p_image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, null=True,
-                              blank=True, verbose_name="Products Image")
-
-
-    description = TextField(max_length=200,verbose_name="Description")
+                                blank=True, verbose_name="Products Image")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Created At")
 
     def __str__(self):
@@ -84,11 +79,10 @@ class Products(models.Model):
 
 
 class Board_of_directors(models.Model):
-
-    name = models.TextField(max_length=20,verbose_name="Name")
-    designation = models.TextField(max_length=20,verbose_name="Designation")
-    image = models.ImageField(upload_to=None,null=True,blank=True, height_field=None, width_field=None, max_length=100)
-
+    name = models.TextField(max_length=20, verbose_name="Name")
+    designation = models.TextField(max_length=20, verbose_name="Designation")
+    image = models.ImageField(upload_to=None, null=True, blank=True, height_field=None, width_field=None,
+                              max_length=100)
 
     def __str__(self):
         return self.name
@@ -112,7 +106,7 @@ class subscribe(models.Model):
 
 class NewsandEvent(models.Model):
     title = models.TextField(max_length=50, verbose_name="News Headline")
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.AutoField(primary_key=True,verbose_name="Slug")
     description = TextField(verbose_name="Description")
     image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100,
                               verbose_name="News Photo")
@@ -120,7 +114,7 @@ class NewsandEvent(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.title
+        return f'{self.slug}. {self.title}'
 
 
 class About_us(models.Model):
@@ -145,19 +139,31 @@ class Contact(models.Model):
     email = models.EmailField(verbose_name="Requester Email")
     cell = models.CharField(max_length=14, verbose_name="Phone Number")
     message = models.TextField(max_length=500, verbose_name="Message")
-    sub_text=models.TextField(max_length=100,blank=True,verbose_name="Subject")
+    sub_text = models.TextField(max_length=100, blank=True, verbose_name="Subject")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.created_at.ctime()} {self.email}'
+
+
+class Career(models.Model):
+    job_title = models.TextField(max_length=50, verbose_name="Job Title")
+    Description = TextField(max_length=500, verbose_name="Description")
+
+    def __str__(self):
+        return self.job_title
+
+
+class investor_request(models.Model):
+    name = models.TextField(max_length=50, verbose_name="Requester Name")
+    email = models.EmailField(verbose_name="Requester Email")
+    cell = models.CharField(max_length=14, verbose_name="Phone Number")
+    message = models.TextField(max_length=500, verbose_name="Message")
+    sub_text = models.TextField(max_length=100, blank=True, verbose_name="Subject")
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f'{self.email} {self.created_at}'
 
-
-class Career(models.Model):
-    job_title = models.TextField(max_length=50, verbose_name="Job Title")
-    Description = TextField(max_length=200,verbose_name="Description")
-
-    def __str__(self):
-        return self.job_title
-
-    # Machine Xtreme IT
-    # Team Touhid,Rafi,Tareq,Snigdho
+# Machine Xtreme IT
+# Team Touhid,Rafi,Tareq,Snigdho
