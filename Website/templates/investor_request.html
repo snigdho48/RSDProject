@@ -16,6 +16,9 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+.contact-form textarea {
+    height: 250px;
+}
 
 
 </style>
@@ -40,38 +43,8 @@ input[type=number]::-webkit-outer-spin-button {
 		
   
   <!-- Contact Section -->
-  <section class="padding ptb-xs-40">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-lg-8 offset-md-2 text-center">
-          <h2>KEEP IN TOUCH</h2>
-            <span class="b-line my-2"></span>
-          <p class="lead"> Want to keep in touch? We'd love to hear from you . Here's how you can reach us.. </p>
-        </div>
-      </div>
-      <div class="row">
-          {% for contact_info in data %}
-          {% if forloop.counter <= 1 %}
-        <div class="col-md-12 col-lg-12 contact pb-40 pt-30">
-          <div class="row text-center">
-            <div class="col-md-4 col-lg-4 pb-xs-30"> <i class="ion-android-call icon-circle pos-s"></i><a href="#" class="mt-15 i-block">{{ contact_info.cell  }}</a> </div>
+  <section class="padding ptb-xs-40 mt-3">
 
-            <div class="col-md-4 col-lg-4 pb-xs-30"> <i class="ion-ios-location icon-circle pos-s"></i>
-                <p  class="mt-15">
-                {{ contact_info.address1 }},<br />
-                {{ contact_info.address2 }}
-                </p>
-            </div>
-            <div class="col-md-4 col-lg-4 pb-xs-30"> <i class="ion-ios-email icon-circle pos-s"></i><a href="mailto:Construc@support.com"  class="mt-15 i-block">{{ contact_info.email }}</a> </div>
-          </div>
-        </div>
-          {% endif %}
-      {% endfor %}
-      </div>
-    </div>
-
-
-    <br><br><br><br><br><br><br><br>
 
     <!-- Map Section -->
     <!-- <div class="map">
@@ -80,12 +53,12 @@ input[type=number]::-webkit-outer-spin-button {
     <!-- Map Section -->
 
 
-    <div class="container contact-form pt-40 pt-xs-40 mt-up">
+    <div class="container contact-form pt-40 pt-xs-40">
       <div class="row">
         <div class="col-md-12 col-lg-12">
-          <h2>GET IN TOUCH</h2>
+          <h2>Request Here For Become An Investor</h2>
             <span class="b-line my-2"></span>
-          <p class="lead"> Request Here. </p>
+
           <!-- Contact FORM -->
           <form class="contact-form mt-45" id="contact" method="post" action="{% url 'send_request' %}">
               {% csrf_token %}

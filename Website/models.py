@@ -106,7 +106,7 @@ class subscribe(models.Model):
 
 class NewsandEvent(models.Model):
     title = models.TextField(max_length=50, verbose_name="News Headline")
-    slug = models.AutoField(primary_key=True,verbose_name="Slug")
+    slug = models.AutoField(primary_key=True)
     description = TextField(verbose_name="Description")
     image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100,
                               verbose_name="News Photo")

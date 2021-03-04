@@ -9,7 +9,9 @@ admin.site.index_title="Welcome To RS Meena Portal"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('Website.urls'))
+    path('',include('Website.urls')),
+    path('portal/', include('InvestorPortal.urls'))
+
     #url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
