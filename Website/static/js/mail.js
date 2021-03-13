@@ -80,19 +80,10 @@ jQuery(function($) {"use strict";
 					email_val = $('#email').val();
 
 				}
-				var y = $('#cell').val();
 
 
-				if (jQuery.type(y)== "string" || x == 'Cell') {
-					$('#cell').addClass('error')
-					bool = false;
-				} else {
 
-					i++;
-					$('#cell').removeClass('error');
-					cell_val = $('#cell').val();
 
-				}
 
 
 				msg_val = $('#message').val();
@@ -113,7 +104,7 @@ jQuery(function($) {"use strict";
 						email : email_val,
 						company : comp_val,
 						msg : msg_val,
-						cell:cell_val,
+						Cell:cell_val,
 					}, function(data) {
 						//console.log(data)
 
@@ -154,15 +145,16 @@ jQuery(function($) {"use strict";
 				}
 				//email
 				if ($(abc).attr('id') == 'email') {
-					if (($(abc).val() != "" || $(abc).val() != null) && ($(abc).val().match(emailRegex))) {
+					if (($(abc).val() != "" || $(abc).val() != null) && ($(abc).val().match(emailRegex)))  {
 						$(abc).removeClass('error');
 
 					} else {
 						$(abc).addClass('error');
 					}
 				}
+				//phone
 				if ($(abc).attr('id') == 'cell') {
-					if (($(abc).val() != "" || $(abc).val() != null) && ($(abc).val().match(numericExpression))) {
+					if (($(abc).val() != "" || $(abc).val() != null) && ($(parseInt((abc).val())).match(numericExpression)) || ($(abc).length === 11)){
 						$(abc).removeClass('error');
 
 					} else {

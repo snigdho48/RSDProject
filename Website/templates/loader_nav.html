@@ -104,10 +104,10 @@
 							<div class="social-link__block text-right">
 								{#Social Links#}
                                 {% for link in links %}
-								<a href="https://{{ link.facebook_link }}" class="facebook"> <i class="fa fa-facebook"></i> </a>
-								<a href="https://{{ link.googleplus_link }}" class="google-plus"> <i class="fa fa-google-plus"></i></a>
-								<a href="https://{{ link.twitter_link }}" class="twitter"> <i class="fa fa-twitter"></i> </a>
-								<a href="https://{{ link.linkedin_link }}" class="linkedin"> <i class="fa fa-linkedin"></i> </a>
+								<a href="{{ link.facebook_link }}" class="facebook"> <i class="fa fa-facebook"></i> </a>
+								<a href="{{ link.googleplus_link }}" class="google-plus"> <i class="fa fa-google-plus"></i></a>
+								<a href="{{ link.twitter_link }}" class="twitter"> <i class="fa fa-twitter"></i> </a>
+								<a href="{{ link.linkedin_link }}" class="linkedin"> <i class="fa fa-linkedin"></i> </a>
 								{#Social Links#}
                                 {% endfor %}
 							</div>
@@ -153,7 +153,7 @@
 										<i class="fa fa-envelope" aria-hidden="true"></i>
 										<p>
 											Mail Us
-											<span> <a href="#">{{p.email}}</a> </span>
+											<span> <a href="mailto:{{ p.email }}">{{p.email}}</a> </span>
 										</p>
 										{% endfor %}
 									</li>
@@ -228,11 +228,11 @@
                                             {#	                                        Trams and conditions URL#}
                                         </li>
                                         <li>
-                                            <a href="#">Investor Request</a>
+                                            <a href="{% url 'investor_req' %}">Investor Request</a>
                                             {#											investor request URL#}
                                         </li>
                                         <li>
-                                            <a href="#">Investor login</a>
+                                            <a href="{% url 'p_home' %}">Investor login</a>
                                             {#											login Url#}
                                         </li>
 

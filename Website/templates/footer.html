@@ -7,25 +7,31 @@
 		<div class="row">
 			<div class="col-md-6 col-lg-3 footer_logo">
 				<a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="" class="footer_logo w-75"></a>
-                {#                                                        footer logo#}
+                {#  for                                                       footer logo#}
+            {% for i in data %}
 				<p>
-					We Source Quality, We Make Quality, We Delivery Quality
+					Head Office: {{ i.address1 }}
+                					{{ i.address2}}<br>
+                    {% endfor %}
+                    {% for j in links %}
+                Factory: {{ j.f_address }}
+                    {% endfor %}
 				</p>
                 {% for link in links %}
 				{#Social Links#}
 				<ul>
 					<li>
-						<a href="https://{{ link.facebook_link }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+						<a href="{{ link.facebook_link }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 					</li>
 					
 					<li>
-						<a href="https://{{ link.googleplus_link }}"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+						<a href="{{ link.googleplus_link }}"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
 					</li>
 					<li>
-						<a href="https://{{ link.likedin_link }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+						<a href="{{ link.linkedin_link }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
 					</li>
 					<li>
-						<a href="https://{{ link.twitter_link }}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+						<a href="{{ link.twitter_link }}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 					</li>
 
 				</ul>
@@ -92,7 +98,7 @@
 			<div class="bor_top clearfix">
 				<p>
                     {% for link in links %}
-					<a href="#" target="_blank">Copyright &copy{{ link.copyright_text }} RS Dairy And Agro Foods Industries Ltd.</a>
+					<a href="#" target="_blank">Copyright &copy{{ link.copyright_text }}</a>
 					{% endfor %}
 				</p>
 

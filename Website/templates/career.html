@@ -1,124 +1,118 @@
-﻿﻿{% extends 'base.html' %}
+﻿{% extends 'base.html' %}
 {% load static %}
 {% block title %}
 
-{% endblock %}
 
-{% block css %}
+{% endblock %}
+{% block content %}
+
 <style>
-	.bg-img{
+	.bg-img {
 		background: url(../static/images/banner/u_banner.jpg) 0 36% no-repeat;
 		background-size: cover;
 
 	}
+.panel-title :hover{
+    color: #000000;
+}
 </style>
-{% endblock css %}
-{% block content %}
 
 
+<!-- Intro Section -->
+<section class="inner-intro bg-img light-color overlay-before parallax-background">
+	<div class="container">
+		<div class="row title">
+			<div class="title_row">
+				<h1 data-title="Career"><span>Career</span></h1>
 
-    <!-- Intro Section -->
-    <section class="inner-intro bg-img light-color overlay-before parallax-background">
-        <div class="container">
-            <div class="row title">
-                <div class="title_row">
-                    <h1 data-title="Career"><span>Career</span></h1>
-      		
-      	</div>
-        
-      </div>
-    </div>
-  </section>
- <!-- Intro Section End-->
-		
-		
-  <!-- CONTENT --> 
-  
-  <section class="padding pt-xs-40">
-				<div class="container">
-					
-					<div class="row">
+			</div>
 
-					<div class="col-md-3 col-lg-3 mt-xs-40 pb-xs-40">
-						<div class="tab-title">
-								<ul class="clearfix">
-									<li>
-										<a href="{% url 'home' %}">Company</a>
-									</li>
-									<!-- <li>
+		</div>
+	</div>
+</section>
+<!-- Intro Section End-->
+
+
+<!-- CONTENT -->
+
+<section class="padding pt-xs-40">
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-md-3 col-lg-3 mt-xs-40 pb-xs-40">
+				<div class="tab-title">
+					<ul class="clearfix">
+						<li>
+							<a href="{% url 'home' %}">Company</a>
+						</li>
+						<!-- <li>
 									<a href="#!">History</a>
-										
-									</li> -->
-									<li>
-									<a href="#!" class="active">Careers</a>
-										
-									</li>
-									<li>
-									<a href="{% url 'partnerships' %}">Partnerships</a>
 
-                                    </li>
-                                    <!-- <li>
+									</li> -->
+						<li>
+							<a href="#!" class="active">Careers</a>
+
+						</li>
+						<li>
+							<a href="{% url 'partnerships' %}">Partnerships</a>
+
+						</li>
+						<!-- <li>
                                         <a href="leadership.html">Leadership</a>
 
                                     </li> -->
-                                </ul>
-                        </div>
-                    </div>
+					</ul>
+				</div>
+			</div>
 
-                        <div class="col-md-9 col-lg-9">
-                            <div class="tab-content">
+			<div class="col-md-9 col-lg-9">
+				<div class="tab-content">
 
-								<div class="row">
+					<div class="row">
 
-									<div class="col-md-12 col-lg-12">
-										<h2 class="">Career</h2>
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim minim veniam quis nostrud exercitation ullamco laboris nisi aliquip exea commodo ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua.
-											laboris nisi aliquip exea commodo ipsum dolor sit amet consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua.
-										</p>
-	
-									</div>
+						<div class="col-md-12 col-lg-12">
+							<h2 class="">Career</h2>
+							<p>
+								Your career at the RS Group is made up of the jobs you undertake, the experiences you gain, and the personal and professional fulfilment you will achieve along the way. The wide range of functions and mandates at RS Meena offers staff many opportunities and potential career paths.
+							</p>
 
-								</div>
-	
+						</div>
+
+					</div>
+
+				</div>
+
+
+				<!-- About Section -->
+
+				<div class="anim-section creer_page mt-30">
+					<div id="accordion" role="tablist" aria-multiselectable="true">
+						{% for info in career %}
+						<div class="card">
+							<div class="card-header" role="tab" id="heading" style="background-color:#479c18">
+								<h5 class="mb-0 panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse" aria-expanded="true" aria-controls="collapse"> {{ info.job_title }}</a></h5>
 							</div>
-							
-						
-						<!-- About Section -->
-				{% for info in career %}
-			<div class="anim-section creer_page mt-30">
-						<div id="accordion" role="tablist" aria-multiselectable="true">
-							
-							<div class="card">
-								<div class="card-header" role="tab" id="headingTwo">
-									{# Career Database Job_title Field #}
-									<h5 class="mb-0 panel-title"><a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> {{info.job_title}} <i class="fa fa-plus collape-plus"></i> </a></h5>
-								</div>
-								{# Career Database Job_title Field #}
-								<div id="collapseTwo" class="collapse bg-custom" role="tabpanel" aria-labelledby="headingTwo">
-									<div class="card-block">
-										{#Career Database Description Field#}
-										<p>
-											{{ info.Description }}
-										</p>
-										{#Career Database Description Field#}
-									</div>
+
+							<div id="collapseOne" class="collapse show bg-custom" role="tabpanel" aria-labelledby="heading">
+								<div class="card-block">
+									<p>
+										{{ info.Description }}
+									</p>
 								</div>
 							</div>
 						</div>
+
+						{% endfor %}
 					</div>
-	                        {% endfor %}
-            </div>
-                            <!-- About Section End-->
+				</div>
+				<!-- About Section End-->
 
-                        </div>
+			</div>
 
 
-                    </div>
-  </section>
+		</div>
+
+	</div>
+</section>
 {% endblock %}
-
-{% block scripts %}
-    <script src="{% static 'js/jquery.appear.js'  %}"type="text/javascript"></script>
-{% endblock %}
-
