@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
 {% block title %}
 RS Group-RS Dairy And Agro Foods Industries Ltd.
 
@@ -44,6 +45,7 @@ RS Group-RS Dairy And Agro Foods Industries Ltd.
 							<p>
 								{{ banner.slide_content1 }}
 							</p>
+
 						</div>
 					</div>
 				</li>
@@ -110,86 +112,7 @@ RS Group-RS Dairy And Agro Foods Industries Ltd.
 <!--  Main Banner End Here-->
 
 <!-- About -->
-<section class="padding ptb-xs-40">
-	<div class="container">
-		<div class="row pb-30">
-			<div class="col-md-4 d-flex align-items-center">
-				<div class="section_tit">
-					<h2>About Us</h2>
-					<span class="b-line l-left sm-l-center my"></span>
-				</div>
-			</div>
 
-			<div class="col-md-8 mt-xs-30 text-center text-md-left text-justify">
-				<p class="text-justify">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-					's standard dummy text. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem
-					Ipsum is simply dummy text.
-				</p>
-				<p class="text-justify">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-					been the 's standard dummy text. Lorem Ipsum has been the industry's standard dummy text
-					ever since. Lorem Ipsum is simply dummy text.
-				</p>
-			</div>
-		</div>
-
-		<div class="row mt-30 mt-xs-0">
-			<div class="col-lg-3 col-md-6">
-				<div class="clean_top mb-xs-30 feature-box">
-					<div class="content">
-						<img src="{% static 'images/about-us.png' %}" alt="" height="50" width="50" />
-						{# about us logo#}
-						<h3>Quality</h3>
-						<p>
-							We ensure our products Quality.
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6">
-				<div class="clean_top mb-xs-30 feature-box">
-					<div class="content">
-						<img src="{% static 'images/about-us.png' %}" alt="" height="50" width="50" />
-						{# about us logo#}
-
-						<h3>Health</h3>
-						<p>
-							We care for Healthy food products.
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 mt-sm-30">
-				<div class="clean_top mb-xs-30 feature-box">
-					<div class="content">
-						<img src="{% static 'images/about-us.png' %}" alt="" height="50" width="50" />
-						{# about us logo#}
-
-						<h3>Taste</h3>
-						<p>
-							We make our products Tasty for you.
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 mt-sm-30">
-				<div class="clean_top mb-xs-30 feature-box">
-					<div class="content">
-						<img src="{% static 'images/about-us.png' %}" alt="" height="50" width="50" />
-						{# about us logo#}
-
-						<h3>Satisfaction</h3>
-						<p>
-							We concern about Customer Satisfaction.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-</section>
 <!-- About -->
 
 <!-- Service_Section -->
@@ -213,12 +136,12 @@ RS Group-RS Dairy And Agro Foods Industries Ltd.
 				<div class="service_slider_home next_btn_style">
 					{% for b in brands %}
 
-					<div class="service_box ml-lg-auto">
+					<div class="service_box ml-lg-auto" style="overflow:hidden">
 						<figure>
-							<img src="{{ b.image.url }}" alt="" />
+							<img src="{{ b.image.url }}" height="220px" alt="" />
 						</figure>
-						<h3><a href="#">{{b.title}}</a></h3>
-						<p>{{ b.description }}</p>
+						<h3><a href="#">{{b.title |slice:34}}</a></h3>
+						<p>{{ b.description |slice:34}}</p>
 					</div>
 					{% endfor %}
 
@@ -238,12 +161,12 @@ RS Group-RS Dairy And Agro Foods Industries Ltd.
 
 			<div class="col-lg-8">
 				<div class="email_gardener">
-					<div class="section_tit light-color">
+					<div class="section_tit light-color d-flex justify-content-center">
 						<h2>Subscribe For Information</h2>
 						<span class="three_line"></span>
 					</div>
 					<div class="text_heading mb-30 light-color">
-						<p class="text-justify">
+						<p class="text-justify d-flex justify-content-center">
 							HELLO THIS IS SUBSCRIBE STATIC TEXT.
 						</p>
 					</div>
@@ -299,7 +222,7 @@ RS Group-RS Dairy And Agro Foods Industries Ltd.
 							<img src="{{board.image.url}}" alt="" class="c_border" height="265x">
 						</figure>
 					</div>
-					<div class="team_detail team_text ">
+					<div class="team_detail ">
 						<h3>{{ board.name }}</h3>
 						<span>{{ board.designation }}</span>
 					</div>
@@ -424,7 +347,7 @@ RS Group-RS Dairy And Agro Foods Industries Ltd.
 
 				<div class="service_box ml-lg-auto">
 					<figure>
-						<img src="{{ pro.p_image.url }}" alt="" />
+						<img src="{{ pro.p_image.url }}" height="220px" alt="" />
 					</figure>
 					<h3><a href="#">{{pro.p_title}}</a></h3>
 				</div>

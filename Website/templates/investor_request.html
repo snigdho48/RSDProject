@@ -1,0 +1,122 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+
+
+{% endblock %}
+{% block css %}
+<style>
+	.bg-img{
+		background: url(../static/images/banner/u_banner.jpg) 0 36% no-repeat;
+		background-size: cover;
+
+	}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.contact-form textarea {
+    height: 250px;
+}
+
+
+</style>
+{% endblock css %}
+{% block content %}
+
+
+		<!-- Intro Section -->
+ <section class="inner-intro bg-img light-color overlay-before parallax-background">
+    <div class="container">
+      <div class="row title">
+      	<div class="title_row">
+      		<h1 data-title="Contact"><span>Request For Investor</span></h1>
+      	
+      		
+      	</div>
+        
+      </div>
+    </div>
+  </section>
+ <!-- Intro Section End-->
+		
+  
+  <!-- Contact Section -->
+  <section class="padding ptb-xs-40 mt-3">
+
+
+    <!-- Map Section -->
+    <!-- <div class="map">
+      <div id="map"></div>
+    </div> -->
+    <!-- Map Section -->
+
+
+    <div class="container contact-form pt-40 pt-xs-40">
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <h2>Request Here For Become An Investor</h2>
+            <span class="b-line my-2"></span>
+
+          <!-- Contact FORM -->
+          <form class="contact-form mt-45" id="contact" method="post" action="{% url 'send_request' %}">
+              {% csrf_token %}
+            <!-- IF MAIL SENT SUCCESSFULLY -->
+            <div id="success">
+              <div role="alert" class="alert alert-success"> <strong>Thanks</strong> for Get In Touch. </div>
+            </div>
+            <!-- END IF MAIL SENT SUCCESSFULLY -->           
+            <div class="row">
+              <div class="col-md-6 col-lg-6">
+                {# Contact name #}
+                <div class="form-field">
+                  <input class="input-sm form-control" id="name" type="text" name="name" placeholder="Your Name" required="true">
+                </div>
+                {# Contact name #}
+                {# Contact email #}
+                <div class="form-field">
+                  <input class="input-group-sm form-control" id="email" type="email" name="email" placeholder="Email" required="true">
+                </div>
+                  <div class="form-field">
+                  <input class="input-group-sm form-control" id="cell" type="number" name="Cell" placeholder="Phone Number" required="true">
+                </div>
+                {# Contact email #}
+                {# contact Subject#}
+                <div class="form-field">
+                  <input class="input-sm form-control" id="sub" type="text" name="subject" placeholder="Subject">
+                </div>
+                {# contact Subject#}
+              </div>
+              <div class="col-md-6 col-lg-6">
+                {# Contact message #}
+                <div class="form-field">
+                  <textarea class="form-control" id="message" rows="12" name="message" placeholder="Your Message" required="true"></textarea>
+                </div>
+                {# Contact Message #}
+              </div>
+
+            </div>
+               {% if messages %}
+                   {% for m in messages %}
+                    <div class="col-md-12 col-lg-12 mt-30 align-items-center">
+
+                <lebel class="btn-text" style="padding-top:13px"> {{ m }} </lebel>
+              </div>
+                   {% endfor %}
+                {% endif %}
+              <div class="col-md-12 col-lg-12 mt-30">
+
+                <button class="btn-text" type="Submit" id="submit" name="button"> Send Message </button>
+              </div>
+          </form>
+          <!-- END Contact FORM --> 
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+{% endblock %}
+
+
+

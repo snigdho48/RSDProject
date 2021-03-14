@@ -46,16 +46,16 @@
                 <div class="row">
                     {% for p in brands %}
                     <div class="col-md-6 col-lg-4 mb-xs-30 mt-2">
-                        <div class="service_box">
+                        <div class="service_box overflow_hidden fi">
                             <figure>
                                 <img src="{{p.image.url}}" alt="" height="220px">
                                 {#                                brands image#}
                             </figure>
                             {#                                brands title#}
-                            <h3><a href="#">{{ p.title }}</a></h3>
+                            <h3><a href="#">{{ p.title |slice:15}}</a></h3>
                             {#                                brands Description#}
                             <p>
-                                {{p.description}}
+                                {{p.description |slice:34}}
                             </p>
                         </div>
                     </div>

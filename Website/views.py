@@ -9,9 +9,9 @@ def home(request):
     data = Contact_Info.objects.all()
     product = Products.objects.all()
     posts = reversed(NewsandEvent.objects.all())
-    f_post=reversed(NewsandEvent.objects.all())
+    f_post = reversed(NewsandEvent.objects.all())
     brands = Brands.objects.all()
-    banners=Slide_Images.objects.all()
+    banners = Slide_Images.objects.all()
     overview = Company_Overview.objects.all()
     board_of_directors = Board_of_directors.objects.all()
     links = Topbar_footer.objects.all()
@@ -25,7 +25,7 @@ def home(request):
                'image': image,
                'board_of_directors': board_of_directors,
                'f_post': f_post,
-               'banners':banners,
+               'banners': banners,
                }
     return render(request, 'index.html', context)
 
@@ -50,7 +50,7 @@ def NewsList(request):
     context = {'data': data,
                'po': posts,
                'links': links,
-               'f_post':f_post,
+               'f_post': f_post,
                }
 
     return render(request, 'News_and_events.html', context)
@@ -66,7 +66,7 @@ def NewsDetail(request, slug):
                'post': post,
                'links': links,
                'po': posts,
-               'f_post':f_post}
+               'f_post': f_post}
     return render(request, 'Event_details.html', context)
 
 
@@ -106,8 +106,9 @@ def contact(request):
     return render(request, 'contact.html', context)
 
 
-def handler404(request, exception=None):
-    return render(request, '404.html', status=404)
+def error_404(request, exception=None):
+    data = {}
+    return render(request, '404.html', data)
 
 
 def brands(request):
@@ -146,12 +147,25 @@ def catalog(request):
     return render(request, 'catalog.html', context)
 
 
+def investor_req(request):
+    posts = reversed(NewsandEvent.objects.all())
+    links = Topbar_footer.objects.all()
+    data = Contact_Info.objects.all()
+    contacts = Contact.objects.all()
+    context = {'data': data,
+               'contact': contacts,
+               'links': links,
+               'po': posts, }
+    return render(request, 'investor_request.html', context)
+
+
 def Subscribe(request):
     if request.method == 'POST':
         email = request.POST['email']
         if email != '':
             user = subscribe.objects.create(email=email)
             user.save()
+            messages.info(request, "Success")
             return redirect(request.META['HTTP_REFERER'])
         else:
             messages.info(request, "Field Can't Be Empty")
@@ -166,6 +180,7 @@ def Subscribe_footer(request):
         if email != '':
             user = subscribe.objects.create(email=email)
             user.save()
+            messages.info(request, "Success")
             return redirect(request.META['HTTP_REFERER'])
         else:
             messages.info(request, "Email Can't Be Empty")
@@ -184,6 +199,27 @@ def send_massage(request):
         if email != '' or name != '' or subject != '' or cell != '' or massage != '':
             user = Contact.objects.create(name=name, email=email, message=massage, sub_text=subject, cell=cell)
             user.save()
+            messages.info(request, "Success")
+            return redirect(request.META['HTTP_REFERER'])
+        else:
+            messages.info(request, "Field Can't Be Empty")
+            return redirect(request.META['HTTP_REFERER'])
+    else:
+        return redirect(request.META['HTTP_REFERER'])
+
+
+def send_request(request):
+
+    if request.method == 'POST':
+        email = request.POST['email']
+        name = request.POST['name']
+        massage = request.POST['message']
+        subject = request.POST['subject']
+        cell = request.POST['Cell']
+        if email != '' or name != '' or subject != '' or cell != '' or massage != '':
+            user = investor_request.objects.create(name=name, email=email, message=massage, sub_text=subject, cell=cell)
+            user.save()
+            messages.info(request, "Success")
             return redirect(request.META['HTTP_REFERER'])
         else:
             messages.info(request, "Field Can't Be Empty")

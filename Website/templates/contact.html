@@ -124,11 +124,13 @@ input[type=number]::-webkit-outer-spin-button {
               </div>
 
             </div>
-               {% if massage in messages %}
-                    <div class="col-md-12 col-lg-12 mt-30">
+            {% if messages %}
+                   {% for m in messages %}
+                    <div class="col-md-12 col-lg-12 mt-30 align-items-center">
 
-                <p class="btn-danger"> {{ massage }} </p>
+                <lebel class="btn-text" style="padding-top:13px"> {{ m }} </lebel>
               </div>
+                   {% endfor %}
                 {% endif %}
               <div class="col-md-12 col-lg-12 mt-30">
 
