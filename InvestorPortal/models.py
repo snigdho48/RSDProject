@@ -4,12 +4,6 @@ from django.contrib.auth.models import User
 
 
 
-# class History(models.Model):
-#     share =
-#     ammount =
-#     operation =
-
- 
 
 # Create your models here.
 class Issue(models.Model):
