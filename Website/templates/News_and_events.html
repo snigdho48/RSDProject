@@ -3,6 +3,15 @@
 {% block title %}
 
 {% endblock %}
+{% block css %}
+<style>
+	.bg-img{
+		background: url(../static/images/banner/u_banner.jpg) 0 36% no-repeat;
+		background-size: cover;
+
+	}
+</style>
+{% endblock css %}
 {% block content %}
 <style>
 	.btn-text {
@@ -15,7 +24,7 @@
 	<div class="container">
 		<div class="row title">
 			<div class="title_row">
-				<h1 data-title="News & Events">News & Events<span class="b-line"></span></h1>
+				<h1 data-title="News & Events">News & Events</h1>
 
 			</div>
 		</div>
@@ -26,7 +35,7 @@
 <div class="row pb-30 text-center">
 	<div class="col-md-12">
 		<div class="section-title_home">
-			<h2>News & Event<span class="b-line"></span></h2>
+			<h2>News & Event<span class="b-line mt-2"></span></h2>
 		</div>
 	</div>
 </div>
@@ -35,25 +44,25 @@
 <section class="pb-xs-40 pb-4">
 	<div class="container">
 		<div class="row">
-            {% for post in posts %}
+            {% for pos in f_post %}
 			<!-- Post Item -->
 			<div class="col-12 mt-2">
 				<div class="row">
 
 					<div class="col-md-9 blog-post-hr mt-2">
 						<div class="blog-post mb-30">
-							<div class="post-media"><img src="{{post.image.url}}" class="">
-                                <span class="event-calender post_date text-white"> {{ post.created_at.date }}</span></div>
+							<div class="post-media"><img src="{{pos.image.url}}" class="" height="400px">
+                                <span class="event-calender post_date text-white"> {{ pos.created_at.date }}</span></div>
 							{# news image#}
 						
 							<div class="post-header text-justify">
-								<h2><a href="{% url 'News_detail' post.slug %}">{{ post.title }}</a></h2>
+								<h2><a href="{% url 'News_detail' pos.slug %}">{{ pos.title }}</a></h2>
 								{# news details#}
 							</div>
 							<div class="post-entry text-justify">
-							  <p>{{post.description | slice:":200" }}</p>
+							  <p>{{pos.description | slice:":200" }}</p>
 							</div>
-							<div class="post-more-link pull-left"><a href="{% url 'News_detail' post.slug %}" class="btn-text">Read
+							<div class="post-more-link pull-left"><a href="{% url 'News_detail' pos.slug %}" class="btn-text">Read
 									More</a></div>
 							{# news details#}
 						</div>

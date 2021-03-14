@@ -103,11 +103,13 @@
 						<div class="col-sm-5">
 							<div class="social-link__block text-right">
 								{#Social Links#}
-								<a href="#" class="facebook"> <i class="fa fa-facebook"></i> </a>
-								<a href="#" class="google-plus"> <i class="fa fa-google-plus"></i></a>
-								<a href="#" class="twitter"> <i class="fa fa-twitter"></i> </a>
-								<a href="#" class="linkedin"> <i class="fa fa-linkedin"></i> </a>
+                                {% for link in links %}
+								<a href="https://{{ link.facebook_link }}" class="facebook"> <i class="fa fa-facebook"></i> </a>
+								<a href="https://{{ link.googleplus_link }}" class="google-plus"> <i class="fa fa-google-plus"></i></a>
+								<a href="https://{{ link.twitter_link }}" class="twitter"> <i class="fa fa-twitter"></i> </a>
+								<a href="https://{{ link.linkedin_link }}" class="linkedin"> <i class="fa fa-linkedin"></i> </a>
 								{#Social Links#}
+                                {% endfor %}
 							</div>
 						</div>
 					</div>
