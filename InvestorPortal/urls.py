@@ -13,8 +13,11 @@ urlpatterns = [
         path('issue/', views.issue, name='issue'),
         path('buy_req/', views.request_buy, name='request_buy'),
         path('withdraw_req/', views.request_withdraw, name='request_withdraw'),
+        path('login/', views.loginPage , name='login'),
+        path('logout/', views.logutPage , name='logout'),
+       # path('price-chart/', views.price_chart, name='price-chart'),
+       path('population-chart/', views.population_chart, name='population-chart'),
+
 ]
 
-# handler404 = Website.views.error_404
-# handler500 = Website.views.error_404
 

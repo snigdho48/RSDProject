@@ -7,7 +7,200 @@
       <!-- Main Content -->
 
 
-{% include 'investor/card.html' %}
+
+      
+
+      
+        <div class="row ">
+              
+            {% for i in investor %}
+            
+          
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="card-statistic-4">
+                <div class="align-items-center justify-content-between">
+                  <div class="row ">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                      <div class="card-content">
+                        <h5 class="font-15">Name</h5>
+                        <h2 class="mb-3 font-18">{{ i.name }}</h2>
+                        <p class="mb-0"><span class="col-green"></p>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                      <div class="banner-img">
+                        <img src="{% static 'investor/img/banner/11.jpg' %}" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="card-statistic-4">
+                <div class="align-items-center justify-content-between">
+                  <div class="row ">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                      <div class="card-content">
+                        <h5 class="font-15">Total Investment</h5>
+                        <h2 class="mb-3 font-18">৳ {{i.total_invest}}</h2>
+                        <p class="mb-0"><span class="col-orange"></p>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                      <div class="banner-img">
+                        <img src="{% static 'investor/img/banner/22.png' %}" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="card-statistic-4">
+                <div class="align-items-center justify-content-between">
+                  <div class="row ">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                      <div class="card-content">
+                        <h5 class="font-15">Owned Share</h5>
+                        <h2 class="mb-3 font-18">{{i.own_share}}</h2>
+                        <p class="mb-0"></p>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                      <div class="banner-img">
+                        <img src="{% static 'investor/img/banner/33.png' %}" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="card-statistic-4">
+                <div class="align-items-center justify-content-between">
+                  <div class="row ">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                      <div class="card-content">
+                        <h5 class="font-15">Available Amount</h5>
+                        <h2 class="mb-3 font-18">৳ {{i.available_amount}}</h2>
+                        <p class="mb-0"></p>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                      <div class="banner-img">
+                        <img src="{% static 'investor/img/banner/4.png' %}" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% for p in share %}
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="card-statistic-4">
+                <div class="align-items-center justify-content-between">
+                  <div class="row ">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                      <div class="card-content">
+                        <h5 class="font-15">Total Share of company</h5>
+                        <h2 class="mb-3 font-18">{{ p.total_share }}</h2>
+                        <p class="mb-0"><span class="col-green">
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                      <div class="banner-img">
+                        <img src="{% static 'investor/img/banner/1.png' %}" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="card-statistic-4">
+                <div class="align-items-center justify-content-between">
+                  <div class="row ">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                      <div class="card-content">
+                        <h5 class="font-15"> Available Share</h5>
+                        <h2 class="mb-3 font-18">{{ p.available_share }}</h2>
+                        <p class="mb-0"></p>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                      <div class="banner-img">
+                        <img src="{% static 'investor/img/banner/2.png' %}" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="card-statistic-4">
+                <div class="align-items-center justify-content-between">
+                  <div class="row ">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                      <div class="card-content">
+                        <h5 class="font-15">Per Share Rate</h5>
+                        <h2 class="mb-3 font-18">৳ {{ p.Per_share_amount }}</h2>
+                        <p class="mb-0"></p>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                      <div class="banner-img">
+                        <img src="{% static 'investor/img/banner/3.png' %}" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="card">
+              <div class="card-statistic-4">
+                <div class="align-items-center justify-content-between">
+                  <div class="row ">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                      <div class="card-content">
+                        <h5 class="font-15">Revenue</h5>
+                        <h2 class="mb-3 font-18">$48,697</h2>
+                        <p class="mb-0"><span class="col-green">42%</span> Increase</p>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                      <div class="banner-img">
+                        <img src="{% static 'investor/img/banner/4.png' %}" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>-->
+        {% endfor %}
+     
+
     {% include 'investor/chart.html' %}
 
 
