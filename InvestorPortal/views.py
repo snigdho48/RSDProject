@@ -6,13 +6,19 @@ from .forms import CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate , login ,logout
 from .models import *
+from django.shortcuts import render
+from django.db.models import Sum
+from django.http import JsonResponse
 
-
-# Create your views here.
-
-@login_required(login_url = 'login')
 def p_home(request):
-    return render(request, 'investor/index.html')
+    if request.user.is_authenticated:
+        user = request.user
+        investor = Investor.objects.all().filter(user = user)
+        share = Share.objects.all()
+        
+        context={'investor' : investor, 'share': share}
+    return render(request, 'investor/index.html', context)
+
 
 
 @login_required(login_url = 'login')
@@ -30,6 +36,7 @@ def buy_more(request):
 @login_required(login_url = 'login')
 def issue(request):
     return render(request, 'investor/issu.html')
+
 
 
 @login_required(login_url = 'login')
@@ -53,7 +60,9 @@ def request_buy(request):
         return redirect(request.META['HTTP_REFERER'])
 
 
+
 @login_required(login_url = 'login')
+
 def request_withdraw(request):
     if request.method == 'POST':
         email = request.POST['email']
@@ -72,6 +81,7 @@ def request_withdraw(request):
             return redirect(request.META['HTTP_REFERER'])
     else:
         return redirect(request.META['HTTP_REFERER'])
+
     
 
 @login_required(login_url = 'login')
@@ -93,7 +103,7 @@ def request_issu(request):
             return redirect(request.META['HTTP_REFERER'])
     else:
         return redirect(request.META['HTTP_REFERER'])
-    
+
     
     
 def loginPage(request):
@@ -119,3 +129,26 @@ def loginPage(request):
 def logutPage(request):
     logout(request)
     return redirect('login')
+
+################# Char View ##################
+
+from django.shortcuts import render
+from django.db.models import Sum
+from django.http import JsonResponse
+
+
+
+
+def population_chart(request):
+    labels = []
+    data = []
+
+    queryset = Share_Rate_history.objects.all()
+    for entry in queryset:
+        labels.append(entry.date)
+        data.append(entry.price)
+    
+    return JsonResponse(data={
+        'labels': labels,
+        'data': data,
+    })
