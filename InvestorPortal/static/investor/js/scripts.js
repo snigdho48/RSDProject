@@ -641,9 +641,9 @@ $(function () {
   $(".sidebar-color input:radio").change(function () {
     if ($(this).val() == "1") {
       $("body").removeClass("dark-sidebar");
-      $("body").addClass("light-sidebar");
+      $("body").addClass("green-sidebar");
     } else {
-      $("body").removeClass("light-sidebar");
+      $("body").removeClass("green-sidebar");
       $("body").addClass("dark-sidebar");
     }
   });
@@ -652,9 +652,9 @@ $(function () {
   $(".layout-color input:radio").change(function () {
     if ($(this).val() == "1") {
       $("body").removeClass();
-      $("body").addClass("light");
-      $("body").addClass("light-sidebar");
-      $("body").addClass("theme-white");
+      $("body").addClass("green");
+      $("body").addClass("green-sidebar");
+      $("body").addClass("theme-green");
 
       $(".choose-theme li").removeClass("active");
       $(".choose-theme li[title|='white']").addClass("active");
@@ -675,9 +675,9 @@ $(function () {
   $(".btn-restore-theme").on("click", function () {
     //remove all class from body
     $("body").removeClass();
-    jQuery("body").addClass("light");
-    jQuery("body").addClass("light-sidebar");
-    jQuery("body").addClass("theme-white");
+    jQuery("body").addClass("green");
+    jQuery("body").addClass("green-sidebar");
+    jQuery("body").addClass("theme-green");
 
     // set default theme
     $(".choose-theme li").removeClass("active");
@@ -694,12 +694,12 @@ $(function () {
   //start up class add
 
   //add default class on body tag
-  jQuery("body").addClass("light");
-  jQuery("body").addClass("light-sidebar");
-  jQuery("body").addClass("theme-white");
+  jQuery("body").addClass("green");
+  jQuery("body").addClass("green-sidebar");
+  jQuery("body").addClass("theme-green");
   // set theme default color
   $(".choose-theme li").removeClass("active");
-  $(".choose-theme li[title|='white']").addClass("active");
+  $(".choose-theme li[title|='green']").addClass("active");
   //set default dark or light layout(1=light, 2=dark)
   $(".select-layout[value|='1']").prop("checked", true);
   //set default dark or light sidebar(1=light, 2=dark)

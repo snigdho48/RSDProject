@@ -231,10 +231,20 @@
                                             <a href="{% url 'investor_req' %}">Investor Request</a>
                                             {#											investor request URL#}
                                         </li>
-                                        <li>
+                                        {% if user.is_authenticated %}
+                                        
+                                             <li>
+                                            <a href="{% url 'p_home' %}">Investor Panel</a>
+                                            {#											login Url#}
+                                        </li>
+
+	                                        {% else %}
+                                             <li>
                                             <a href="{% url 'login' %}">Investor login</a>
                                             {#											login Url#}
                                         </li>
+
+	                                    {% endif %}
 
 {#                                        <li>#}
 {#                                            <a href="{% url 'testimonial' %}">Testimonials</a>#}

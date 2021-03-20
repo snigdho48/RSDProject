@@ -8,10 +8,14 @@
 
 
 
-      
+    <style>
+    .card {
+    min-height: 178px;
+}
+    </style>
 
-      
-        <div class="row ">
+
+    <div class="row">
               
             {% for i in investor %}
             
@@ -25,7 +29,7 @@
                       <div class="card-content">
                         <h5 class="font-15">Name</h5>
                         <h2 class="mb-3 font-18">{{ i.name }}</h2>
-                        <p class="mb-0"><span class="col-green"></p>
+                          <p class="mb-0"><span class="col-green"></span></p>
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
@@ -48,7 +52,7 @@
                       <div class="card-content">
                         <h5 class="font-15">Total Investment</h5>
                         <h2 class="mb-3 font-18">৳ {{i.total_invest}}</h2>
-                        <p class="mb-0"><span class="col-orange"></p>
+                          <p class="mb-0"><span class="col-orange"></span></p>
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
@@ -74,8 +78,8 @@
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
-                      <div class="banner-img">
-                        <img src="{% static 'investor/img/banner/33.png' %}" alt="">
+                      <div class="banner-img img-responsive">
+                        <img src="{% static 'investor/img/banner/33.png' %}" class="img-fluid image-responsive h-auto"alt="">
                       </div>
                     </div>
                   </div>
@@ -116,7 +120,7 @@
                       <div class="card-content">
                         <h5 class="font-15">Total Share of company</h5>
                         <h2 class="mb-3 font-18">{{ p.total_share }}</h2>
-                        <p class="mb-0"><span class="col-green">
+                          <p class="mb-0"><span class="col-green"></span>
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
@@ -199,6 +203,7 @@
           </div>
         </div>-->
         {% endfor %}
+    </div>
      
 
     {% include 'investor/chart.html' %}
