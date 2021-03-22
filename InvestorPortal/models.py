@@ -3,8 +3,11 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
+
+
 class Investor(models.Model):
-    name = models.TextField(max_length=50, verbose_name="Requester Name")
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50, verbose_name="Requester Name")
     nid = models.TextField(max_length=25, verbose_name="NID")
     investor_id = models.TextField(max_length=10, verbose_name="Investor ID")
     phone = models.TextField(max_length=11, verbose_name="Phone")
@@ -16,7 +19,8 @@ class Investor(models.Model):
     total_invest = models.IntegerField()
     own_share = models.IntegerField()
     available_amount = models.IntegerField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
 
     def __str__(self):
         return self.name

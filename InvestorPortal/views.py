@@ -10,18 +10,20 @@ from django.shortcuts import render
 from django.db.models import Sum
 from django.http import JsonResponse
 
+
 @login_required(login_url='login')
 def p_home(request):
     if request.user.is_authenticated:
         user = request.user
         investor = Investor.objects.all().filter(user=user)
         share = Share.objects.all()
-        notice=Notice.objects.all()
+        notice = Notice.objects.all()
 
         context = {'investor': investor,
                    'share': share,
-                   'notice':notice}
+                   'notice': notice}
     return render(request, 'investor/index.html', context)
+
 
 @login_required(login_url='login')
 def profile(request):
@@ -55,7 +57,7 @@ def buy_more(request):
         investor = Investor.objects.all().filter(user=user)
 
         context = {'investor': investor}
-    return render(request, 'investor/buy_more.html',context)
+    return render(request, 'investor/buy_more.html', context)
 
 
 @login_required(login_url='login')
@@ -65,22 +67,25 @@ def issue(request):
         investor = Investor.objects.all().filter(user=user)
 
         context = {'investor': investor}
-    return render(request, 'investor/issu.html',context)
+    return render(request, 'investor/issu.html', context)
 
 
 @login_required(login_url='login')
 def request_buy(request):
     if request.user.is_authenticated:
         if request.method == 'POST':
-            email = request.POST['email']
-            name = request.POST['name']
+            user = request.user
+            investor = Investor.objects.get(user=user)
+            email = investor.email
+            name = investor.name
             massage = request.POST['message']
             subject = request.POST['subject']
             cell = request.POST['Cell']
-            user = request.user
+
             investor = Investor.objects.get(user=user)
             if email != '' or name != '' or subject != '' or cell != '' or massage != '':
-                user = Buy_more.objects.create(name=name, email=email, message=massage, sub_text=subject, cell=cell,user=investor)
+                user = Buy_more.objects.create(name=name, email=email, message=massage, sub_text=subject, cell=cell,
+                                               user=investor)
                 user.save()
 
                 messages.info(request, "Success")
@@ -97,15 +102,16 @@ def request_withdraw(request):
     if request.user.is_authenticated:
 
         if request.method == 'POST':
-            email = request.POST['email']
-            name = request.POST['name']
+            user = request.user
+            investor = Investor.objects.get(user=user)
+            email = investor.email
+            name = investor.name
             massage = request.POST['message']
             subject = request.POST['subject']
             cell = request.POST['Cell']
-            user = request.user
-            investor = Investor.objects.get(user=user)
             if email != '' or name != '' or subject != '' or cell != '' or massage != '':
-                user = Withdraw.objects.create(name=name, email=email, message=massage, sub_text=subject, cell=cell,user=investor)
+                user = Withdraw.objects.create(name=name, email=email, message=massage, sub_text=subject, cell=cell,
+                                               user=investor)
                 user.save()
 
                 messages.info(request, "Success")
@@ -122,15 +128,17 @@ def request_issu(request):
     if request.user.is_authenticated:
 
         if request.method == 'POST':
-            email = request.POST['email']
-            name = request.POST['name']
+            user = request.user
+            investor = Investor.objects.get(user=user)
+            email = investor.email
+            name = investor.name
             massage = request.POST['message']
             subject = request.POST['subject']
             cell = request.POST['Cell']
-            user = request.user
-            investor = Investor.objects.get(user=user)
+
             if email != '' or name != '' or subject != '' or cell != '' or massage != '':
-                user = Issue.objects.create(name=name, email=email, message=massage, sub_text=subject, cell=cell,user=investor)
+                user = Issue.objects.create(name=name, email=email, message=massage, sub_text=subject, cell=cell,
+                                            user=investor)
                 user.save()
 
                 messages.info(request, "Success")
@@ -174,6 +182,7 @@ from django.db.models import Sum
 from django.http import JsonResponse
 
 
+@login_required(login_url='login')
 def population_chart(request):
     labels = []
     data = []
