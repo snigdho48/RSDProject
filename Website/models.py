@@ -165,5 +165,17 @@ class investor_request(models.Model):
     def __str__(self):
         return f'{self.email} {self.created_at}'
 
+class About_investment(models.Model):
+    text=models.TextField(verbose_name="Text")
+
+    def __str__(self):
+        return f'About Investment Text {self.pk}'
+
+class Investment_policy(models.Model):
+    policy=models.TextField(verbose_name="Policy")
+
+    def __str__(self):
+        return self.policy
+
 # Machine Xtreme IT
 # Team Touhid,Rafi,Tareq,Snigdho

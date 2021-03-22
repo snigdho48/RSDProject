@@ -1,0 +1,62 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+
+{% endblock %}
+{% block css %}
+<style>
+	.bg-img{
+		background: url(../static/images/banner/u_banner.jpg) 0 36% no-repeat;
+		background-size: cover;
+
+	}
+</style>
+{% endblock css %}
+{% block content %}
+<style>
+	.btn-text {
+		padding-top: 12px;
+	}
+</style>
+
+<!-- Intro Section -->
+<section class="inner-intro bg-img light-color overlay-before parallax-background">
+	<div class="container">
+		<div class="row title">
+			<div class="title_row">
+				<h1 data-title="About Investment">About Investment</h1>
+
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Intro Section -->
+<div class="container pt-5">
+<div class="row pb-30 text-center">
+	<div class="col-md-12">
+		<div class="section-title_home">
+			<h2>About Investment<span class="b-line mt-2"></span></h2>
+		</div>
+	</div>
+</div>
+</div>
+<!-- Blog Post Section -->
+<section class="pb-xs-40 pb-4 mb-2">
+	<div class="container">
+		<div class="row">
+        <div class="col-md-12 post-entry text-justify" style="font-weight: bold; font-size:20px;">
+            {% for invest_about in about_invest %}
+	            <div class="post-entry text-justify mb-4" style="font-weight: bold; font-size:20px;">{{ invest_about.text }}</div>
+			<!-- Post Item -->
+
+
+
+            {% endfor %}
+        </div>
+			<!-- End Post Item -->
+		</div>
+	</div>
+
+</section>
+<!-- End Blog Post Section -->
+{% endblock %}

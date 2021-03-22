@@ -158,6 +158,32 @@ def investor_req(request):
                'po': posts, }
     return render(request, 'investor_request.html', context)
 
+def about_investment(request):
+    posts = reversed(NewsandEvent.objects.all())
+    links = Topbar_footer.objects.all()
+    data = Contact_Info.objects.all()
+    contacts = Contact.objects.all()
+    about_invest =About_investment.objects.all()
+    context = {'data': data,
+               'contact': contacts,
+               'links': links,
+               'about_invest':about_invest,
+               'po': posts,}
+    return render(request, 'about_investment.html', context)
+
+def investment_policy(request):
+    posts = reversed(NewsandEvent.objects.all())
+    links = Topbar_footer.objects.all()
+    data = Contact_Info.objects.all()
+    contacts = Contact.objects.all()
+    invest_policy =Investment_policy.objects.all()
+    context = {'data': data,
+               'contact': contacts,
+               'links': links,
+               'invest_policy':invest_policy,
+               'po': posts}
+    return render(request, 'Investment_policy.html', context)
+
 
 def Subscribe(request):
     if request.method == 'POST':
