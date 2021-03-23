@@ -209,7 +209,85 @@
     {% include 'investor/chart.html' %}
 
 
- {% include 'investor/task_table.html' %}
+ <div class="row" id="activity">
+            <div class="col-md-6 col-lg-12 col-xl-6">
+              <!-- Support tickets -->
+              <div class="card">
+                <div class="card-header">
+                  <h4>Investment Notice</h4>
+{#                  <form class="card-header-form">#}
+{#                    <input type="text" name="search" class="form-control" placeholder="Search">#}
+{#                  </form>#}
+                </div>
+
+                <div class="card-body">
+                    {% for n in notice %}
+                        {% if forloop.counter < 5 %}
+                            <div class="support-ticket media pb-1 mb-3">
+                    <div class="media-body ml-3">
+                      <div class="badge badge-pill badge-success mb-1 float-right">{{ n.created_at }}</div>
+                      <span class="font-weight-bold">#{{ n.pk }}</span>
+                      <a href="javascript:void(0)">{{ n.title }}</a>
+                      <p class="my-1">{{ n.description }}</p>
+                    </div>
+                  </div>
+                        {% endif %}
+
+                    {% endfor %}
+
+
+
+                </div>
+                <a href="javascript:void(0)" class="card-footer card-link text-center small ">View
+                  All</a>
+              </div>
+              <!-- Support tickets -->
+            </div>
+            <div class="col-md-6 col-lg-12 col-xl-6">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Accounts History</h4>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Category</th>
+                          <th>Date</th>
+                          <th>Num Of Share</th>
+                          <th>Total Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for acc in acc_history %}
+                          {% if forloop.counter < 5 %}
+                              <tr>
+                          <td>{{ acc.pk }}</td>
+                          <td>{{ acc.category }}</td>
+                          <td>{{ acc.created_at }}</td>
+                          <td>{{ acc.num_of_share }}</td>
+                          <td>{{ acc.total_amount }} TK.</td>
+                        </tr>
+
+                          {% endif %}
+
+                      {% endfor %}
+
+
+
+                      </tbody>
+
+                    </table>
+                  <a href="javascript:void(0)" class="card-footer card-link text-center small ">View
+                  All</a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
 

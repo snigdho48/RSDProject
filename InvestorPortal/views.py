@@ -17,11 +17,15 @@ def p_home(request):
         user = request.user
         investor = Investor.objects.all().filter(user=user)
         share = Share.objects.all()
-        notice = Notice.objects.all()
+        notice = reversed(Notice.objects.all())
+        acc_history=reversed(Account_history.objects.all().filter(user=user))
+        print(acc_history)
 
         context = {'investor': investor,
                    'share': share,
-                   'notice': notice}
+                   'notice': notice,
+                   'acc_history':acc_history,
+                   }
     return render(request, 'investor/index.html', context)
 
 

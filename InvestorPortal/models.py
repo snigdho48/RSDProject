@@ -74,6 +74,7 @@ class Share(models.Model):
 class Notice(models.Model):
     title = models.TextField(max_length=50, verbose_name="Title")
     description = models.TextField(max_length=50, verbose_name="Description")
+    created_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
@@ -85,3 +86,21 @@ class Share_Rate_history(models.Model):
 
     def __str__(self):
         return f'{self.date}'
+CATEGORY_CHOICES = (
+    ('BUY', 'BUY'),
+    ('SELL', 'SELL'),
+    ('WITHDRAW', 'WITHDRAW')
+ 
+)
+
+class  Account_history(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE,default=None)
+    category = models.CharField(choices=CATEGORY_CHOICES, max_length=10,verbose_name='Catagory')
+    created_at = models.DateTimeField(auto_now=True)
+    num_of_share=models.IntegerField(verbose_name='Num Of Share/Withdraw Profit')
+    total_amount=models.IntegerField(verbose_name='Total Amount')
+
+
+    def __str__(self):
+        return self.category
+    

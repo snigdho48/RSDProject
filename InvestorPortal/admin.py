@@ -16,7 +16,9 @@ class InvestorAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Investor, InvestorAdmin)
-admin.site.register(Notice)
+class  NoticeAdmin(admin.ModelAdmin):
+    list_display = ['pk','title','created_at']
+admin.site.register(Notice,NoticeAdmin)
 
 
 class IssuAdmin(admin.ModelAdmin):
@@ -45,3 +47,9 @@ class Share_rate_historyAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Share_Rate_history, Share_rate_historyAdmin)
+
+class Account_historyAdmin(admin.ModelAdmin):
+    list_display = ['category', 'num_of_share','total_amount','created_at']
+
+
+admin.site.register(Account_history, Account_historyAdmin)
