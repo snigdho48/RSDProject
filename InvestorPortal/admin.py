@@ -3,6 +3,7 @@ from .models import *
 
 
 # Register your models here.
+
 class ShareAdmin(admin.ModelAdmin):
     list_display = ['total_share', 'available_share', 'Per_share_amount']
 
